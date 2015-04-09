@@ -11,15 +11,19 @@ module.exports = function (grunt) {
     express: 'grunt-express-server',
   });
 
+
   //Time how long tasks take.
   require('time-grunt')(grunt);
 
   //Define the configuration for all tasks
   grunt.initConfig({
+
     express: {
       tasks: ['express:dev', 'wait'],
       options: {
-        port: process.env.PORT || 8080
+        port: process.env.PORT || 8080,
+        livereload: true,
+        nospawn: true
       },
       dev: {
         options: {
