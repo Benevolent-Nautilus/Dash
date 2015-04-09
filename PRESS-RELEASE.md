@@ -19,26 +19,46 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  Join the future of fitness.
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  Track your fitness goals and progress with others, regardless of device.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  You've joined the fitness-tracking revolution. You're counting your steps and watching your activity, but your friends or loved ones are using another device. What now? Enter Dash - a platform for users to track their health and fitness data together, regardless of device. Monitor all the same information you get from your own device, but also offer encouragement and goals to others, and issue fun challenges that you can tackle together. 
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  Fitness-tracking devices only connect with users of the same device, without a way to communicate with users of other devices.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  Dash provides a seamless platform for integrating different users and devices. Whether you have a fitbit, jawbone, or anything in between, you can add your friends, view their performance, and encourage or challenge them in fun and interesting ways.
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  With the growth of fitness-tracking devices, there should be a way for users of different devices to participate in the broader community of healthy living. Dash is that platform for bringing users of all devices together to monitor their fitness activity and challenge themselves, and others, to live more healthfully. 
+  --Dennis Yang
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  To get started using Dash, visit [Dash website] to create an account and get tracking!
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+  "I love my Fitbit, but my brother recently bought a Jawbone UP. With Dash, we can monitor each other's fitness progress and send challenges to each other to see who can climb Mount Kilimanjaro the fastest. It's great! " 
+  --Derek Wu
+
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+  Set up an account with Dash today and help grow a cross-device fitness community!
