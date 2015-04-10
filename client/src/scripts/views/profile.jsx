@@ -1,18 +1,18 @@
+/**
+@fileOverview 
+<p>Profile.js - This will be where the application will load profile for curated views</p>
+@author Jason Chang, Scott Kao, Derek Van Dyk, Dennis Yang
+*/
 'use strict';
-
+// Reflux
 var Reflux = require('reflux');
-
-// actions
+// Actions
 var actions = require('../actions/actions');
-
-// stores
+// Stores
 var profileStore = require('../stores/profileStore');
 var userStore = require('../stores/userStore');
-
-// components
+// Components
 var Spinner = require('../components/spinner');
-var Post = require('../components/post');
-var Comment = require('../components/comment');
 
 var Profile = React.createClass({
 

@@ -1,71 +1,41 @@
+/**
+@fileOverview 
+<p>Register.js - This is where the application will go when the route hits /register </p>
+@author Jason Chang, Scott Kao, Derek Van Dyk, Dennis Yang
+*/
 'use strict';
-
+// Reflux
 var Reflux = require('reflux');
-
+// Router
 var Router = require('react-router');
-
-// actions
+// Actions
 var actions = require('../actions/actions');
-
-// stores
+// Stores
 var loginStore = require('../stores/loginStore');
-
-// components
+// Components
 var Spinner = require('../components/spinner');
-
+var Facebook   = require('../components/social/facebook');
+/**
+@description This is the register View, this will simply load social media componenets such as <Facebook /> to handle AJAX requests to the server.
+@class Register
+*/
 var Register = React.createClass({
+  mixins: [],
 
-    mixins: [
-        Router.Navigation
-    ],
+  getInitialState: function() {
+    return {};
+  },
 
-    getInitialState: function() {
-        return {
-            // error message - set default blank
-            error: '',
-            // submitted set to false, this is purely for the spinner
-            submitted: false
-        };
-    },
-
-    registerUser: function(e) {
-        e.preventDefault();
-        console.log('ajax call for facebook!');
-        var self = this;
-        // Prefill Here with Login Information
-
-        //this setState edits the state
-        self.setState({
-            submitted: true
-        });
-        //Transition later
-        self.transitionTo('login');
-    },
-
-    // Function is built for error messages.  
-    onErrorMessage: function(errorMessage) {
-        this.refs.submit.getDOMNode().disabled = false;
-        this.setState({
-            error: errorMessage,
-            submitted: false
-        });
-    },
-
-    render: function() {
-        var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
-        return (
-            <div className="post-info inner full-height">
-                <div className="text-center">
-                  <h1>Sign Up With Facebook</h1>
-                      <button className="button button-primary" onClick={ this.registerUser }>
-                         { this.state.submitted ? <Spinner /> : 'Register with Facebook' }
-                      </button>
-                </div>
-                { error }
-            </div>
-        );
-    }
-
+  render: function() {
+    return (
+      <div className="post-info inner full-height">
+        <div className="text-center">
+          <h1>Register With Social Media</h1>
+              <Facebook />
+        </div>
+      </div>
+    );
+  }
 });
 
 module.exports = Register;
