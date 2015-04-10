@@ -90,6 +90,7 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', [
     'jshint', 
     'express:dev',
-    'open'
+    'open',
+    'watch'
   ]);
 };
