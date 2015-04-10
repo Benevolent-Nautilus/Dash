@@ -1,40 +1,41 @@
+/**
+@fileOverview 
+<p>Register.js - This is where the application will go when the route hits /register </p>
+@author Jason Chang, Scott Kao, Derek Van Dyk, Dennis Yang
+*/
 'use strict';
-
+// Reflux
 var Reflux = require('reflux');
-
+// Router
 var Router = require('react-router');
-
-// actions
+// Actions
 var actions = require('../actions/actions');
-
-// stores
+// Stores
 var loginStore = require('../stores/loginStore');
-
-// components
+// Components
 var Spinner = require('../components/spinner');
 var Facebook   = require('../components/social/facebook');
-
+/**
+@description This is the register View, this will simply load social media componenets such as <Facebook /> to handle AJAX requests to the server.
+@class Register
+*/
 var Register = React.createClass({
+  mixins: [],
 
-    mixins: [
-    ],
+  getInitialState: function() {
+    return {};
+  },
 
-    getInitialState: function() {
-        return {
-        };
-    },
-
-    render: function() {
-        return (
-            <div className="post-info inner full-height">
-                <div className="text-center">
-                  <h1>Register With Social Media</h1>
-                      <Facebook />
-                </div>
-            </div>
-        );
-    }
-
+  render: function() {
+    return (
+      <div className="post-info inner full-height">
+        <div className="text-center">
+          <h1>Register With Social Media</h1>
+              <Facebook />
+        </div>
+      </div>
+    );
+  }
 });
 
 module.exports = Register;
