@@ -75,6 +75,7 @@ Documentation on Stores: https://facebook.github.io/flux/docs/overview.html
 var Home      = require('./views/home');
 var Login      = require('./components/login');
 var Register   = require('./components/register');
+var Setup   = require('./views/setup');
 
 var Dash = React.createClass({
 
@@ -118,6 +119,7 @@ var routes = (
     <Route handler={ Dash }>
         <Route name="register" path="/register" handler={ Register } />
         <Route name="login" path="/login" handler={ Login } />
+        <Route name="setup" path="/setup" handler={ Setup } />
         <DefaultRoute name="home" handler={ Home } />
     </Route>
 );

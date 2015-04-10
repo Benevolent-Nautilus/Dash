@@ -2,8 +2,6 @@
 
 var Reflux = require('reflux');
 
-var Router = require('react-router');
-
 // actions
 var actions = require('../actions/actions');
 
@@ -12,7 +10,8 @@ var loginStore = require('../stores/loginStore');
 
 // components
 var Spinner = require('../components/spinner');
-var Facebook   = require('../components/login/facebook');
+var Jawbone = require('../components/devices/jawbone');
+var Fitbit = require('../components/devices/fitbit');
 
 var Register = React.createClass({
 
@@ -28,8 +27,9 @@ var Register = React.createClass({
         return (
             <div className="post-info inner full-height">
                 <div className="text-center">
-                  <h1>Register With Social Media</h1>
-                      <Facebook />
+                  <h1>Connect Your Device</h1>
+                        <Fitbit />
+                        <Jawbone />
                 </div>
             </div>
         );
