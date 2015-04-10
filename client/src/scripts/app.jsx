@@ -56,27 +56,40 @@ More info here: https://github.com/rackt/react-router/blob/master/docs/api/compo
 */
 var Link          = Router.Link;
 /** 
-userStore is linking to file `scripts/stores/userStore`.  Running here is basically like running a model of sorts.  Functionality refering to the user will be documented here.   
-Documentation on Stores: https://facebook.github.io/flux/docs/overview.html
-@type {store}
-*/
-// var userStore  = require('./stores/userStore');
-/** 
 Part of the reflux architecture, will send out emit triggers that will be heard throughout the app to update. 
 Documentation on Actions: https://facebook.github.io/flux/docs/overview.html  
 @type {actions}
 */
 var actions    = require('./actions/actions');
 /** 
-Posts is linking to file `scripts/views/posts.jsx`. Posts will render the full Posts page
-Documentation on Stores: https://facebook.github.io/flux/docs/overview.html
-@type {store}
+Components are the backbone of React, every view should be devided into multiple bits.  
+Attached is 'Home', which is located in the /views folder.  Home has the main landing view. 
+@type {View}
 */
 var Home      = require('./views/home');
+/** 
+Components are the backbone of React, every view should be devided into multiple bits.  
+Attached is 'Login', which is located in the /components folder. Login will hold the necessary information for users to Login. 
+Reason for why the files are in the components folder is mainly due to modulator amongst many views. 
+@type {Component}
+*/
 var Login      = require('./components/login');
+/** 
+Components are the backbone of React, every view should be devided into multiple bits.  
+Attached is 'Register', which is located in the /components folder. Register will hold the necessary information for users to Login. 
+Reason for why the files are in the components folder is mainly due to modulator amongst many views. 
+@type {Component}
+*/
 var Register   = require('./components/register');
+/** 
+Attached is 'Setup', which is located in the /views folder. Setup will hold a view for users to have new devices. 
+@type {View}
+*/
 var Setup   = require('./views/setup');
-
+/**
+@description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
+@class React Class
+*/
 var Dash = React.createClass({
 
     mixins: [
@@ -84,8 +97,7 @@ var Dash = React.createClass({
     ],
 
     getInitialState: function() {
-        return {
-        };
+        return;
     },
 
     render: function() {
@@ -114,7 +126,11 @@ var Dash = React.createClass({
         );
     }
 });
-
+/** 
+Router.  This dictates the route and links with the above Router.  This is the main mutator in rendering Components to the View. 
+Remember that everything in between hander={' '} is a component to load. 
+@type {DOM Node}
+*/
 var routes = (
     <Route handler={ Dash }>
         <Route name="register" path="/register" handler={ Register } />
@@ -124,7 +140,10 @@ var routes = (
     </Route>
 );
 
-
+/**
+@param {variables}  routes, func(Handler, state)
+@returns {object} a Handler/state from the above routes. 
+*/
 Router.run(routes, function(Handler, state) {
     React.render(<Handler params={ state.params } />, document.getElementById('app'));
 });

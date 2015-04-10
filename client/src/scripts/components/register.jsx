@@ -12,7 +12,7 @@ var loginStore = require('../stores/loginStore');
 
 // components
 var Spinner = require('../components/spinner');
-var Facebook   = require('../components/login/facebook');
+var Facebook   = require('../components/social/facebook');
 
 var Register = React.createClass({
 
