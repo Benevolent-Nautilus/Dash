@@ -9,6 +9,6 @@ module.exports = function(app) {
   // routes used below
   app.route('/*')
     .get(function(req, res) {
-      res.send('Hello World!');
+      res.type('.html').sendFile('./client/src/index.html');
     });
 };
