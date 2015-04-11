@@ -10,5 +10,7 @@ var express = require('express');
 var app = express();
 var port = 8080;
 
+require('./routes')(app);
+
 app.listen(port);
 console.log('Listening on port: ', port);
