@@ -126,14 +126,25 @@ gulp.task('images', function() {
 
 
 // Webserver
-gulp.task('serve', function() {
-  gulp.src('client/dist')
-    .pipe($.webserver({
-      livereload: true,
-      port: 9000,
-      fallback: 'client/index.html'
-    }));
-});
+// gulp.task('serve', function() {
+//   gulp.src('client/dist')
+//     .pipe($.webserver({
+//       livereload: true,
+//       port: 9000,
+//       fallback: 'client/index.html'
+//     }));
+// });
+
+// // .... //
+// gulp.task('serve', connect.server({
+//   root: ['./server/app.js'],
+//   port: 8080,
+//   livereload: true,
+//   open: {
+//     brower: 'Google Chrome'
+//   }
+//   }));
+
 
 
 // Clean
