@@ -33,7 +33,8 @@ var userSchema = new Schema({
     }
   },
   session: {type: String},
-  steps: {
+  activity: {
+    dailyGoal: {type: Number},
     dailySteps: {type: Number},
     totalSteps: {type: Number}
   },
