@@ -9,6 +9,6 @@ module.exports = function(app) {
   app.use('./auth', require('./auth'));
 
   app.get('/*', function(req, res) {
-      res.type('.html').sendFile('./client/src/index.html');
+      res.redirect('/');
     });
 };

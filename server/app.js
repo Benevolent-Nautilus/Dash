@@ -7,6 +7,7 @@
 
 */
 var express = require('express');
+var morgan = require('morgan');
 var path = require('path');
 var app = express();
 var port = 8080;
@@ -17,6 +18,7 @@ app.set('view engine', 'ejs');
 
 //Serving mainpage
 app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(morgan('dev'));
 
 //Using ejs as template engine
 app.engine('html', require('ejs').renderFile);
