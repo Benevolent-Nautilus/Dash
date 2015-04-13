@@ -23,3 +23,6 @@ app.engine('html', require('ejs').renderFile);
 
 app.listen(port);
 console.log('Listening on port: ', port);
+
+require('./routes')(app);
+exports = module.exports = app;
