@@ -4,7 +4,9 @@
   "description": "fitness tracker platform",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "start": "node ./server/app.js",
+    "test": "jest",
+    "postinstall": "gulp"
   },
   "repository": {
     "type": "git",
