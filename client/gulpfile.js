@@ -141,5 +141,5 @@ gulp.task('default', ['clean', 'html', 'styles', 'images', 'scripts']);
 gulp.task('watch', ['html', 'images', 'styles', 'scripts', 'serve'], function() {
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/styles/**/*.scss', ['styles']);
-    gulp.watch('src/images/**/*', ['image']);
+    gulp.watch('src/images/**/*', ['images']);
 });

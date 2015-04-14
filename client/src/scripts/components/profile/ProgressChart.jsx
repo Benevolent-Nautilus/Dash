@@ -4,7 +4,7 @@ var sampleData = [
       { 
         name: 'Jason Chang', 
         steps_today: 5201, 
-        daily_goal: 10000, 
+        daily_goal: 8000, 
         steps_total: 1030102, 
         steps_week: 40000, 
         competitions: 100000 

@@ -32,7 +32,9 @@ var Chart = React.createClass({
 
   render: function() {
     return (
-      <div class="Chart"></div>
+      <div class="chart-center">
+        <div class="Chart"></div>
+      </div>
     );
   }
 });
