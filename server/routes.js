@@ -6,7 +6,7 @@
 
 module.exports = function(app) {
   // routes used below
-  app.use('./auth', require('./auth'));
+  app.use('/auth', require('./auth'));
 
   app.get('/*', function(req, res) {
       res.redirect('/');

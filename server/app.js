@@ -12,6 +12,8 @@ var path = require('path');
 var app = express();
 var port = 8080;
 
+require('./db/db.config');
+
 //Setting views to correct directory
 app.set('views', path.join(__dirname, '../client/dist/'));
 app.set('view engine', 'ejs');
