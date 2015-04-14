@@ -20,7 +20,8 @@ var Chart = React.createClass({
   getChartState: function() {
     return {
       name: this.props.data.name,
-      steps: this.props.data.value
+      steps_today: this.props.data.steps_today, 
+      daily_goal: this.props.data.daily_goal
     };
   },
   // Destroy (Figure out what to do with this later)

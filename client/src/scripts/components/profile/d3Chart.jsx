@@ -6,7 +6,8 @@ d3Chart.create = function(el, state) {
       .label(state.name)
       .onClick(this.onClick1)
       .diameter(300)
-      .value(state.steps)
+      .value(state.steps_today)
+      .maxValue(state.daily_goal)
       .render();
 };
 

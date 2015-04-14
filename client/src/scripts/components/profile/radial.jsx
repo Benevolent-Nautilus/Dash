@@ -137,7 +137,7 @@ Radial.radialProgress = function (parent) {
 
   function labelTween(a) {
     var i = d3.interpolate(_currentValue, a);
-    _currentValue = i(0);
+    // _currentValue = i(0);
 
     return function(t) {
       _currentValue = i(t);
@@ -169,8 +169,6 @@ Radial.radialProgress = function (parent) {
     _fontSize=_width*.2;
     _arc.outerRadius(_width/2);
     _arc.innerRadius(_width/2 * .85);
-    _arc2.outerRadius(_width/2 * .85);
-    _arc2.innerRadius(_width/2 * .85 - (_width/2 * .15));
   }
 
 
