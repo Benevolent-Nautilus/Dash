@@ -1,3 +1,5 @@
+'use strict';
+
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
@@ -38,7 +40,7 @@ var facebookAuth = function (User, config) {
         } else {
           return done(err, user);
         }
-      })
+      });
     }
   ));
 };
