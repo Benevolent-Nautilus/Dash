@@ -16,6 +16,7 @@ var reactify   = require('reactify');
 var watchify   = require('watchify');
 var source     = require('vinyl-source-stream');
 var $          = require('gulp-load-plugins')();
+var images     = require('gulp-image');
 
 var prod = $.util.env.prod;
 
@@ -96,16 +97,22 @@ gulp.task('html', function() {
 });
 
 
-// Images
-gulp.task('images', function() {
-    return gulp.src('src/images/**/*')
-        .pipe($.cache($.imagemin({
-            optimizationLevel: 3,
-            progressive: true,
-            interlaced: true
-        })))
-        .pipe(gulp.dest('dist/images'))
-        .pipe($.size());
+// // Images
+// gulp.task('images', function() {
+//     return gulp.src('src/images/*')
+//         .pipe($.cache($.imagemin({
+//             optimizationLevel: 3,
+//             progressive: true,
+//             interlaced: true
+//         })))
+//         .pipe(gulp.dest('dist/images'))
+//         .pipe($.size());
+// });
+
+gulp.task('images', function () {
+  gulp.src('./src/images/*')
+    .pipe(images())
+    .pipe(gulp.dest('./dist/images/'));
 });
 
 
@@ -127,11 +134,11 @@ gulp.task('clean', function(cb) {
 
 
 // Default task
-gulp.task('default', ['clean', 'html', 'styles', 'scripts']);
+gulp.task('default', ['clean', 'html', 'styles', 'images', 'scripts']);
 
 
 // Watch
-gulp.task('watch', ['html', 'styles', 'scripts', 'images', 'serve'], function() {
+gulp.task('watch', ['html', 'images', 'styles', 'scripts', 'serve'], function() {
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/images/**/*', ['images']);

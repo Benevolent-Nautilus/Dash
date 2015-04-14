@@ -35,7 +35,7 @@ var Fitbit = React.createClass({
     e.preventDefault();
     var self = this;
     console.log('setup fitbit');
-    self.transitionTo('login');
+    self.transitionTo('profile');
   },
 
   // Function is built for error messages.  

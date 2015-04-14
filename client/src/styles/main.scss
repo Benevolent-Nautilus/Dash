@@ -168,3 +168,70 @@ body {
     height: 1000px;
     background-color: #00dac5;
 }
+
+
+
+
+.background {
+    fill: transparent;
+}
+.component {
+    fill: #e5fbf9;
+}
+.component .label {
+    font-family: "museo-sans", sans-serif, "Helvetica";
+    font-weight: 200;
+    text-anchor: middle;
+    color: #659f99;
+    fill: #0000FF;
+}
+.arc {
+    stroke-weight:.5;
+    fill: #00dac5;
+}
+
+.arc2 {
+    stroke-weight:1;
+    fill: #3660b0;
+}
+
+.label {
+    font-family:  "museo-sans", sans-serif, "Helvetica";
+    text-anchor: middle;
+    color: #659f99;
+    font-weight: 200;
+}
+
+.radial-svg {
+    width: 345px;
+    margin: 30px auto;
+    display: block;
+}
+
+
+.today-text {
+    font-family:  "museo-sans", sans-serif, "Helvetica";
+    text-anchor: middle;
+    color: #a1aeb3;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.steps-text {
+    font-family:  "museo-sans", sans-serif, "Helvetica";
+    text-anchor: middle;
+    color: #00dac5;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.steps-left {
+    font-family:  "museo-sans", sans-serif, "Helvetica";
+    text-anchor: middle;
+    color: #7d8f97;
+    letter-spacing: -2px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
