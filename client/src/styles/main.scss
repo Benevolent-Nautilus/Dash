@@ -1,7 +1,10 @@
 body {
     background-color: #FFF;
 }
-
+.nav {
+    font-family: "museo-sans", sans-serif, "Helvetica";
+    color: #6fc4bb;
+}
 .navbar {
     border: 0px;
     margin-bottom: 0px;
@@ -27,6 +30,10 @@ body {
 .navbar-brand img {
     height: 100%;
     width: auto;
+}
+
+.container-fluid {
+    padding: 0px;
 }
 
 .brand { 
@@ -203,7 +210,7 @@ body {
 }
 
 .radial-svg {
-    width: 345px;
+    width: 320px;
     margin: 30px auto;
     display: block;
 }
@@ -230,8 +237,8 @@ body {
     text-anchor: middle;
     color: #7d8f97;
     letter-spacing: -2px;
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 00;
     text-transform: uppercase;
     letter-spacing: 2px;
 }

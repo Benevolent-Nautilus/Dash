@@ -18,13 +18,13 @@ d3Chart.create = function(el, state) {
 
   Radial.radialProgress(el)
       .label(function() {
-        if(goal-daily < 0) {
+        if(goal-daily <= 0) {
           return "Goal has been met!";
         }
         return goal-daily + " STEPS TO GO";
       })
       .onClick(this.onClick1)
-      .diameter(375)
+      .diameter(350)
       .value(state.steps_today)
       .maxValue(state.daily_goal)
       .render();
