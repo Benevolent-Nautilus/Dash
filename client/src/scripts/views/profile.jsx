@@ -13,7 +13,7 @@ var actions = require('../actions/actions');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../components/spinner');
-var ProgressChart = require('../components/profile/ProgressChart');
+var Dashboard = require('../components/profile/Dashboard');
 
 // Profile Class
 var Profile = React.createClass({
@@ -37,7 +37,7 @@ var Profile = React.createClass({
   render: function() {
     return (
       <div className="content full-width">
-       < ProgressChart />
+       < Dashboard />
       </div>
     );
   }

@@ -1,7 +1,7 @@
-var Radial = require('./radial');
-d3Chart = {};
+var Radial = require('./Radial');
+D3Chart = {};
 
-d3Chart.create = function(el, state) {
+D3Chart.create = function(el, state) {
   // Checks to see how far user is from daily goal.
   var goal = state.daily_goal;
   var daily = state.steps_today;
@@ -30,9 +30,9 @@ d3Chart.create = function(el, state) {
       .render();
 };
 
-d3Chart.onClick1 = function() {
+D3Chart.onClick1 = function() {
   deselect();
   el.attr("class","selectedRadial");
 };
 
-module.exports = d3Chart;
+module.exports = D3Chart;
