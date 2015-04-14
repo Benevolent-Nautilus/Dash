@@ -131,7 +131,7 @@ gulp.task('default', ['clean', 'html', 'styles', 'scripts']);
 
 
 // Watch
-gulp.task('watch', ['html', 'styles', 'scripts', 'serve'], function() {
+gulp.task('watch', ['html', 'styles', 'scripts', 'images', 'serve'], function() {
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/images/**/*', ['images']);
