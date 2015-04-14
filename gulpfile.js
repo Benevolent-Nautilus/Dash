@@ -43,15 +43,16 @@ var path = {
   LOCAL_CONFIG: './server/config/local.env'
 };
 
-function runCommand(command){
-  return fucntion(cb){
-    exec(command, function(err, stdout, stderr){
+function runCommand(command) {
+  return function (cb) {
+    exec(command, function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);
       cb(err);
     });
   }
-})
+}
+
 
 
 // gulp-plumber for error handling
@@ -157,6 +158,7 @@ gulp.task('serverLint', function() {
 });
 
 
+<<<<<<< HEAD
 //Create webserver
 gulp.task('serve', function() {
   nodemon({
@@ -181,7 +183,10 @@ gulp.task('open', function() {
 gulp.task('start-mongo', funCommand('mongod --dbpath server/db')):
 
 
-// Clean directories
+
+gulp.task('start-mongo', runCommand('mongod --dbpath server/db'));
+
+// Clean
 gulp.task('clean', function(cb) {
   del([path.DIST_CSS, path.DIST_SCRIPT, path.DIST_IMAGE], cb);
 });
