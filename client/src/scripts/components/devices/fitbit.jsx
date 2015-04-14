@@ -51,8 +51,8 @@ var Fitbit = React.createClass({
     var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
     return (
       <div className="text-center">
-        <button className="button button-primary" onClick={ this.connectFitbit }>
-           { this.state.submitted ? <Spinner /> : 'Connect Fitbit' }
+        <button type="button" className="btn btn-default fitbit-button" aria-label="Fitbit" onClick={ this.connectFitbit }>
+          { this.state.submitted ? <Spinner /> : <span className="fitbit-logo" aria-hidden="true"></span> }
         </button>
         { error }
       </div>

@@ -31,7 +31,7 @@ var Facebook = React.createClass({
     e.preventDefault();
     var self = this;
     console.log('ajax call for facebook component!');
-    self.transitionTo('login');
+    self.transitionTo('setup');
   },
 
   // If oAuth runs into a problem.
@@ -47,8 +47,8 @@ var Facebook = React.createClass({
     var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
     return (
       <div className="text-center">
-        <button className="button button-primary" onClick={ this.registerUser }>
-           { this.state.submitted ? <Spinner /> : 'Register with Facebook' }
+        <button className="facebook-login" onClick={ this.registerUser }>
+           { this.state.submitted ? <Spinner /> : <img src="../../../images/facebook-login.png" width="90" height="50" alt="submit" />}
         </button>
         { error }
       </div>

@@ -23,14 +23,15 @@ var Register = React.createClass({
   mixins: [],
 
   getInitialState: function() {
-    return {};
+    return {
+    };
   },
 
   render: function() {
     return (
-      <div className="post-info inner full-height">
-        <div className="text-center">
-          <h1>Register With Social Media</h1>
+      <div className="post-info inner full-height fill">
+        <div className="login-page">
+          <img src="../images/splash-login.png" />
               <Facebook />
         </div>
       </div>
