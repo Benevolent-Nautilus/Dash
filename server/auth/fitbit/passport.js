@@ -1,11 +1,11 @@
 'use strict';
 
 var passport = require('passport');
-var FacebookStrategy = require('passport-oauth').Strategy;
+var OAuthStrategy = require('passport-oauth').OAuthStrategy;
 
 var facebookAuth = {
   setup: function (User, config) {
-    passport.use(new FacebookStrategy({
+    passport.use('fitbit', new OAuthStrategy({
         requestTokenURL: config.fitbit.requestTokenURL,
         accessTokenURL: config.fitbit.accessTokenURL,
         userAuthorizationURL: config.fitbit.userAuthorizationURL,
@@ -31,7 +31,6 @@ var facebookAuth = {
               }
             });
           } else {
-            console.log('found USER');
             return done(err, user);
           }
         });

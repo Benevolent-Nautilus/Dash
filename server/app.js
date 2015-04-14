@@ -7,7 +7,9 @@
 
 */
 var express = require('express');
+var session = require('express-session');
 var morgan = require('morgan');
+var config = require('./config/config');
 var path = require('path');
 var app = express();
 var port = 8080;
@@ -21,6 +23,17 @@ app.set('view engine', 'ejs');
 //Serving mainpage
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(morgan('dev'));
+
+//set setting for oauth
+app.use(session({
+  secret: config.secrets.session,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false,
+    maxAge: new Date(Date.now() + 3600000),
+  }
+}));
 
 //Using ejs as template engine
 app.engine('html', require('ejs').renderFile);

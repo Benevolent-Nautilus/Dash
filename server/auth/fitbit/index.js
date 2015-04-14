@@ -7,17 +7,17 @@ var router = express.Router();
 
 router
   //facebook auth
-  .get('/', passport.authenticate('fitbit', {
-    failureRedirect: '#/register',
+  .get('/', passport.authorize('fitbit', {
+    failureRedirect: '/#/register',
     session: false
   }))
 
   //callback for api
-  .get('/callback', passport.authenticate('fitbit', {
-    failureRedirect: '#/register',
+  .get('/callback', passport.authorize('fitbit', {
+    failureRedirect: '/#/register',
     session: false
   }), function(req, res){
-    
+    res.redirect('/#/profile');
   });
 
 module.exports = router;
