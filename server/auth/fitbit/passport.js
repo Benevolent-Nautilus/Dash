@@ -11,34 +11,22 @@ var facebookAuth = {
         userAuthorizationURL: config.fitbit.userAuthorizationURL,
         consumerKey: config.fitbit.consumerKey,
         consumerSecret: config.fitbit.consumerSecret,
-        callbackURL: config.fitbit.callbackURL
+        callbackURL: config.fitbit.callbackURL,
+        passReqToCallback: true
       },
-      function(accessToken, refreshToken, profile, done) {
+      function(req, accessToken, tokenSecret, profile, done) {
         User.findOne({
-          'oauth.facebook.id': profile.id
+          '_id': req.user._id
         },
         function(err, user) {
           if(err){
             return done(err);
           }
-          if(!user){
-            user = new User({
-              name: {
-                first:profile.name.familyName,
-                last: profile.name.givenName
-              },
-              emailAddress: profile.emails[0].value,
-              username: profile.username,
-              oauth:{
-                facebook:{
-                  id: profile.id
-                }
-              }
-            });
+          if(user){
+            user.fitnessDevice.token = accessToken;
+            user.fitnessDevice.tokenSecret = tokenSecret; 
             user.save(function(err) {
               if(err){
-
-                done(err);
                 return done(err, user);
               }
             });
