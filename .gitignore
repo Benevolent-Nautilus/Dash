@@ -2,6 +2,8 @@
 
 # miscellaneous
 .DS_store
+client/.DS_store
+client/src/.DS_store
 
 # Logs
 logs
