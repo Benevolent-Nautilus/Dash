@@ -8,7 +8,7 @@ Radial.radialProgress = function (parent) {
       _selection,
       _margin = {top:0, right:0, bottom:30, left:0},
       __width = 350,
-      __height = 455,
+      __height = 350,
       _diameter,
       _label="",
       _fontSize=10;

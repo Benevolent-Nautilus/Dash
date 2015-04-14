@@ -6,16 +6,6 @@ D3Chart.create = function(el, state) {
   var goal = state.daily_goal;
   var daily = state.steps_today;
 
-  // var stepsLeft = function(daily, goal){
-  //   var result = goal - daily;
-  //   if(result < 0) {
-  //     result = "Goal has been reached!";
-  //   }
-  //   return result;
-  // };
-
-  // stepsLeft(daily, goal);
-
   Radial.radialProgress(el)
       .label(function() {
         if(goal-daily <= 0) {

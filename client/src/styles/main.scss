@@ -1,6 +1,28 @@
 body {
     background-color: #FFF;
 }
+
+.container-fluid>.navbar-header {
+    margin: 0px;    
+}
+
+h2 { 
+    font-family: "museo-sans", sans-serif, "Helvetica";
+    font-size: 32px;
+    margin: 5px;
+    padding: 0px;
+    font-weight: 400;
+}
+
+h4 { 
+    font-family: "museo-sans", sans-serif, "Helvetica";
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
 .nav {
     font-family: "museo-sans", sans-serif, "Helvetica";
     color: #6fc4bb;
@@ -239,6 +261,105 @@ body {
     letter-spacing: -2px;
     font-size: 20px;
     font-weight: 00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.tracker {
+    height: 100px;
+    margin: 3px 20px;
+    padding: 0px;
+    text-align: center;
+    border: 2px solid #00dac5;
+    display: block;
+    position: relative;
+}
+
+.tracker-header {
+    width: 100%;
+    height: 30px;
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    background-color: #00dac5;
+    display: block;
+    position: relative;
+}
+
+.tracker-header h4 {
+    color: #FFF;
+    padding-top: 8px;
+}
+
+.tracker-data {
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    display: block;
+    position: relative;
+}
+
+.tracker-data h2 {
+    color: #659f99;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.tracker-data span {
+    color: #a1aeb3;
+    margin: 0px;
+    padding:0px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.competition-box {
+    height: 75px;
+    padding-top: 14px;
+}
+
+.competition-box h4{
+    color: #7d8f97;
+    text-transform: uppercase;
+}
+
+.competition-box img{
+    height: 20px;
+    margin: 3px auto;
+    width: auto;
+}
+
+.competition-score {
+    font-family:  "museo-sans", sans-serif, "Helvetica";
+    color: #7d8f97;
+    text-align: right;
+    display: block;
+}
+
+.competition-accumulated {
+    font-family:  "museo-sans", sans-serif, "Helvetica";
+    color: #7d8f97;
+    font-weight: 800;
+}
+.competition-score {
+    font-family:  "museo-sans", sans-serif, "Helvetica";
+    font-size: 20px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.line-right {
+    border-right: 1px solid #c7cdd0;
+}
+
+.competition-text {
+    font-family:  "museo-sans", sans-serif, "Helvetica";
+    color: #7d8f97;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
