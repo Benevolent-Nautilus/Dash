@@ -2,8 +2,9 @@
 
 var passport = require('passport');
 var OAuthStrategy = require('passport-oauth').OAuthStrategy;
+var jwt = require('jsonwebtoken');
 
-var facebookAuth = {
+var fitbitAuth = {
   setup: function (User, config) {
     passport.use('fitbit', new OAuthStrategy({
         requestTokenURL: config.fitbit.requestTokenURL,
@@ -15,8 +16,9 @@ var facebookAuth = {
         passReqToCallback: true
       },
       function(req, accessToken, tokenSecret, profile, done) {
+        var decode = jwt.verify(JSON.parse(req.cookies.token), config.secrets.session)
         User.findOne({
-          '_id': req.user._id
+          '_id': decode.id
         },
         function(err, user) {
           if(err){
@@ -27,6 +29,7 @@ var facebookAuth = {
             user.fitnessDevice.tokenSecret = tokenSecret; 
             user.save(function(err) {
               if(err){
+                done(err);
                 return done(err, user);
               }
             });
@@ -39,4 +42,4 @@ var facebookAuth = {
   }
 };
 
-module.exports = facebookAuth;
+module.exports = fitbitAuth;

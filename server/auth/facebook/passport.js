@@ -40,7 +40,6 @@ var facebookAuth = {
               }
             });
           } else {
-            console.log('found USER');
             return done(err, user);
           }
         });
