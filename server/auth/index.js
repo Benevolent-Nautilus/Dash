@@ -15,4 +15,3 @@ router.use('/facebook', require('./facebook'));
 router.use('/fitbit', require('./fitbit'));
 
 module.exports = router;
-  
