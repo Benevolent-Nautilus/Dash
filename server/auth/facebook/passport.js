@@ -34,11 +34,13 @@ var facebookAuth = {
             });
             user.save(function(err) {
               if(err){
+
                 done(err);
                 return done(err, user);
               }
             });
           } else {
+            console.log('found USER');
             return done(err, user);
           }
         });
