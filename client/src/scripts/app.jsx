@@ -9,6 +9,7 @@ $ will be used to reference jQuery throughout the React Application
 @type {dependency}
 */
 var $ = jQuery;
+
 /** 
 window.React will load addons.js from the React folder in nodes_modules. 
 @type {dependency}
@@ -90,6 +91,10 @@ Attached is 'Setup', which is located in the /views folder. Setup will hold a vi
 @type {View}
 */
 var Setup = require('./views/setup');
+
+
+// Profile
+var Profile = require('./views/profile');
 /**
 @description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
 @class React
@@ -113,15 +118,35 @@ var Dash = React.createClass({
 
     return (
       <div className="wrapper full-height">
-        <header className={ headerCx }>
-          <div className="header-main">
-              <div className="float-left">
-                  <Link to="home" className="menu-title">Dash.io</Link>
-              </div>
-              <div className="float-right">
-              </div>
+        <nav className="navbar navbar-default">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+              <a className="navbar-brand" href="#">
+                <img src="../images/logo.png" />
+              </a>
+            </div>
+
+            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul className="nav navbar-nav">
+                <li><a href="#/profile">Dashboard<span className="sr-only">(current)</span></a></li>
+                <li><a href="#/register">Setup</a></li>
+                <li><a href="#/competition">Competition</a></li>
+              </ul>
+              <form className="navbar-form navbar-left" role="search">
+                <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Search" />
+                </div>
+                <button type="submit" className="btn btn-default">Submit</button>
+              </form>
+            </div>
           </div>
-        </header>
+        </nav>
         <main id="content" className="full-height inner">
             <RouteHandler />
         </main>
@@ -142,6 +167,7 @@ var routes = (
     <Route name="register" path="/register" handler={ Register } />
     <Route name="login" path="/login" handler={ Login } />
     <Route name="setup" path="/setup" handler={ Setup } />
+    <Route name="profile" path="/profile" handler={ Profile } />
     // Home is set to the default route for the time being. 
     <DefaultRoute name="home" handler={ Home } />
   </Route>

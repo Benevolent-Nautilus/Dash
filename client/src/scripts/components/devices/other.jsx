@@ -17,7 +17,7 @@ var Spinner = require('../spinner');
 @description Class Dedicated to Jawbones API requests while rendering a button.
 @class Jawbone
 */
-var Jawbone = React.createClass({
+var Other = React.createClass({
   mixins: [
     Router.Navigation
   ],
@@ -51,8 +51,8 @@ var Jawbone = React.createClass({
     var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
     return (
         <div className="text-center">
-          <button type="button" className="btn btn-default jawbone-button" aria-label="Jawbone" onClick={ this.connectFitbit }>
-            { this.state.submitted ? <Spinner /> : <span className="jawbone-logo" aria-hidden="true"></span> }
+          <button type="button" className="btn btn-default other-button" aria-label="Jawbone" onClick={ this.connectFitbit }>
+            { this.state.submitted ? <Spinner /> : <span className="other" aria-hidden="true"><strong>Missing your device?</strong> Let us know!</span> }
           </button>
           { error }
         </div>
@@ -60,4 +60,4 @@ var Jawbone = React.createClass({
     }
 });
 
-module.exports = Jawbone;
+module.exports = Other;

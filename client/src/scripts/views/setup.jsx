@@ -14,6 +14,7 @@ var loginStore = require('../stores/loginStore');
 var Spinner = require('../components/spinner');
 var Jawbone = require('../components/devices/jawbone');
 var Fitbit = require('../components/devices/fitbit');
+var Other = require('../components/devices/other');
 /**
 @description This is where users will be able to set up their application.
 Keep an eye out for <Fitbit /> and <Jawbone /> 
@@ -33,10 +34,13 @@ var Setup = React.createClass({
   render: function() {
     return (
       <div className="post-info inner full-height">
-        <div className="text-center">
-          <h1>Connect Your Device</h1>
+        <div className="setup text-center">
+          <span className="setup-steps">Step 1 of 2</span>
+          <h2>Choose your device!</h2>
+          <img src="../../images/setup-monster.png" />
             <Fitbit />
             <Jawbone />
+            <Other />
         </div>
       </div>
     );

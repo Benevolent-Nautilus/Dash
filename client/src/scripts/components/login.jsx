@@ -13,6 +13,8 @@ var loginStore = require('../stores/loginStore');
 // Components
 var Spinner = require('./spinner');
 var Facebook   = require('../components/social/facebook');
+
+var jQuery = require('jquery');
 /**
 @description This is the Login class.  This is the made component/module that will load our applications login.
 
