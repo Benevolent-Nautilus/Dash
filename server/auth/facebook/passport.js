@@ -5,7 +5,6 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 
 var facebookAuth = {
   setup: function (User, config) {
-    console.log(config);
     passport.use(new FacebookStrategy({
         clientID: config.facebook.clientID,
         clientSecret: config.facebook.clientSecret,
@@ -25,7 +24,7 @@ var facebookAuth = {
                 first:profile.name.familyName,
                 last: profile.name.givenName
               },
-              email: profile.emails[0].value,
+              emailAddress: profile.emails[0].value,
               username: profile.username,
               oauth:{
                 facebook:{
