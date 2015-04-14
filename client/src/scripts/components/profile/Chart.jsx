@@ -1,6 +1,5 @@
 // Chart.js
-
-var d3Chart = require('./d3Chart');
+var D3Chart = require('./D3Chart');
 
 var Chart = React.createClass({
   propTypes: {
@@ -9,7 +8,7 @@ var Chart = React.createClass({
   // Create
   componentDidMount: function() {
     var el = this.getDOMNode();
-    d3Chart.create(el, this.getChartState());
+    D3Chart.create(el, this.getChartState());
   },
   // Update (Figure out what to do with this later)
   // componentDidUpdate: function() {

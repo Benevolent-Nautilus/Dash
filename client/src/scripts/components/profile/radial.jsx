@@ -7,8 +7,8 @@ Radial.radialProgress = function (parent) {
       _duration= 3000,
       _selection,
       _margin = {top:0, right:0, bottom:30, left:0},
-      __width = 375,
-      __height = 455,
+      __width = 350,
+      __height = 350,
       _diameter,
       _label="",
       _fontSize=10;
@@ -111,7 +111,6 @@ Radial.radialProgress = function (parent) {
 
     // Count Steps
       // enter.append("g").attr("class", "labels");
-      // var label = svg.select(".labels").selectAll(".label").data(data);
     steps.enter().append("text")
         .attr("class","label")
         .attr("y",_width/2 + 45)
@@ -152,13 +151,13 @@ Radial.radialProgress = function (parent) {
             path2.transition().delay(_duration).duration(_duration)
                 .attrTween("d", arcTween2);
         }
-
+        var label = svg.selectAll(".label").data(data);
         //This is where the steps values get manipulated.
           //Change the argument within .datum();
-        // label.datum(_value);
+        label.datum(_value);
         //refer back to this later
-        // label.transition().duration(_duration)
-        //     .tween("text",labelTween);
+        label.transition().duration(_duration)
+            .tween("text",labelTween);
 
     }
 
@@ -173,7 +172,7 @@ Radial.radialProgress = function (parent) {
 
   function labelTween(a) {
     var i = d3.interpolate(_currentValue, a);
-    _currentValue = i(0);
+    _currentValue = i();
 
     return function(t) {
       _currentValue = i(t);
