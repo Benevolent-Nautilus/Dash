@@ -17,6 +17,12 @@ var reactify = require('reactify');
 var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 var $ = require('gulp-load-plugins')();
+var nodemon = require('gulp-nodemon');
+var jshint = require('gulp-jshint');
+var open = require('gulp-open');
+var runSequence = require('run-sequence');
+
+//Remove
 var sass = require('gulp-sass');
 
 
@@ -34,7 +40,7 @@ var path = {
   DIST_IMAGE:'client/dist/images',
   // back end
   LOCAL_CONFIG: './server/config/local.env'
-}
+};
 
 
 // gulp-plumber for error handling
@@ -53,7 +59,7 @@ function onError() {
 
 // Styles
 gulp.task('styles', function() {
-  gulp.src('client/src/styles/**/*.scss')
+  return gulp.src('client/src/styles/**/*.scss')
   .pipe(sass({
     outputStyle: 'compressed',
     sourceComments: 'map',
@@ -62,7 +68,7 @@ gulp.task('styles', function() {
   .on('error', function(error){
     displayError(error);  
   })
-  .pipe(gulp.dest('client/dist/styles'))
+  .pipe(gulp.dest('client/dist/styles'));
 });
 
 
@@ -124,42 +130,64 @@ gulp.task('images', function() {
     .pipe($.size());
 });
 
+//Linting 
+gulp.task('clientLint', function() {
+  return gulp.src(['client/dist/*.+(js)', 'client/src/**.+(js)'])
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'))
+  .pipe(jshint.reporter('fail'));
+});
 
-// Webserver
-// gulp.task('serve', function() {
-//   gulp.src('client/dist')
-//     .pipe($.webserver({
-//       livereload: true,
-//       port: 9000,
-//       fallback: 'client/index.html'
-//     }));
-// });
+gulp.task('serverLint', function() {
+  return gulp.src('server/**/**.+(js)')
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'))
+  .pipe(jshint.reporter('fail'));
+});
 
-// // .... //
-// gulp.task('serve', connect.server({
-//   root: ['./server/app.js'],
-//   port: 8080,
-//   livereload: true,
-//   open: {
-//     brower: 'Google Chrome'
-//   }
-//   }));
+//Create webserver
+gulp.task('serve', function() {
+  nodemon({
+    script: './server/app.js',
+    ignore: ['node_modules/**'],
+    tasks: ['serverLint']
+  })
+  .on('restart', function() {
+    console.log('restarted!');
+  });
+});
 
+//Open live server in browser
+gulp.task('open', function() {
+  var options = {
+    url: 'http://localhost:8080'
+  };
+  gulp.src('client/dist/index.html')
+  .pipe(open(' ', options));
+})
 
-
-// Clean
+// Clean directories
 gulp.task('clean', function(cb) {
   del([path.DIST_CSS, path.DIST_SCRIPT, path.DIST_IMAGE], cb);
 });
 
+//Build local environment for testing/development
+gulp.task('localtest', function(callback) {
+  runSequence('clean', 
+    ['clientLint', 'serverLint'], 
+    ['html', 'styles', 'images', 'scripts'],
+    'serve',
+    'open',
+    'watch');
+});
 
-// Default task
-gulp.task('default', ['clean', 'html', 'styles', 'scripts']);
+// Default task - DEPRECATING
+gulp.task('default', ['clean', 'html', 'styles', 'images', 'scripts']);
 
 
 // Watch
-gulp.task('watch', ['html', 'styles', 'scripts', 'serve'], function() {
-  gulp.watch(path.SRC_HTML, ['html']);
-  gulp.watch(path.SRC_CSS, ['styles']);
-  gulp.watch(path.SRC_IMAGE, ['images']);
+gulp.task('watch', function() {
+  gulp.watch(path.SRC_HTML, ['clientLint', 'html']);
+  gulp.watch(path.SRC_CSS, ['clientLint', 'styles']);
+  gulp.watch(path.SRC_IMAGE, ['clientLint', 'images']);
 });

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./server/app.js",
-    "test": "jest",
-    "postinstall": "gulp"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -37,6 +36,7 @@
     "gulp-jshint": "^1.8.6",
     "gulp-load-plugins": "~0.7.0",
     "gulp-notify": "^2.0.1",
+    "gulp-open": "^0.3.2",
     "gulp-plumber": "^0.6.6",
     "gulp-react": "^1.0.2",
     "gulp-rename": "^1.2.0",
@@ -58,6 +58,7 @@
     "react-tools": "^0.12.2",
     "reactify": "^0.15.2",
     "reflux": "^0.2.5",
+    "run-sequence": "^1.0.2",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.1.1"
   },
@@ -71,6 +72,10 @@
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.1",
     "jsonwebtoken": "^5.0.0",
+    "gulp-jshint": "^1.10.0",
+    "gulp-nodemon": "^2.0.2",
+    "jit-grunt": "^0.9.1",
+    "jshint-stylish": "^1.0.1",
     "mongoose": "^4.0.1",
     "time-grunt": "^1.1.0"
   },
