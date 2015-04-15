@@ -158,7 +158,6 @@ gulp.task('serverLint', function() {
 });
 
 
-<<<<<<< HEAD
 //Create webserver
 gulp.task('serve', function() {
   nodemon({
@@ -179,8 +178,6 @@ gulp.task('open', function() {
   gulp.src('client/dist/index.html')
   .pipe(open(' ', options));
 })
-
-gulp.task('start-mongo', funCommand('mongod --dbpath server/db')):
 
 
 
