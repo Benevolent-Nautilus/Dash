@@ -161,8 +161,8 @@ Home is set the default route for the time being
 var routes = (
   <Route handler={ Dash }>
     <Route name="Login" path="/login" handler={ Login } />
-    <Route name="Connect" path="/setup" handler={ Connect } />
-    <Route name="Dashboard" path="/profile" handler={ Profile } />
+    <Route name="Connect" path="/connect" handler={ Connect } />
+    <Route name="Dashboard" path="/dashboard" handler={ Profile } />
     <Route name="Challenges" path="/challenges" handler={ Challenges } />
     // Home is set to the default route for the time being. 
     <DefaultRoute name="Home" handler={ Login } />
