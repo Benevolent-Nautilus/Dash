@@ -12,6 +12,7 @@ var userSchema = new Schema({
   },
   emailAddress: {type: String, unique: true},
   fitnessDevice: {
+    deviceType: {type: String},
     token: {type: String},
     tokenSecret: {type: String},
   },

@@ -25,6 +25,7 @@ var fitbitAuth = {
             return done(err);
           }
           if(user){
+            user.fitnessDevice.deviceType = 'fitbit';
             user.fitnessDevice.token = accessToken;
             user.fitnessDevice.tokenSecret = tokenSecret; 
             user.save(function(err) {
