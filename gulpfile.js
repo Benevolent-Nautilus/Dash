@@ -21,10 +21,11 @@ var nodemon = require('gulp-nodemon');
 var jshint = require('gulp-jshint');
 var open = require('gulp-open');
 var runSequence = require('run-sequence');
+var exec = require('child_process').exec;
+var mongobackup = require('mongobackup');
 
 //Remove
 var sass = require('gulp-sass');
-var exec = require('child_process').exec;
 
 
 var prod = $.util.env.prod;
@@ -172,17 +173,38 @@ gulp.task('serve', function() {
 
 //Open live server in browser
 gulp.task('open', function() {
-  var options = {
-    url: 'http://localhost:8080'
-  };
-  gulp.src('client/dist/index.html')
-  .pipe(open(' ', options));
-})
+  setTimeout(function(){
+    var options = {
+      url: 'http://localhost:8080'
+    };
+    gulp.src('client/dist/index.html')
+    .pipe(open(' ', options));
+  }, 1500);
+});
 
+gulp.task('start-mongo', function() {
+  exec('mongod', function(err, stdout, stderr) {
+    console.log(stdout);
+  });
+});
 
+gulp.task('stop-mongo', function() {
+  exec('mongod --shutdown', function(err, stdout, stderr) {
+    console.log(stdout);
+  });
+});
 
-gulp.task('start-mongo', runCommand('mongod --dbpath server/db/'));
-gulp.task('stop-mongo', runCommand('mongo --eval "use admin; db.shutdownServer();"'));
+gulp.task('mongodump', function() { 
+  mongobackup.dump({
+    host: 'localhost',
+  });
+});
+
+gulp.task('mongoclean', function() {
+  runSequence('start-mongo', 
+    'mongodump', 
+    'stop-mongo');
+});
 
 // Clean
 gulp.task('clean', function(cb) {
@@ -191,12 +213,15 @@ gulp.task('clean', function(cb) {
 
 //Build local environment for testing/development
 gulp.task('localtest', function(callback) {
-  runSequence('clean', 
-    ['clientLint', 'serverLint'], 
+  runSequence('stop-mongo',
+    'clean', 
+    ['serverLint'], 
     ['html', 'styles', 'images', 'scripts'],
+    'clientLint',
+    'start-mongo',
     'serve',
-    'open',
-    'watch');
+    'watch',
+    'open');
 });
 
 // Default task - DEPRECATING
