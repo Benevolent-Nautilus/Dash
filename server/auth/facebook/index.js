@@ -9,14 +9,14 @@ var router = express.Router();
 router
   //facebook auth
   .get('/', passport.authenticate('facebook', {
-    failureRedirect: '/#/register',
+    failureRedirect: '/#/login',
     session: false
   }))
 
   //callback for api
   .get('/callback', passport.authenticate('facebook', {
     scope: 'email',
-    failureRedirect: '/#/register',
+    failureRedirect: '/#/login',
     session: false
   }), function(req, res){
     //setting the token for the cookie
@@ -26,9 +26,9 @@ router
     //redirect to register device if new user, else go to profile
 
     if(!req.user.fitnessDevice.token){
-      res.redirect('/#/register');
+      res.redirect('/#/connect');
     } else {
-      res.redirect('/#/profile');
+      res.redirect('/#/dashboard');
     }
   });
 
