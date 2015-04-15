@@ -1,3 +1,10 @@
+// Reflux
+var Reflux = require('reflux');
+// Router
+var Router = require('react-router');
+// Actions
+var actions = require('../../actions/actions');
+
 // Components
 // var Module = require('./Tracker/');
 var TotalSteps = require('./Tracker/TotalSteps');

@@ -19,7 +19,7 @@ var Facebook   = require('../components/social/facebook');
 @description This is the register View, this will simply load social media componenets such as <Facebook /> to handle AJAX requests to the server.
 @class Register
 */
-var Register = React.createClass({
+var Login = React.createClass({
   mixins: [],
 
   getInitialState: function() {
@@ -39,4 +39,4 @@ var Register = React.createClass({
   }
 });
 
-module.exports = Register;
+module.exports = Login;

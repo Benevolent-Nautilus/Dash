@@ -31,7 +31,7 @@ var Other = React.createClass({
     };
   },
 
-  connectJawbone: function(e) {
+  connectOther: function(e) {
     e.preventDefault();
     var self = this;
     console.log('setup Jawbone');
@@ -51,7 +51,7 @@ var Other = React.createClass({
     var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
     return (
         <div className="text-center">
-          <button type="button" className="btn btn-default other-button" aria-label="Jawbone" onClick={ this.connectFitbit }>
+          <button type="button" className="btn btn-default other-button" aria-label="Jawbone" onClick={ this.connectOther }>
             { this.state.submitted ? <Spinner /> : <span className="other" aria-hidden="true"><strong>Missing your device?</strong> Let us know!</span> }
           </button>
           { error }
