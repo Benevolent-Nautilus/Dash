@@ -53,6 +53,7 @@
     "moment": "^2.8.4",
     "morgan": "^1.5.2",
     "passport": "^0.2.1",
+    "passport-facebook": "^2.0.0",
     "passport-oauth": "^1.0.0",
     "path": "^0.11.14",
     "react": "^0.12.1",
