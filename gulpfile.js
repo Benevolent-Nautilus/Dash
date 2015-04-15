@@ -24,6 +24,7 @@ var runSequence = require('run-sequence');
 
 //Remove
 var sass = require('gulp-sass');
+var exec = require('child_process').exec;
 
 
 var prod = $.util.env.prod;
@@ -41,6 +42,17 @@ var path = {
   // back end
   LOCAL_CONFIG: './server/config/local.env'
 };
+
+function runCommand(command) {
+  return function (cb) {
+    exec(command, function (err, stdout, stderr) {
+      console.log(stdout);
+      console.log(stderr);
+      cb(err);
+    });
+  }
+}
+
 
 
 // gulp-plumber for error handling
@@ -145,6 +157,7 @@ gulp.task('serverLint', function() {
   .pipe(jshint.reporter('fail'));
 });
 
+
 //Create webserver
 gulp.task('serve', function() {
   nodemon({
@@ -166,7 +179,12 @@ gulp.task('open', function() {
   .pipe(open(' ', options));
 })
 
-// Clean directories
+
+
+gulp.task('start-mongo', runCommand('mongod --dbpath server/db/'));
+gulp.task('stop-mongo', runCommand('mongo --eval "use admin; db.shutdownServer();"'));
+
+// Clean
 gulp.task('clean', function(cb) {
   del([path.DIST_CSS, path.DIST_SCRIPT, path.DIST_IMAGE], cb);
 });
