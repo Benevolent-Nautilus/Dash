@@ -14,6 +14,7 @@ var actions = require('../actions/actions');
 // Components
 var Spinner = require('../components/spinner');
 var Dashboard = require('../components/profile/Dashboard');
+var Footer = require('../components/profile/Footer');
 
 // Profile Class
 var Profile = React.createClass({
@@ -38,6 +39,7 @@ var Profile = React.createClass({
     return (
       <div className="content full-width">
        < Dashboard />
+       < Footer />
       </div>
     );
   }

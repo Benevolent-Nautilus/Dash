@@ -363,3 +363,75 @@ h4 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
+.footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 80px;
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    background: #FFF;
+}
+
+.footer-tab {
+    border-left: 1px solid #f0f0f0;
+    height: 80px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    display: table-cell;
+}
+.footer-tab:first-child {
+    border-left: transparent;
+    height: 80px;
+    display: table-cell;
+}
+.footer-tab:hover {
+    background-color: #00dac5;
+}
+.active{
+    background-color: #00dac5;
+}
+
+.friends-tab {
+    background-image: url('../images/friends.png');
+    background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.challenges-tab {
+    background-image: url('../images/challenges.png');
+    background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.settings-tab {
+    background-image: url('../images/settings.png');
+    background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.friends-tab:hover {
+    background-image: url('../images/friends-hover.png');
+    background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.challenges-tab:hover {
+    background-image: url('../images/challenges-hover.png');
+    background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.settings-tab:hover {
+    background-image: url('../images/settings-hover.png');
+    background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
