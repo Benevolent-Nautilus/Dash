@@ -71,26 +71,26 @@ Components are the backbone of React, every view should be devided into multiple
 Attached is 'Home', which is located in the /views folder.  Home has the main landing view. 
 @type {View}
 */
-var Home = require('./views/home');
+var Home = require('./views/Home');
 /** 
 Components are the backbone of React, every view should be devided into multiple bits.  
 Attached is 'Login', which is located in the /components folder. Login will hold the necessary information for users to Login. 
 Reason for why the files are in the components folder is mainly due to modulator amongst many views. 
 @type {Component}
 */
-var Login = require('./components/login');
+var Login = require('./views/Login');
 /** 
 Attached is 'Setup', which is located in the /views folder. Setup will hold a view for users to have new devices. 
 @type {View}
 */
-var Connect = require('./views/connect');
+var Connect = require('./views/Connect');
 
 
 // Profile
-var Profile = require('./views/profile');
+var Profile = require('./views/Profile');
 
 // Challenges
-var Challenges = require('./views/challenges');
+var Challenges = require('./views/Challenges');
 /**
 @description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
 @class React
@@ -160,12 +160,12 @@ Home is set the default route for the time being
 */
 var routes = (
   <Route handler={ Dash }>
-    <Route name="login" path="/login" handler={ Login } />
-    <Route name="connect" path="/connect" handler={ Connect } />
-    <Route name="Dashboard" path="/dashboard" handler={ Profile } />
-    <Route name="challenges" path="/challenges" handler={ Challenges } />
+    <Route name="Login" path="/login" handler={ Login } />
+    <Route name="Connect" path="/setup" handler={ Connect } />
+    <Route name="Dashboard" path="/profile" handler={ Profile } />
+    <Route name="Challenges" path="/challenges" handler={ Challenges } />
     // Home is set to the default route for the time being. 
-    <DefaultRoute name="home" handler={ Login } />
+    <DefaultRoute name="Home" handler={ Login } />
   </Route>
 );
 

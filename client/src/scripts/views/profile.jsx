@@ -13,8 +13,8 @@ var actions = require('../actions/actions');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../components/spinner');
-var Dashboard = require('../components/profile/Dashboard');
-var Footer = require('../components/profile/Footer');
+var Dashboard = require('../components/Profile/Dashboard');
+var Footer = require('../components/Profile/Footer');
 
 // Profile Class
 var Profile = React.createClass({

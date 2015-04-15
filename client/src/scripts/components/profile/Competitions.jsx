@@ -1,3 +1,10 @@
+// Reflux
+var Reflux = require('reflux');
+// Router
+var Router = require('react-router');
+// Actions
+var actions = require('../../actions/actions');
+
 var LatestCompetition = require('./Competitions/Competition.jsx');
 
 var Competition = React.createClass({
