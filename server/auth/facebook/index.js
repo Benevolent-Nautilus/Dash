@@ -15,6 +15,7 @@ router
 
   //callback for api
   .get('/callback', passport.authenticate('facebook', {
+    scope: 'email',
     failureRedirect: '/#/register',
     session: false
   }), function(req, res){
