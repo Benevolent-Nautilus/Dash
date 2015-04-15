@@ -184,7 +184,8 @@ gulp.task('start-mongo', funCommand('mongod --dbpath server/db')):
 
 
 
-gulp.task('start-mongo', runCommand('mongod --dbpath server/db'));
+gulp.task('start-mongo', runCommand('mongod --dbpath server/db/'));
+gulp.task('stop-mongo', runCommand('mongo --eval "use admin; db.shutdownServer();"'));
 
 // Clean
 gulp.task('clean', function(cb) {
