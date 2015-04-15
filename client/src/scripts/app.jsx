@@ -80,17 +80,10 @@ Reason for why the files are in the components folder is mainly due to modulator
 */
 var Login = require('./components/login');
 /** 
-Components are the backbone of React, every view should be devided into multiple bits.  
-Attached is 'Register', which is located in the /components folder. Register will hold the necessary information for users to Login. 
-Reason for why the files are in the components folder is mainly due to modulator amongst many views. 
-@type {Component}
-*/
-var Register = require('./components/register');
-/** 
 Attached is 'Setup', which is located in the /views folder. Setup will hold a view for users to have new devices. 
 @type {View}
 */
-var Setup = require('./views/setup');
+var Connect = require('./views/connect');
 
 
 // Profile
@@ -167,13 +160,12 @@ Home is set the default route for the time being
 */
 var routes = (
   <Route handler={ Dash }>
-    <Route name="register" path="/register" handler={ Register } />
     <Route name="login" path="/login" handler={ Login } />
-    <Route name="setup" path="/setup" handler={ Setup } />
-    <Route name="profile" path="/profile" handler={ Profile } />
+    <Route name="connect" path="/connect" handler={ Connect } />
+    <Route name="Dashboard" path="/dashboard" handler={ Profile } />
     <Route name="challenges" path="/challenges" handler={ Challenges } />
     // Home is set to the default route for the time being. 
-    <DefaultRoute name="home" handler={ Home } />
+    <DefaultRoute name="home" handler={ Login } />
   </Route>
 );
 

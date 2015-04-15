@@ -29,27 +29,26 @@ var Facebook = React.createClass({
     };
   },
 
-  registerUser: function(e) {
+  loginFacebook: function(e) {
     e.preventDefault();
-    // var self = this;
-    $.ajax({
-      url: '/auth/facebook',
-      type: 'GET',
-      success: function(response) {
-        console.log('connetion success', responsed.data);
-      },
-      error: function(error) {
-        console.log('connection failed', error);
-      }
-    });
+    console.log('facebook login button pressed');
+    window.location.href='auth/facebook';
+  },
 
+  // Function is built for error messages.  
+  onErrorMessage: function(errorMessage) {
+    this.refs.submit.getDOMNode().disabled = false;
+    this.setState({
+      error: errorMessage,
+      submitted: false
+    });
   },
 
   render: function() {
     var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
     return (
       <div className="text-center">
-        <button className="facebook-login" onClick={ this.registerUser }>
+        <button className="facebook-login" onClick={ this.loginFacebook }>
            { this.state.submitted ? <Spinner /> : <img src="../../../images/facebook-login.png" width="90" height="50" alt="submit" />}
         </button>
         { error }

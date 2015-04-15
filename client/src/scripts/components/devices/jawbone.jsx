@@ -33,9 +33,8 @@ var Jawbone = React.createClass({
 
   connectJawbone: function(e) {
     e.preventDefault();
-    var self = this;
-    console.log('setup Jawbone');
-    self.transitionTo('profile');
+    console.log('jawbone pressed');
+    window.location.href='/auth/jawbone';
   },
 
   // Function is built for error messages.  
@@ -51,7 +50,7 @@ var Jawbone = React.createClass({
     var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
     return (
         <div className="text-center">
-          <button type="button" className="btn btn-default jawbone-button" aria-label="Jawbone" onClick={ this.connectFitbit }>
+          <button type="button" className="btn btn-default jawbone-button" aria-label="Jawbone" onClick={ this.connectJawbone }>
             { this.state.submitted ? <Spinner /> : <span className="jawbone-logo" aria-hidden="true"></span> }
           </button>
           { error }

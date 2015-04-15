@@ -33,9 +33,8 @@ var Fitbit = React.createClass({
 
   connectFitbit: function(e) {
     e.preventDefault();
-    var self = this;
-    console.log('setup fitbit');
-    self.transitionTo('profile');
+    console.log('fitbit pressed');
+    window.location.href='/auth/fitbit';
   },
 
   // Function is built for error messages.  
@@ -51,7 +50,7 @@ var Fitbit = React.createClass({
     var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
     return (
       <div className="text-center">
-        <button type="button" className="btn btn-default fitbit-button" aria-label="Fitbit" onClick={ this.connectFitbit }>
+        <button type="submit" className="btn btn-default fitbit-button" aria-label="Fitbit" onClick={ this.connectFitbit }>
           { this.state.submitted ? <Spinner /> : <span className="fitbit-logo" aria-hidden="true"></span> }
         </button>
         { error }

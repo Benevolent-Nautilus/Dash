@@ -1,42 +1,38 @@
 /**
 @fileOverview 
-<p>Login.js - This is where the user will login page for the user to login.  The reason why its in components is for modularity if a pop-up box needs to be made. </p>
+<p>Register.js - This is where the application will go when the route hits /register </p>
 @author Jason Chang, Scott Kao, Derek Van Dyk, Dennis Yang
 */
 'use strict';
 // Reflux
 var Reflux = require('reflux');
+// Router
+var Router = require('react-router');
 // Actions
 var actions = require('../actions/actions');
 // Stores
 var loginStore = require('../stores/loginStore');
 // Components
-var Spinner = require('./spinner');
+var Spinner = require('../components/spinner');
 var Facebook   = require('../components/social/facebook');
-
-var jQuery = require('jquery');
 /**
-@description This is the Login class.  This is the made component/module that will load our applications login.
-
-It is dependent on social media components such as <Facebook /> 
-
-More may be added on later
-@class Login
+@description This is the register View, this will simply load social media componenets such as <Facebook /> to handle AJAX requests to the server.
+@class Register
 */
 var Login = React.createClass({
-
   mixins: [],
 
   getInitialState: function() {
-    return {};
+    return {
+    };
   },
 
   render: function() {
     return (
-      <div className="post-info inner full-height">
-        <div className="text-center">
-         <h1>Sign Up With Facebook</h1>
-             <Facebook />
+      <div className="post-info inner full-height fill">
+        <div className="login-page">
+          <img src="../images/splash-login.png" />
+              <Facebook />
         </div>
       </div>
     );
