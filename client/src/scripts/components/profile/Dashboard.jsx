@@ -9,7 +9,7 @@ var sampleData =
         steps_today: 5201, 
         daily_goal: 8000, 
         steps_total: 1030102, 
-        competitions: [['Everest', 500000, 100000]] //Name of the competition, steps done, steps total
+        competitions: [['Everest', 50132, 100000]] //Name of the competition, steps done, steps total
       };
 
 var Dashboard = React.createClass({
