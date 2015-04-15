@@ -8,7 +8,19 @@ var config = {
     clientID:     'clientID',
     clientSecret: 'clientSecret',
     callbackURL:  'callbackURL' 
+  },
+  fitbit: {
+    requestTokenURL: 'requestTokenURL',
+    accessTokenURL: 'accessTokenURL',
+    userAuthorizationURL: 'userAuthorizationURL',
+    consumerKey: 'consumerKey',
+    consumerSecret: 'consumerSecret',
+    callbackURL: 'callbackURL'
+  },
+  secrets: {
+    session: 'session'
   }
 };
 
 module.exports = config;
+
