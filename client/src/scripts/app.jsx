@@ -95,6 +95,9 @@ var Setup = require('./views/setup');
 
 // Profile
 var Profile = require('./views/profile');
+
+// Challenges
+var Challenges = require('./views/challenges');
 /**
 @description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
 @class React
@@ -135,7 +138,7 @@ var Dash = React.createClass({
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
                 <li><a href="#/profile">Dashboard<span className="sr-only">(current)</span></a></li>
-                <li><a href="#/register">Setup</a></li>
+                <li><a href="#/register">Login</a></li>
                 <li><a href="#/competition">Competition</a></li>
               </ul>
               <form className="navbar-form navbar-left" role="search">
@@ -168,6 +171,7 @@ var routes = (
     <Route name="login" path="/login" handler={ Login } />
     <Route name="setup" path="/setup" handler={ Setup } />
     <Route name="profile" path="/profile" handler={ Profile } />
+    <Route name="challenges" path="/challenges" handler={ Challenges } />
     // Home is set to the default route for the time being. 
     <DefaultRoute name="home" handler={ Home } />
   </Route>

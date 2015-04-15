@@ -7,6 +7,8 @@ var Router = require('react-router');
 var actions = require('../../actions/actions');
 // Components
 var Spinner = require('../spinner');
+
+var $ = jQuery;
 /**
 @description This is the Facebook module, this will simply just load Facebook login button with its respective methods to the DOM.
 
@@ -29,18 +31,18 @@ var Facebook = React.createClass({
 
   registerUser: function(e) {
     e.preventDefault();
-    var self = this;
-    console.log('ajax call for facebook component!');
-    self.transitionTo('setup');
-  },
-
-  // If oAuth runs into a problem.
-  onErrorMessage: function(errorMessage) {
-    this.refs.submit.getDOMNode().disabled = false;
-    this.setState({
-      error: errorMessage,
-      submitted: false
+    // var self = this;
+    $.ajax({
+      url: '/auth/facebook',
+      type: 'GET',
+      success: function(response) {
+        console.log('connetion success', responsed.data);
+      },
+      error: function(error) {
+        console.log('connection failed', error);
+      }
     });
+
   },
 
   render: function() {
