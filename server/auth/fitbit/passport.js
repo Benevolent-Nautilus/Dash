@@ -31,9 +31,9 @@ var fitbitAuth = {
             user.save(function(err) {
               if(err){
                 done(err);
-                return done(err, user);
               }
             });
+            return done(err, user);
           } else {
             return done(err, user);
           }
