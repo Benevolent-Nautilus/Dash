@@ -92,8 +92,8 @@ var Profile = require('./views/Profile');
 // Challenges
 var Challenges = require('./views/Challenges');
 
-// CurrentChallenges
-var CurrentChallenges = require('./views/currentChallenges')
+// ParticipatingChallenges
+var ParticipatingChallenges = require('./views/ParticipatingChallenges')
 /**
 @description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
 @class React
@@ -167,7 +167,7 @@ var routes = (
     <Route name="Connect" path="/connect" handler={ Connect } />
     <Route name="Dashboard" path="/dashboard" handler={ Profile } />
     <Route name="Challenges" path="/challenges" handler={ Challenges } />
-    <Route name="CurrentChallenges" path="/challenges/current-challenges" handler={ CurrentChallenges } />
+    <Route name="ParticipatingChallenges" path="/challenges/participating-challenges" handler={ ParticipatingChallenges } />
     // Home is set to the default route for the time being. 
     <DefaultRoute name="Home" handler={ Login } />
   </Route>

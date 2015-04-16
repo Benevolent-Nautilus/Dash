@@ -32,10 +32,10 @@ var Jawbone = React.createClass({
   },
 
   currentChallenge: function(e){
-    e.preventDefault();
+    // e.preventDefault();
     var self = this;
     console.log('clicked current challenge');
-    self.transitionTo('currentChallenges');
+    self.transitionTo('participatingChallenges');
   },
 
 
