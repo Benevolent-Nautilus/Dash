@@ -21,8 +21,8 @@ var facebookAuth = {
           if(!user){
             user = new User({
               name: {
-                first:profile.name.familyName,
-                last: profile.name.givenName
+                first:profile.name.givenName,
+                last: profile.name.familyName
               },
               emailAddress: profile.emails[0].value,
               username: profile.username,
