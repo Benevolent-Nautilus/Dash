@@ -4,6 +4,10 @@ var Reflux = require('reflux');
 var Router = require('react-router');
 
 // Components
+var Spinner = require('../../components/spinner');
+var Dashboard = require('../../components/Profile/Dashboard');
+var Footer = require('../../components/Profile/Footer');
+
 var NewChallenges = React.createClass({
   mixins: [],
 
@@ -14,6 +18,7 @@ var NewChallenges = React.createClass({
         <button type="submit" className="btn btn-default fitbit-button" aria-label="Fitbit" onClick={ this.connectFitbit }>
           { <span className="fitbit-logo" aria-hidden="true"></span> }
         </button>
+        < Footer />
         
       </div>
     );
