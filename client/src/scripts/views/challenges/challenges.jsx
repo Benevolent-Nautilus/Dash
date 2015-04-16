@@ -7,14 +7,14 @@
 // Reflux
 var Reflux = require('reflux');
 // Actions
-var actions = require('../actions/actions');
+var actions = require('../../actions/actions');
 // Stores
-var loginStore = require('../stores/loginStore');
+var loginStore = require('../../stores/loginStore');
 // Components
-var Spinner = require('../components/spinner');
-var Footer = require('../components/profile/Footer');
-var CurrentChallenges = require('../components/challenges/CurrentChallenges.jsx');
-var ChooseChallenges = require('../components/challenges/ChooseChallenges.jsx');
+var Spinner = require('../../components/spinner');
+var Footer = require('../../components/profile/Footer');
+var CurrentChallenges = require('../../components/challenges/CurrentChallenges.jsx');
+var ChooseChallenges = require('../../components/challenges/ChooseChallenges.jsx');
 /**
 @description This is where users will be able to set up their application.
 Keep an eye out for <Fitbit /> and <Jawbone /> 
