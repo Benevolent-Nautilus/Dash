@@ -31,11 +31,19 @@ var Jawbone = React.createClass({
     };
   },
 
+  currentChallenge: function(e){
+    e.preventDefault();
+    var self = this;
+    console.log('clicked current challenge');
+    // self.transitionTo('currentChallenge');
+
+  },
+
   render: function() {
     var error = this.state.error ? <div className="error login-error">{ this.state.error }</div> : '';
     return (
         <div className="text-center">
-          <button type="button" className="btn btn-default jawbone-button" aria-label="test" onClick={ this.connectFitbit }>
+          <button type="button" className="btn btn-default jawbone-button" aria-label="Jawbone" onClick={ this.currentChallenge }>
             { this.state.submitted ? <Spinner /> : <span className="jawbone-logo" aria-hidden="true"></span> }
           </button>
           { error }
