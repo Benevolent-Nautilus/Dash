@@ -17,6 +17,13 @@ var config = {
     consumerSecret: 'consumerSecret',
     callbackURL: 'callbackURL'
   },
+  jawbone: {
+    authorizationURL: 'authorizationURL',
+    tokenURL: 'tokenURL',
+    clientID: 'clientID',
+    clientSecret: 'clientSecret',
+    callbackURL: 'callbackURL',
+  },
   secrets: {
     session: 'session'
   }
