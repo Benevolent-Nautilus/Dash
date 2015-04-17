@@ -11,7 +11,7 @@ var ChallengeStat = React.createClass({
     }
     return (
       <li> {props[0].name} | {props[0].currentSteps} / {props[0].totalSteps}
-       <div>{this.props.data[0].friends[0].name}</div>
+       <div className="challenge-stat">{this.props.data[0].friends[0].name}</div>
       </li>
       );
   }
