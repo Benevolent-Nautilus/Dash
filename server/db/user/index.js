@@ -4,10 +4,19 @@
 
 var express = require('express');
 var router = express.Router();
+var User = require('./user.model');
+var jwt = require('jsonwebtoken');
+var config = require('../../config/config');
+
 
 router.get('/', function(req, res, next){
-  res.redirect('/');
-
+  var decode = jwt.verify(JSON.parse(req.cookies.token), config.secrets.session);
+  User.findOne({
+    '_id': decode.id
+  },
+  function(err, user){
+    res.send(user);
+  });
 });
 
 module.exports = router;
