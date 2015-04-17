@@ -5,17 +5,38 @@ var Router = require('react-router');
 
 // Components
 var Spinner = require('../../components/spinner');
-var ChallengeStat = require('../../components/challenges/ChallengeStat');
 var Footer = require('../../components/Profile/Footer');
+var AvailableChallenges = require('../../components/Challenges/AvailableChallenges');
+
+var challengeList = [
+                  {
+                    name: 'Everest',
+                    totalSteps: 100000
+                  }, 
+                  {
+                    name: "Frodo's Journey to Mount Doom",
+                    totalSteps: 17000000
+                  }, 
+                  {
+                    name: "Great Wall of China",
+                    totalSteps: 1800000
+                  }
+    ] 
+
 
 var NewChallenges = React.createClass({
   mixins: [],
+
+  getInitialState: function() {
+    return { data: challengeList };
+  }, 
 
   render: function() {
     console.log("new challenges");
     return (
       <div className="text-center">
-        < ChallengeStat />
+      
+        < AvailableChallenges data= { this.state.data } />
         < Footer />
         
       </div>
