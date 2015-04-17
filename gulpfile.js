@@ -23,6 +23,7 @@ var open = require('gulp-open');
 var runSequence = require('run-sequence');
 var exec = require('child_process').exec;
 var mongobackup = require('mongobackup');
+var livereload = require('gulp-livereload');
 
 //Remove
 var sass = require('gulp-sass');
@@ -32,6 +33,7 @@ var prod = $.util.env.prod;
 
 var path = {
   // front end
+  SRC_SCRIPT: 'client/src/**.+(js | jsx)',
   SRC_CSS: 'client/src/styles/**.scss',
   SRC_HTML: 'client/src/*.html',
   SRC_IMAGE: 'client/src/images/**/*',
@@ -81,7 +83,8 @@ gulp.task('styles', function() {
   .on('error', function(error){
     displayError(error);  
   })
-  .pipe(gulp.dest('client/dist/styles'));
+  .pipe(gulp.dest('client/dist/styles'))
+  .pipe(livereload());
 });
 
 
@@ -113,7 +116,8 @@ gulp.task('scripts', function() {
       .pipe(gulp.dest(path.DIST_SCRIPT))
       .pipe($.notify(function() {
           console.log('Bundling Complete - ' + (Date.now() - start) + 'ms');
-      }));
+      }))
+      .pipe(livereload());
   }
 
   bundler.on('update', rebundle);
@@ -127,7 +131,8 @@ gulp.task('html', function() {
   return gulp.src(path.SRC_HTML)
     .pipe($.useref())
     .pipe(gulp.dest(path.DIST_HTML))
-    .pipe($.size());
+    .pipe($.size())
+    .pipe(livereload());
 });
 
 
@@ -140,7 +145,8 @@ gulp.task('images', function() {
       interlaced: true
     })))
     .pipe(gulp.dest(path.DIST_IMAGE))
-    .pipe($.size());
+    .pipe($.size())
+    .pipe(livereload());
 });
 
 //Linting 
@@ -196,9 +202,10 @@ gulp.task('stop-mongo', function() {
 
 gulp.task('mongodump', function() { 
   mongobackup.dump({
-    host: 'localhost',
+    host: 'localhost'
   });
 });
+
 
 gulp.task('mongoclean', function() {
   runSequence('start-mongo', 
@@ -230,7 +237,9 @@ gulp.task('default', ['clean', 'html', 'styles', 'images', 'scripts']);
 
 // Watch
 gulp.task('watch', function() {
+  livereload.listen();
   gulp.watch(path.SRC_HTML, ['clientLint', 'html']);
   gulp.watch(path.SRC_CSS, ['clientLint', 'styles']);
   gulp.watch(path.SRC_IMAGE, ['clientLint', 'images']);
+  gulp.watch(path.SRC_SCRIPT, ['clientLint', 'scripts']);
 });
