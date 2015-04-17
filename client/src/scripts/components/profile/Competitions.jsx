@@ -16,7 +16,7 @@ var Competition = React.createClass({
     return (
         <div className="container">
           <div className="row">
-            <LatestCompetition data= { this.props.data.competitions[0] } />
+            <LatestCompetition data= { this.props.competitions[0] } />
           </div>
         </div>
     );

@@ -25,16 +25,32 @@ var Profile = React.createClass({
     Reflux.listenTo(profileStore, 'onLoaded')
   ],
 
+  // When the View loads up, get the data from the Store
   getInitialState: function() {
     return {
-      profileData: profileStore.getDefaultData(),
+      profileData: profileStore.createDashboard(),
       isLoading: true
     };
   },
 
-  logout: function(e) {
-    e.preventDefault();
-    this.transitionTo('home');
+  // When there is a change in the store, the method recieves an updated note list and changes the state. 
+  onChange: function(stats) {
+    this.setState({
+      profileData: stats // state changes
+    });
+  },
+
+  componentDidMount: function() {
+    // when the component mounts we start listening to profileStore's 
+    // change event.  This is broadcast whenever there is a mutation in the notes lists
+    // the following line registers as a listener.
+    this.unsubscribe = profileStore.listen(this.onChange);
+  },
+
+  componentWillUnmount: function() {
+    // this will remove the listener.
+    // will always stay up-to-date by listening to the Store's change event
+    this.unsubscribe();
   },
 
   render: function() {

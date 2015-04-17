@@ -19,17 +19,11 @@ var Tracker = React.createClass({
   //   // D3Chart.create(el, this.getChartState());
   // },
 
-  getChartState: function() {
-    return {
-      steps_total: this.props.data.steps_total
-    };
-  },
-
   render: function() {
     return (
       <div className="container">
         <div className="row">
-          <TotalSteps data= { this.props.data.steps_total } />
+          <TotalSteps data= { this.props.totalSteps } />
         </div>
       </div>
     );
