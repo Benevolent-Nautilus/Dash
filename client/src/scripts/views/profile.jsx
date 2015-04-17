@@ -16,16 +16,19 @@ var Spinner = require('../components/spinner');
 var Dashboard = require('../components/Profile/Dashboard');
 var Footer = require('../components/Profile/Footer');
 
+var profileStore = require('../stores/profileStore');
+
 // Profile Class
 var Profile = React.createClass({
   mixins: [
     require('react-router').Navigation,
+    Reflux.listenTo(profileStore, 'onLoaded')
     // Reflux.listenTo(profileStore, 'onLoaded')
   ],
 
   getInitialState: function() {
     return {
-      // profileData: profileStore.getDefaultData(),
+      profileData: profileStore.getDefaultData(),
       isLoading: true
     };
   },
