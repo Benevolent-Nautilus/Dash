@@ -5,45 +5,47 @@ var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 
+// Stores
+var profileStore = require('../stores/profileStore');
+
 // Components
 var Chart = require('./Chart');
 var Tracker = require('./Tracker');
 var Competitions = require('./Competitions');
 
-var sampleData = 
-      { 
-        name: 'Jason Chang', 
-        steps_today: 5201, 
-        daily_goal: 8000, 
-        steps_total: 1030102, 
-        competitions: [['Everest', 50132, 100000]] //Name of the competition, steps done, steps total
-      };
-
 var Dashboard = React.createClass({
+
+  mixins: [
+    require('react-router').Navigation,
+    Reflux.listenTo(profileStore, 'onLoaded')
+  ],
+
   getInitialState: function() {
     return {
       //Distribute Data Across Multiple Components
-      ChartData:      {  
-                        name: sampleData.name, 
-                        steps_today: sampleData.steps_today,
-                        daily_goal: sampleData.daily_goal
-                      },
-      TrackerData:    {
-                        steps_total: sampleData.steps_total
-                      },
-      CompetitionData:{
-                        competitions: sampleData.competitions
-                      }
+      profileData: profileStore.getDefaultData()
+      // ChartData:      {  
+      //                   name: sampleData.name, 
+      //                   steps_today: sampleData.steps_today,
+      //                   daily_goal: sampleData.daily_goal
+      //                 },
+      // TrackerData:    {
+      //                   steps_total: sampleData.steps_total
+      //                 },
+      // CompetitionData:{
+      //                   competitions: sampleData.competitions
+      //                 }
+     
     };
   },
 
   render: function() {
-    console.log(this.state.TrackerData);
+    console.log(this.state.profileData);
     return (
       <div className="Application">
-        <Chart data= { this.state.ChartData } />
-        <Tracker data= { this.state.TrackerData } />
-        <Competitions data= { this.state.CompetitionData } />
+        <Chart data= { this.state.profileData } />
+        <Tracker data= { this.state.profileData } />
+        <Competitions data= { this.state.profileData } />
       </div>
     );
   }
