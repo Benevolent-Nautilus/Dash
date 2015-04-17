@@ -17,7 +17,7 @@ router
     failureRedirect: '/#/register',
     session: false
   }), function(req, res){
-    res.redirect('/#/profile');
+    res.redirect('/#/dashboard');
   });
 
 module.exports = router;
