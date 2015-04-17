@@ -5,7 +5,7 @@ var Router = require('react-router');
 
 // Components
 var Spinner = require('../../components/spinner');
-var Dashboard = require('../../components/Profile/Dashboard');
+var ChallengeStat = require('../../components/challenges/ChallengeStat');
 var Footer = require('../../components/Profile/Footer');
 
 var NewChallenges = React.createClass({
@@ -15,9 +15,7 @@ var NewChallenges = React.createClass({
     console.log("new challenges");
     return (
       <div className="text-center">
-        <button type="submit" className="btn btn-default fitbit-button" aria-label="Fitbit" onClick={ this.connectFitbit }>
-          { <span className="fitbit-logo" aria-hidden="true"></span> }
-        </button>
+        < ChallengeStat />
         < Footer />
         
       </div>
