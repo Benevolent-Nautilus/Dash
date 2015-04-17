@@ -137,9 +137,9 @@ var Dash = React.createClass({
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><a href="#/profile">Dashboard<span className="sr-only">(current)</span></a></li>
-                <li><a href="#/register">Login</a></li>
-                <li><a href="#/competition">Competition</a></li>
+                <li><a href="#/dashboard">Dashboard<span className="sr-only">(current)</span></a></li>
+                <li><a href="#/login">Login</a></li>
+                <li><a href="#/challenges">Competition</a></li>
               </ul>
               <form className="navbar-form navbar-left" role="search">
                 <div className="form-group">

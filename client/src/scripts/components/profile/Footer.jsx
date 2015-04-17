@@ -11,7 +11,7 @@ var Footer = React.createClass({
         <div className="footer">
           <div className="container">
             <div className="row">
-              <a href="#/profile">
+              <a href="#/dashboard">
                 <div className="col-xs-3 col-sm-3 footer-tab">
                 </div>
               </a>

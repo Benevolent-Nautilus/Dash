@@ -6,23 +6,27 @@ var actions = require('../actions/actions');
 // store listener references
 var postListener, commentListener;
 
-
 var profileStore = Reflux.createStore({
     listenables: actions,
 
-    getDefaultData: function(details){
+    init: function() {
+        this.userInfo = '';
+    },
+
+    getDefaultData: function(){
+        var userInfo;
         $.ajax({
             url: 'http://demo7018697.mockable.io/user',
             async: false,
             dataType: 'json',
             success: function(data) {
-                this.categories = categoryData;
+                this.userInfo = data;
             }.bind(this),
             error: function(xhr, status, err) {
                 console.error(url, status, err.toString());
             }.bind(this)
         });
-        return this.categories;
+        return this.userInfo;
     },
 });
 

@@ -6,7 +6,7 @@ var Router = require('react-router');
 var actions = require('../../actions/actions');
 
 // Stores
-var profileStore = require('../stores/profileStore');
+var profileStore = require('../../stores/profileStore');
 
 // Components
 var Chart = require('./Chart');
@@ -40,7 +40,7 @@ var Dashboard = React.createClass({
   },
 
   render: function() {
-    console.log(this.state.profileData);
+    console.log('Dashboard', this.state.profileData);
     return (
       <div className="Application">
         <Chart data= { this.state.profileData } />
