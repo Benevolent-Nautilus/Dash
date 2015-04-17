@@ -5,18 +5,51 @@ var Router = require('react-router');
 
 // Components
 var Spinner = require('../../components/spinner');
-var ChallengeStat = require('../../components/challenges/ChallengeStat');
+var ChallengeStats = require('../../components/challenges/ChallengeStat');
 var Footer = require('../../components/Profile/Footer');
 
+var involvedChallenges = [
+  {
+    name: 'Everest',
+    totoalSteps: 100000,
+    currentSteps: 82009,
+    friends: [
+      {name: 'Dennis',
+       currentSteps: 79004
+      },
+      {name: 'Jason',
+      currentSteps: 85000
+      }
+    ],
+  },
+  {
+    name: "Frodo's Journey to Mount Doom",
+    totoalSteps: 17000000,
+    currentStesp: 6282009,
+    friends: [
+      {name: 'Dennis',
+       currentSteps: 5679004
+      },
+      {name: 'Jason',
+      currentSteps: 689902
+      }
+
+    ]
+  }
+]
 
 
 var ParticipatingChallenges = React.createClass({
+  getInitialState: function() {
+    return { data: involvedChallenges };
+  }, 
 
   render: function() {
-    console.log("hello");
+    console.log("Participating Challenges");
     return (
       <div className="text-center">
-         < ChallengeStat />
+      
+        < ChallengeStats data= { this.state.data } />
         < Footer />
         
       </div>
