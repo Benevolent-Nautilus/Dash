@@ -11,7 +11,7 @@ var Footer = require('../../components/Profile/Footer');
 var involvedChallenges = [
   {
     name: 'Everest',
-    totoalSteps: 100000,
+    totalSteps: 100000,
     currentSteps: 82009,
     friends: [
       {name: 'Dennis',
@@ -24,7 +24,7 @@ var involvedChallenges = [
   },
   {
     name: "Frodo's Journey to Mount Doom",
-    totoalSteps: 17000000,
+    totalSteps: 17000000,
     currentStesp: 6282009,
     friends: [
       {name: 'Dennis',
