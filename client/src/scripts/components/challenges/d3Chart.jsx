@@ -20,16 +20,16 @@ D3Chart.create = function(el, state) {
         }
         return goal-daily + " STEPS TO GO";
       })
-      .onClick(this.onClick1)
+      .onClick(this.refresh)
       .diameter(350)
       .value(state.steps_today)
       .maxValue(state.daily_goal)
       .render();
 };
 
-D3Chart.onClick1 = function() {
-  deselect();
-  el.attr("class","selectedRadial");
+D3Chart.refresh = function() {
+  console.log('Pressed D')
+  actions.updateDashboard;
 };
 
 module.exports = D3Chart;

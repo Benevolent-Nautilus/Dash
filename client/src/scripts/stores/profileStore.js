@@ -3,14 +3,13 @@
 var Reflux = require('reflux');
 var actions = require('../actions/actions');
 
-// store listener references
-var postListener, commentListener;
-
 var profileStore = Reflux.createStore({
+    // listens to the actions store.
     listenables: actions,
 
-    init: function() {
-        this.userInfo = '';
+    updateDashboard: function() {
+        console.log('Update Dashboard Commenced in Store');
+        this.trigger();
     },
 
     getDefaultData: function(){
