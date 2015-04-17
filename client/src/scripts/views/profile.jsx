@@ -23,7 +23,6 @@ var Profile = React.createClass({
   mixins: [
     require('react-router').Navigation,
     Reflux.listenTo(profileStore, 'onLoaded')
-    // Reflux.listenTo(profileStore, 'onLoaded')
   ],
 
   getInitialState: function() {
@@ -41,7 +40,7 @@ var Profile = React.createClass({
   render: function() {
     return (
       <div className="content full-width">
-       < Dashboard />
+       < Dashboard data= {this.state.profileData} />
        < Footer />
       </div>
     );
