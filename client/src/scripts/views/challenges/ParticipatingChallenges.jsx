@@ -4,16 +4,53 @@ var Reflux = require('reflux');
 var Router = require('react-router');
 
 // Components
+var Spinner = require('../../components/spinner');
+var ChallengeStats = require('../../components/challenges/ChallengeStat');
+var Footer = require('../../components/Profile/Footer');
+
+var involvedChallenges = [
+  {
+    name: 'Everest',
+    totalSteps: 100000,
+    currentSteps: 82009,
+    friends: [
+      {name: 'Dennis',
+       currentSteps: 79004
+      },
+      {name: 'Jason',
+      currentSteps: 85000
+      }
+    ],
+  },
+  {
+    name: "Frodo's Journey to Mount Doom",
+    totalSteps: 17000000,
+    currentStesp: 6282009,
+    friends: [
+      {name: 'Dennis',
+       currentSteps: 5679004
+      },
+      {name: 'Jason',
+      currentSteps: 689902
+      }
+
+    ]
+  }
+]
+
+
 var ParticipatingChallenges = React.createClass({
-  mixins: [],
+  getInitialState: function() {
+    return { data: involvedChallenges };
+  }, 
 
   render: function() {
-    console.log("hello");
+    console.log("Participating Challenges");
     return (
       <div className="text-center">
-        <button type="submit" className="btn btn-default fitbit-button" aria-label="Fitbit" onClick={ this.connectFitbit }>
-          { <span className="fitbit-logo" aria-hidden="true"></span> }
-        </button>
+      
+        < ChallengeStats data= { this.state.data } />
+        < Footer />
         
       </div>
     );

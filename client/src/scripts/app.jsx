@@ -93,10 +93,10 @@ var Profile = require('./views/Profile');
 var Challenges = require('./views/challenges/Challenges');
 
 // Participating Challenges
-var ParticipatingChallenges = require('./views/challenges//ParticipatingChallenges');
+var ParticipatingChallenges = require('./views/challenges/ParticipatingChallenges');
 
 // New Challenges
-var NewChallenges = require('./views/challenges//NewChallenges');
+var NewChallenges = require('./views/challenges/NewChallenges');
 
 /**
 @description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
