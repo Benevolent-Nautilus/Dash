@@ -9,13 +9,13 @@ var router = express.Router();
 router
   //facebook auth
   .get('/', passport.authenticate('facebook', {
+    scope: 'email',
     failureRedirect: '/#/login',
     session: false
   }))
 
   //callback for api
   .get('/callback', passport.authenticate('facebook', {
-    scope: 'email',
     failureRedirect: '/#/login',
     session: false
   }), function(req, res){
