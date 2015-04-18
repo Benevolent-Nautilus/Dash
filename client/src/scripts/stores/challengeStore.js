@@ -1,5 +1,5 @@
 var Reflux = require('reflux');
-var ChallengeAction = require('../actions/ChallengeAction');
+var ChallengeAction = require('../actions/actions');
 
 var _challenges = [];
 
@@ -25,6 +25,7 @@ var ChallengeStore = Reflux.createStore({
 
 
   select: function(challenge){
+    console.log('selected!!!!');
     _challenges.push(challenge);
 
   }
