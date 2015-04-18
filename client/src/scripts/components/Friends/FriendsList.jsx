@@ -4,7 +4,8 @@ var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 //Components
-var Friend = require('./Friend');
+var Friend = require('./Friend')
+
 
 var Competition = React.createClass({
   propTypes: {
@@ -13,15 +14,15 @@ var Competition = React.createClass({
 
   render: function() {
     return (
-        <div className="container">
-          <div className="row">
-          <ul>
-            { this.props.data.map(function(friend) {
-              return <Friend key={friend.uid} name={friend.name} device={friend.device} />
-            })}
-          </ul>
-          </div>
+      <div className="container">
+        <div className="row">
+        <ul>
+          { this.props.data.map(function(friend) {
+            return <Friend key={friend.uid} name={friend.name} device={friend.device} uid={friend.uid}  />
+          })}
+        </ul>
         </div>
+      </div>
     );
   }
 });

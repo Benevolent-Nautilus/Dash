@@ -22,11 +22,9 @@ var Friend = React.createClass({
                 {this.props.device} 
               </div>
             </a>
-            <a href="#/settings">
-              <div className="col-xs-3 col-sm-3">
-                {this.props.key}
-              </div>
-            </a>
+            <div className="col-xs-3 col-sm-3" onClick= { actions.addFriend.bind(this, this.props.uid) }>
+              {this.props.uid}
+            </div>
           </div>
         </div>
       </li>

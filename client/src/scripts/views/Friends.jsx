@@ -4,19 +4,22 @@
 var Reflux = require('reflux');
 // Actions
 var actions = require('../actions/actions');
+// Add Immutable Datastructure for Regex Search Table
+var Immutable = require('immutable');
 // Stores
 // var profileStore = require('../stores/profileStore');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../components/spinner');
 var Footer = require('../components/Profile/Footer');
-var FriendsList = require('../components/Friends/FriendsList')
+var FriendsList = require('../components/Friends/FriendsList');
 
 // Stores
 var friendsStore = require('../stores/friendsStore');
 
 // Profile Class
 var Friends = React.createClass({
+  
   mixins: [
     require('react-router').Navigation,
     Reflux.listenTo(friendsStore, 'onLoaded')

@@ -39,8 +39,8 @@ var Chart = React.createClass({
 
   render: function() {
     return (
-      <div class="chart-center">
-        <div class="Chart"></div>
+      <div className="chart-center">
+        <div className="Chart"></div>
       </div>
     );
   }

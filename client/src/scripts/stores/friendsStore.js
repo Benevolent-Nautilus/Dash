@@ -31,8 +31,8 @@ var friendsStore = Reflux.createStore({
    return _friends;
   },
 
-  addFriend: function() {
-
+  addFriend: function(key) {
+    console.log(key);
   },
 
   deleteFriend: function() {
