@@ -13,6 +13,7 @@ var Immutable = require('immutable');
 var Spinner = require('../components/spinner');
 var Footer = require('../components/Profile/Footer');
 var FriendsList = require('../components/Friends/FriendsList');
+var FriendsTable = require('../components/Friends/FriendsTable');
 
 // Stores
 var friendsStore = require('../stores/friendsStore');
@@ -59,6 +60,7 @@ var Friends = React.createClass({
       <div className="content full-width">
         < FriendsList data= {this.state.friendsList} />
         < Footer />
+        < FriendsTable />
       </div>
     );
   }
