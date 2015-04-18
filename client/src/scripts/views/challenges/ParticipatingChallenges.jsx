@@ -50,6 +50,7 @@ var ParticipatingChallenges = React.createClass({
       <div className="text-center">
         <h2 className="setup">Here Are Your Current Challenges </h2>
         < ChallengeStats data= { this.state.data } />
+        <img className="challengeMonster" src="../../images/challengeMonster.png" />
         < Footer />
         
       </div>

@@ -34,12 +34,11 @@ var NewChallenges = React.createClass({
   render: function() {
     console.log("new challenges");
     return (
-      <div className="text-center">
-      
+      <li className="text-center" >
         < AvailableChallenges data= { this.state.data } />
         < Footer />
         
-      </div>
+      </li>
     );
   }
 });
