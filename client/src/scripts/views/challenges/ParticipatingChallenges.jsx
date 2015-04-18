@@ -48,7 +48,7 @@ var ParticipatingChallenges = React.createClass({
     console.log("Participating Challenges");
     return (
       <div className="text-center">
-      
+        <h2 className="setup">Here Are Your Current Challenges </h2>
         < ChallengeStats data= { this.state.data } />
         < Footer />
         
