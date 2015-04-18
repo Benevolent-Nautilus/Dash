@@ -25,7 +25,7 @@ var involvedChallenges = [
   {
     name: "Frodo's Journey to Mount Doom",
     totalSteps: 17000000,
-    currentStesp: 6282009,
+    currentSteps: 6282009,
     friends: [
       {name: 'Dennis',
        currentSteps: 5679004

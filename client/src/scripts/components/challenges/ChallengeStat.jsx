@@ -14,7 +14,7 @@ var ChallengeStat = React.createClass({
           <div> Challenge Name: {props.name} </div>
           <div> Current Progress: {props.currentSteps} / {props.totalSteps} steps</div>
           <div>
-            <div> Participating Friends: {this.props.data.friends[0].name}</div>
+            <div> Participating Friends: {this.props.data.friends[0].name} | {this.props.data.friends[1].name}</div>
           </div>
         </ul>
       </div>
