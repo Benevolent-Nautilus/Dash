@@ -1,8 +1,10 @@
+var $ = jQuery;
 var Reactable = require('reactable');
 var Reflux = require('reflux');
 var actions = require('../../actions/actions');
 var Reactable = require('reactable');
 var Table = Reactable.Table;
+
 
 var Friends = React.createClass({
   
@@ -12,6 +14,8 @@ var Friends = React.createClass({
 
   // When the View loads up, get the data from the Store
   getInitialState: function() {
+    var holder = $('label[for="uid"]');
+    console.log(holder);
     return {
     };
   },
@@ -34,9 +38,10 @@ var Friends = React.createClass({
   },
 
   render: function() {
-    console.log('Friends', this.state.friendsList)
     return (
-       <Table className="table" id="table" data={this.props.data} filterable={['name', 'email']} />
+      <div class="table-responsive search-friends" >
+       <Table className="table table-hover" id="table" data={this.props.data} filterable={['name', 'email']} />
+      </div>
     );
   }
 });

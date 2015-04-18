@@ -56,7 +56,7 @@ var Friends = React.createClass({
     console.log('Friends', this.state.friendsList)
     return (
       <div className="content full-width">
-        < div className="friends-table"></div>
+        <h2>Search For Friends</h2>
         < FriendsTable data= {this.state.friendsList} />
         < Footer />
       </div>
