@@ -1,76 +1,44 @@
-'use strict';
-// Router
-var Router = require('react-router');
-// React Fork
-var Fork = require('react-ghfork');
-// Actions
+var Reactable = require('reactable');
+var Reflux = require('reflux');
 var actions = require('../../actions/actions');
-//Components
-var FullTable = require('./full_table.jsx');
-var EditorsTable = require('./editors_table.jsx');
+var Reactable = require('reactable');
+var Table = Reactable.Table;
 
-module.exports = React.createClass({
-    displayName: 'App',
-    render() {
-        return (
-            <div className='pure-g'>
-                <Fork className='right' project='bebraw/reactabular' />
-                <header className='pure-u-1'>
-                    <h1>Reactabular</h1>
+var Friends = React.createClass({
+  
+  mixins: [
+    require('react-router').Navigation,
+  ],
 
-                    <div className='description'>Spectacular tables for React.js</div>
-                </header>
-                <article className='pure-u-1'>
-                    <section className='demonstration'>
-                        <div className='description'>
-                            <h2>Demonstration</h2>
+  // When the View loads up, get the data from the Store
+  getInitialState: function() {
+    return {
+    };
+  },
 
-                            <p>The demo below shows basic features of Reactabular. Besides usual pagination, sorting and filtering by search it is possible to modify various fields by clicking them. In addition you may edit rows by hitting the arrow at the end of each. `x` will remove the row in question.</p>
+  // When there is a change in the store, the method recieves an updated note list and changes the state. 
+  onChange: function(friends) {
+    this.setState({
+    });
+  },
 
-                            <p>Most of this functionality is optional and has been plugged on top of a small core. The rest is just basic React.js code.</p>
+  componentDidMount: function() {
+    // when the component mounts we start listening to profileStore's 
+    // change event.  This is broadcast whenever there is a mutation in the notes lists
+    // the following line registers as a listener.
+  },
 
-                            <p>There are hooks for connecting with data stores (ie. Flux architecture) and the library has been developed extensibility in mind. Ideally you shouldnt have to modify the library itself to get something done.</p>
-                        </div>
+  componentWillUnmount: function() {
+    // this will remove the listener.
+    // will always stay up-to-date by listening to the Store's change event
+  },
 
-                        <FullTable />
-                    </section>
-                    <section className='editors'>
-                        <div className='description'>
-                            <h2>Editors</h2>
-
-                            <p>The table below contains some sample editors you can use. It is possible to develop your own editors as long as you follow the same interface (`value`, `onValue` props).</p>
-                        </div>
-
-                        <EditorsTable/>
-                    </section>
-                    <section className='documentation'>
-                        <h2>README</h2>
-
-                        <div dangerouslySetInnerHTML={{__html: readme}}></div>
-                    </section>
-                </article>
-            </div>
-        );
-    },
+  render: function() {
+    console.log('Friends', this.state.friendsList)
+    return (
+       <Table className="table" id="table" data={this.props.data} filterable={['name', 'email']} />
+    );
+  }
 });
-// var Competition = React.createClass({
-//   propTypes: {
-//     data: React.PropTypes.array
-//   },
 
-//   render: function() {
-//     return (
-//       <div className="container">
-//         <div className="row">
-//         <ul>
-//           { this.props.data.map(function(friend) {
-//             return <Friend key={friend.uid} name={friend.name} device={friend.device} uid={friend.uid}  />
-//           })}
-//         </ul>
-//         </div>
-//       </div>
-//     );
-//   }
-// });
-
-// module.exports = Competition;
+module.exports = Friends;

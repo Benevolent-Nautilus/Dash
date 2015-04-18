@@ -4,8 +4,6 @@
 var Reflux = require('reflux');
 // Actions
 var actions = require('../actions/actions');
-// Add Immutable Datastructure for Regex Search Table
-var Immutable = require('immutable');
 // Stores
 // var profileStore = require('../stores/profileStore');
 // var userStore = require('../stores/userStore');
@@ -58,9 +56,9 @@ var Friends = React.createClass({
     console.log('Friends', this.state.friendsList)
     return (
       <div className="content full-width">
-        < FriendsList data= {this.state.friendsList} />
+        < div className="friends-table"></div>
+        < FriendsTable data= {this.state.friendsList} />
         < Footer />
-        < FriendsTable />
       </div>
     );
   }
