@@ -1,9 +1,9 @@
-'use strict';
 var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 
 var Radial = require('./Radial');
+
 D3Chart = {};
 
 D3Chart.create = function(el, state) {

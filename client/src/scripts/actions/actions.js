@@ -5,7 +5,10 @@ var Reflux = require('reflux');
 
 var actions = Reflux.createActions([
     'createDashboard',
-    'updateDashboard'
+    'updateDashboard',
+    'getFriendsList',
+    'deleteFriend',
+    'addFriend'
   ]);
 
 

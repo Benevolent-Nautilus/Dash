@@ -85,9 +85,11 @@ Attached is 'Setup', which is located in the /views folder. Setup will hold a vi
 */
 var Connect = require('./views/Connect');
 
-
 // Profile
 var Profile = require('./views/Profile');
+
+// Friends
+var Friends = require('./views/Friends');
 
 // Challenges
 var Challenges = require('./views/challenges/Challenges');
@@ -140,6 +142,7 @@ var Dash = React.createClass({
                 <li><a href="#/dashboard">Dashboard<span className="sr-only">(current)</span></a></li>
                 <li><a href="#/login">Login</a></li>
                 <li><a href="#/challenges">Competition</a></li>
+                <li><a href="#/friends">Friends</a></li>
               </ul>
               <form className="navbar-form navbar-left" role="search">
                 <div className="form-group">
@@ -170,6 +173,7 @@ var routes = (
     <Route name="Login" path="/login" handler={ Login } />
     <Route name="Connect" path="/connect" handler={ Connect } />
     <Route name="Dashboard" path="/dashboard" handler={ Profile } />
+    <Route name="Friends" path="/friends" handler={ Friends } />
     <Route name="Challenges" path="/challenges" handler={ Challenges } />
     <Route name="ParticipatingChallenges" path="/participating-challenges" handler={ ParticipatingChallenges } />
     <Route name="NewChallenges" path="/new-challenges" handler={ NewChallenges } />
