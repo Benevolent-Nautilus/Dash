@@ -10,7 +10,7 @@ var AvailableChallenges = React.createClass({
       <div>
         <ul>
         {this.props.data.map(function(challenge) {
-            return <li key={challenge.id}> <AvailableChallenge data= { challenge }/> </li>;
+            return <button key={challenge.id}> <AvailableChallenge data= { challenge }/> </button>;
         })}
         </ul>
       </div>
