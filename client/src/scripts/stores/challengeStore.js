@@ -1,12 +1,28 @@
-var React = require('react');
+var Reflux = require('reflux');
 var ChallengeAction = require('../actions/ChallengeAction');
 
 var _challenges = [];
 
 var ChallengeStore = Reflux.createStore({
+  listenables: ChallengeAction,
   init: function(){
-    this.listenTo(ChallengeAction.selectChallenge, this.select);
+    this.challenges = _challenges;
   },
+  fetchChallenges: function(){
+    $.ajax({
+         url: 'http://demo2404350.mockable.io/dash',
+         async: false,
+         dataType: 'json',
+         success: function(data) {
+            this.challenges = data;
+         }.bind(this),
+         error: function(xhr, status, err) {
+             console.error(url, status, err.toString());
+         }.bind(this)
+     });
+    return this.challenges;
+  },
+
 
   select: function(challenge){
     _challenges.push(challenge);
@@ -15,3 +31,6 @@ var ChallengeStore = Reflux.createStore({
 });
 
 module.exports = ChallengeStore;
+
+
+
