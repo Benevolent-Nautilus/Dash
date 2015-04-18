@@ -39,6 +39,10 @@ var userSchema = new Schema({
     dailySteps: {type: Number},
     totalSteps: {type: Number}
   },
+  friendRequests:[{
+    id: {type:Schema.Types.ObjectId, ref: 'User'},
+    isAccepted: {type: Boolean}
+  }],
   friends: [{type: Schema.Types.ObjectId, ref: 'User'}],
   challenges: [{type: Schema.Types.ObjectId, ref: 'Challenge'}]
 });
