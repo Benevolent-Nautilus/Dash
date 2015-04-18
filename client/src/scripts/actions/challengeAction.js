@@ -1,7 +1,7 @@
 var Reflux = require('reflux');
 
 var ChallengeAction = Reflux.createAction([
-  'selectChallenge'
+  'select'
 ]);
 
 module.exports = ChallengeAction;
