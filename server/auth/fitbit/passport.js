@@ -33,6 +33,7 @@ var fitbitAuth = {
                 done(err);
               }
             });
+            require('./controller').getData('activities.json', user, config);
             return done(err, user);
           } else {
             return done(err, user);
