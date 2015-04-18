@@ -4,6 +4,7 @@ var Reflux = require('reflux');
 var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
+var ChallengeStat = require('../../components/challenges/ChallengeStat');
 
 
 var ChallengeStats = React.createClass({
@@ -11,11 +12,13 @@ var ChallengeStats = React.createClass({
     return (
       <div>
         <ul>
-          {this.prop.data.map(function(stat){
-            return <li key=(stat.id)> <ChallengeStat data= { stat }>
+          {this.props.data.map(function(stat){
+            return <ul key={stat.id}> <ChallengeStat data= { stat } /> </ul>
           })}
         </ul>
       </div>
     );
-  };
+  }
 });
+
+module.exports = ChallengeStats

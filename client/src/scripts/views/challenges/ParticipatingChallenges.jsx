@@ -5,7 +5,7 @@ var Router = require('react-router');
 
 // Components
 var Spinner = require('../../components/spinner');
-var ChallengeStats = require('../../components/challenges/ChallengeStat');
+var ChallengeStats = require('../../components/challenges/ChallengeStats');
 var Footer = require('../../components/Profile/Footer');
 
 var involvedChallenges = [
@@ -45,7 +45,7 @@ var ParticipatingChallenges = React.createClass({
   }, 
 
   render: function() {
-    console.log("Participating Challenges");
+    console.log("Participating Challenges", this.state.data);
     return (
       <div className="text-center">
         <h2 className="setup">Here Are Your Current Challenges </h2>

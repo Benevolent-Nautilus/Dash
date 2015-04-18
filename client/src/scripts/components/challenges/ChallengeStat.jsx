@@ -6,16 +6,17 @@ var Router = require('react-router');
 var ChallengeStat = React.createClass({
   render: function(){
     var props = this.props.data
-    for(var i = 0; i < props.length; i++){
-
-    }
+    console.log(props)
+  
     return (
       <div className= "challenge-stat">
-        <div> Challenge Name: {props[0].name} </div>
-        <div> Current Progress: {props[0].currentSteps} / {props[0].totalSteps} steps</div>
-        <div>
-          <div> Participating Friends: {this.props.data[0].friends[0].name}</div>
-        </div>
+        <ul>
+          <div> Challenge Name: {props.name} </div>
+          <div> Current Progress: {props.currentSteps} / {props.totalSteps} steps</div>
+          <div>
+            <div> Participating Friends: {this.props.data.friends[0].name}</div>
+          </div>
+        </ul>
       </div>
       );
   }
