@@ -1,26 +1,12 @@
+'use strict';
+
+// Router
+var Router = require('react-router');
+// Actions
+var actions = require('../../../actions/actions');
 
 var TotalSteps = React.createClass({
-  propTypes: {
-    data: React.PropTypes.number,
-  },
-  // Create
-  componentDidMount: function() {
-    // var el = this.getDOMNode();
-    // D3Chart.create(el, this.getChartState());
-  },
-  // Update (Figure out what to do with this later)
-  // componentDidUpdate: function() {
-  //   var el = this.getDOMNode();
-  //   d3Chart.update(el, this.getChartState());
-  // },
-  // Destroy (Figure out what to do with this later)
-  // componentWillUnmount: function() {
-  //   var el = this.getDOMNode();
-  //   d3Chart.destroy(el);
-  // },
-
   render: function() {
-    console.log(this.props.totalSteps);
     return ( 
         <div className="tracker">
           <div className="tracker-header">

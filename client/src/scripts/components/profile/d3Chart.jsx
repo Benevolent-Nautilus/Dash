@@ -1,6 +1,4 @@
-// Reflux
-var Reflux = require('reflux');
-// Router
+'use strict';
 var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');

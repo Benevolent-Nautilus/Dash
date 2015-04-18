@@ -1,4 +1,5 @@
 // Chart.js
+'use strict';
 // Reflux
 var Reflux = require('reflux');
 // Router
