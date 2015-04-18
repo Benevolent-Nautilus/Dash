@@ -18,7 +18,7 @@ var friendsStore = Reflux.createStore({
   getFriendsList: function(){
    console.log('Friends AJAX button pressed');
    $.ajax({
-     url: 'https://demo7018697.mockable.io/api/friends',
+     url: '/api/user',
      async: false,
      dataType: 'json',
      success: function(data) {

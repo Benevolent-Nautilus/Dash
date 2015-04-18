@@ -26,20 +26,21 @@ var profileStore = Reflux.createStore({
   fetchUserData: function(){
      console.log('AJAX button pressed');
      $.ajax({
-         url: 'http://demo7018697.mockable.io/user',
+         url: '/api/user',
          async: false,
          dataType: 'json',
          success: function(data) {
+          console.log('user data', data);
           //Divide up data into new initialized object
             this.userId = data.msg;
-            this.name = data.name;
-            this.stepsToday = data.steps_today;
-            this.dailyGoal = data.daily_goal;
-            this.totalSteps = data.steps_total;
-            this.competitions = data.competitions;
+            this.name = data.name.first + ' ' + data.name.last;
+            this.stepsToday = data.activity.dailySteps;
+            this.dailyGoal = data.activity.dailyGoal;
+            this.totalSteps = data.activity.totalSteps;
+            this.competitions = data.challenges;
          }.bind(this),
          error: function(xhr, status, err) {
-             console.error(url, status, err.toString());
+             console.error(xhr, status, err.toString());
          }.bind(this)
      });
   },
