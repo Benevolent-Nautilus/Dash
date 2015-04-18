@@ -1,4 +1,5 @@
 // Chart.js
+'use strict';
 // Reflux
 var Reflux = require('reflux');
 // Router
@@ -25,9 +26,9 @@ var Chart = React.createClass({
 
   getChartState: function() {
     return {
-      name: this.props.data.name,
-      steps_today: this.props.data.steps_today, 
-      daily_goal: this.props.data.daily_goal
+      name: this.props.name,
+      steps_today: this.props.stepsToday, 
+      daily_goal: this.props.dailyGoal
     };
   },
   // Destroy (Figure out what to do with this later)
@@ -38,8 +39,8 @@ var Chart = React.createClass({
 
   render: function() {
     return (
-      <div class="chart-center">
-        <div class="Chart"></div>
+      <div className="chart-center">
+        <div className="Chart"></div>
       </div>
     );
   }

@@ -1,42 +1,42 @@
-/**
-@fileOverview 
-<p>Profile.js - This will be where the application will load profile for curated views</p>
-@author Jason Chang, Scott Kao, Derek Van Dyk, Dennis Yang
-*/
+
 'use strict';
 // Reflux
 var Reflux = require('reflux');
 // Actions
 var actions = require('../actions/actions');
+// Add Immutable Datastructure for Regex Search Table
+var Immutable = require('immutable');
 // Stores
 // var profileStore = require('../stores/profileStore');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../components/spinner');
-var Dashboard = require('../components/Profile/Dashboard');
 var Footer = require('../components/Profile/Footer');
+var FriendsList = require('../components/Friends/FriendsList');
 
-var profileStore = require('../stores/profileStore');
+// Stores
+var friendsStore = require('../stores/friendsStore');
 
 // Profile Class
-var Profile = React.createClass({
+var Friends = React.createClass({
+  
   mixins: [
     require('react-router').Navigation,
-    Reflux.listenTo(profileStore, 'onLoaded')
+    Reflux.listenTo(friendsStore, 'onLoaded')
   ],
 
   // When the View loads up, get the data from the Store
   getInitialState: function() {
     return {
-      profileData: profileStore.createDashboard(),
+      friendsList: friendsStore.getFriendsList(),
       isLoading: true
     };
   },
 
   // When there is a change in the store, the method recieves an updated note list and changes the state. 
-  onChange: function(stats) {
+  onChange: function(friends) {
     this.setState({
-      profileData: stats // state changes
+      friendsList: friends // state changes
     });
   },
 
@@ -44,7 +44,7 @@ var Profile = React.createClass({
     // when the component mounts we start listening to profileStore's 
     // change event.  This is broadcast whenever there is a mutation in the notes lists
     // the following line registers as a listener.
-    this.unsubscribe = profileStore.listen(this.onChange);
+    this.unsubscribe = friendsStore.listen(this.onChange);
   },
 
   componentWillUnmount: function() {
@@ -54,13 +54,14 @@ var Profile = React.createClass({
   },
 
   render: function() {
+    console.log('Friends', this.state.friendsList)
     return (
       <div className="content full-width">
-       < Dashboard data= {this.state.profileData} />
-       < Footer />
+        < FriendsList data= {this.state.friendsList} />
+        < Footer />
       </div>
     );
   }
 });
 
-module.exports = Profile;
+module.exports = Friends;

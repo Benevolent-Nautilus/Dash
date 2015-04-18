@@ -1,12 +1,9 @@
-// Reflux
-var Reflux = require('reflux');
+'use strict';
 // Router
 var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
-
 // Components
-// var Module = require('./Tracker/');
 var TotalSteps = require('./Tracker/TotalSteps');
 
 var Tracker = React.createClass({
@@ -14,22 +11,11 @@ var Tracker = React.createClass({
     data: React.PropTypes.object,
   },
 
-  // componentDidMount: function() {
-  //   // var el = this.getDOMNode();
-  //   // D3Chart.create(el, this.getChartState());
-  // },
-
-  getChartState: function() {
-    return {
-      steps_total: this.props.data.steps_total
-    };
-  },
-
   render: function() {
     return (
       <div className="container">
         <div className="row">
-          <TotalSteps data= { this.props.data.steps_total } />
+          <TotalSteps data= { this.props.totalSteps } />
         </div>
       </div>
     );

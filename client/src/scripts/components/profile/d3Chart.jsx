@@ -1,11 +1,9 @@
-// Reflux
-var Reflux = require('reflux');
-// Router
 var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 
 var Radial = require('./Radial');
+
 D3Chart = {};
 
 D3Chart.create = function(el, state) {
@@ -20,16 +18,18 @@ D3Chart.create = function(el, state) {
         }
         return goal-daily + " STEPS TO GO";
       })
-      .onClick(this.onClick1)
+      .onClick(this.refresh)
       .diameter(350)
       .value(state.steps_today)
       .maxValue(state.daily_goal)
       .render();
 };
 
-D3Chart.onClick1 = function() {
-  deselect();
-  el.attr("class","selectedRadial");
+D3Chart.refresh = function() {
+  console.log('D3 Chart has been pressed');
+  actions.updateDashboard();
+  // deselect();
+  // el.attr("class","selectedRadial");
 };
 
 module.exports = D3Chart;

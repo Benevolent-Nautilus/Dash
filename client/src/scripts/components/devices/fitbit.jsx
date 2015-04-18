@@ -4,8 +4,6 @@
 @author Jason Chang, Scott Kao, Derek Van Dyk, Dennis Yang
 */
 'use strict';
-// Reflux
-var Reflux = require('reflux');
 // Router
 var Router = require('react-router');
 // Actions
