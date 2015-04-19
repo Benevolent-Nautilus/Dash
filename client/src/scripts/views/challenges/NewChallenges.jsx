@@ -10,11 +10,14 @@ var Footer = require('../../components/Profile/Footer');
 var AvailableChallenges = require('../../components/Challenges/AvailableChallenges');
 
 var NewChallenges = React.createClass({
-  mixins: [],
+  mixins: [Reflux.connect(ChallengeStore, 'data')],
 
   getInitialState: function() {
-    return { data: ChallengeStore.fetchChallenges() };
-  }, 
+    return { data: [{}] };
+  },
+  componentDidMount: function(){
+    ChallengeStore.refresh();
+  },
 
   render: function() {
     console.log("data", this.state.data);

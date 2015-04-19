@@ -12,18 +12,23 @@ var Router = require('react-router');
 var actions = require('../../actions/actions');
 // Components
 var Spinner = require('../spinner');
+var ChallengeStore = require('../../stores/challengeStore')
 
 
 
 var SelectChallenge = React.createClass({
-
-  select: function(e){
-    console.log('SELECTED!!!!');
-
+  getInitialState: function(){
+    return {selected: false}
   },
+
+  toggleSelect: function(){
+    ChallengeStore.selectChallenge();
+    this.setState( { selected: true } );
+  },
+
   render: function() {
     return (
-      <button onClick= {this.select}> enter challenge </button>
+      <button onClick= {this.toggleSelect}> {this.state.selected ? 'selected' : 'enter challenge'} </button>
       )
 
 
