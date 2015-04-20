@@ -11,7 +11,7 @@ var AvailableChallenge = React.createClass({
     // console.log(this.onAdd);
     return (
         <div > {this.props.data.name} | {this.props.data.totalSteps} 
-          <SelectButton />                 
+          <SelectButton />    
         </div>
     );
   }
@@ -21,8 +21,3 @@ var AvailableChallenge = React.createClass({
 module.exports = AvailableChallenge;
 
 
-
-// // var selectChallenge = function(e){
-//   e.preventDefault();
-//   console.log('clicked on new challenge!')
-// }
