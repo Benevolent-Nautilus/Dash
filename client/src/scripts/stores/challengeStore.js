@@ -2,6 +2,7 @@ var Reflux = require('reflux');
 var ChallengeAction = require('../actions/actions');
 
 var _challenges = [];
+var _joinedChallenge = [];
 
 var ChallengeStore = Reflux.createStore({
   listenables: ChallengeAction,
@@ -24,9 +25,27 @@ var ChallengeStore = Reflux.createStore({
          }.bind(this)
      });
   },
+
+  loadCurrentChallenges: function(){
+    var context = this;
+    $.ajax({
+         url: '',
+         async: false,
+         dataType: 'json',
+         success: function(data) {
+            _joinedChallenge = data.data;
+            context.trigger(_joinedChallenge);
+         }.bind(this),
+         error: function(xhr, status, err) {
+             console.error(url, status, err.toString());
+         }.bind(this)
+     });
+  },
+
   refresh: function(){
     this.trigger(_challenges);
   },
+
   selectChallenge: function(){
     console.log('SELECTED!!!!');
     // $.ajax({
