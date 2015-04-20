@@ -1,9 +1,10 @@
 var $ = jQuery;
-var Reactable = require('reactable');
 var Reflux = require('reflux');
 var actions = require('../../actions/actions');
-var Reactable = require('reactable');
-var Table = Reactable.Table;
+var Reactable = require('reactable'),
+    Table = Reactable.Table,
+    Tr = Reactable.Tr,
+    Td = Reactable.Td;
 
 
 var Friends = React.createClass({
@@ -13,13 +14,14 @@ var Friends = React.createClass({
   ],
 
   // When the View loads up, get the data from the Store
-  getInitialState: function() {
-    var holder = $('label[for="uid"]');
-    console.log(holder);
-    return {
-    };
-  },
+  componentDidMount: function() {
+      // store the node on the `this.node` so we can access elsewhere
+      this.node = this.getDOMNode();
+      var dialog = $(this.node).dialog().data('ui-dialog');
 
+      // moved this code so we can call it in other places
+      this.renderDialogContent();
+  },
   // When there is a change in the store, the method recieves an updated note list and changes the state. 
   onChange: function(friends) {
     this.setState({
@@ -39,8 +41,22 @@ var Friends = React.createClass({
 
   render: function() {
     return (
-      <div class="table-responsive search-friends" >
-       <Table className="table table-hover" id="table" data={this.props.data} filterable={['name', 'email']} />
+      <div className="table-responsive search-friends table-hover" >
+        <Table className="table table-hover" id="table" filterable={['Name', 'Device']}>
+            {this.props.data.map(function(friend){
+              return (
+                  <Tr className="search-tr">
+                      <Td column="">
+                        <div className="profile-circle"></div>
+                      </Td>
+                      <Td column="Name" data={friend.name}>
+                      </Td>
+                      <Td column="Device" data={friend.device}>
+                      </Td>
+                  </Tr>
+              )
+            })}
+        </Table>
       </div>
     );
   }
