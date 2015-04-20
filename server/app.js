@@ -13,6 +13,7 @@ var config = require('./config/config');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var app = express();
+var bodyParser = require('body-parser');
 var port = 8080;
 
 require('./db/db.config');
@@ -38,6 +39,10 @@ app.use(session({
 
 //cookie parser
 app.use(cookieParser());
+
+//use body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}));
 
 //Using ejs as template engine
 app.engine('html', require('ejs').renderFile);

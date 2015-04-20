@@ -31,5 +31,16 @@ router
       res.send(friends);
     });
   })
+  .post('/addfriend', function(req, res, next){
+    var decode = jwt.verify(JSON.parse(req.cookies.token), config.secrets.session);
+    User.findOne({
+      'emailAddress': req.body.email
+    },
+    function(err, user){
+      user.friendRequests.push(user);
+      user.save();
+    });
+    res.send(201, 'Friend request sent');
+  })
 
 module.exports = router;

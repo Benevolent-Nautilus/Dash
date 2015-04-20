@@ -68,6 +68,7 @@
     "watchify": "^2.1.1"
   },
   "devDependencies": {
+    "body-parser": "^1.12.3",
     "expect": "^1.6.0",
     "express": "^4.12.3",
     "fitbit": "0.0.6",
@@ -88,7 +89,6 @@
     "karma-chrome-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.5",
     "mongobackup": "^0.1.8",
-    "jest-cli": "^0.4.0",
     "mongoose": "^4.0.1",
     "request": "^2.55.0",
     "should": "^6.0.1",
