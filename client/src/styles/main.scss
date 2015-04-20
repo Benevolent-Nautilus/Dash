@@ -1,4 +1,8 @@
 body {
+    background-color: #FCFCFC;
+}
+
+#app {
     background-color: #FFF;
 }
 
@@ -465,9 +469,132 @@ h4 {
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
 .reactable-filter-input:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.friend-request {
+    min-width: 300px;
+    height: 25px;
+    margin: 10px;
+    font-family: "museo-sans", sans-serif, "Helvetica";
+    font-size: 12px;
+    background-color: #6fc4bb;
+    color: #FFF;
+}
+
+.table-cell {
+    height: 25px;
+    vertical-align:middle;
+    display: table-cell;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius:0px;
+    border-top-right-radius: 0px;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.list-group-item {
+    border: 0px;
+    font-family: "museo-sans", sans-serif, "Helvetica";
+    color: #CCC;
+    background-color: #2C4744;
+}
+
+a.list-group-item {
+    color: #FFF;   
+    padding: 10px; 
+}
+
+.list-group-item-success {
+    background-color: #009A8B;
+}
+
+.list-group-item-success:hover {
+    background-color: #009A8B;
+}
+
+.panel {
+    margin-bottom: 0px;
+    border-radius: 0px;
+    border: 0px;
+}
+
+a.list-group-item-success {
+    color: #FFF;
+    font-family: "museo-sans", sans-serif, "Helvetica";
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px; 
+    margin-top: 7px;
+    background-color: #009A8B;
+    /* width and height can be anything, as long as they're equal */
+}
+
+.denial-button {
+    float: right;
+}
+
+.approve-button {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px; 
+    margin: 10px;
+    background-color: #4CB778;
+    float: left;
+    /* width and height can be anything, as long as they're equal */
+}
+
+.deny-button {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px; 
+    margin: 10px;
+    background-color: #CC4141;
+    float: left;
+    /* width and height can be anything, as long as they're equal */
+}
+
+.approval-text {
+  padding-top: 6px;
+  float: left;
+}
+
+.table>thead:first-child>tr:first-child>td {
+    background-color: #F1F1F1;
+}
+
+.profile-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px; 
+    margin: 5px 0px 5px 20px;
+    border: 2px dashed #009A8B;
+    background-color: transparent;
+    /* width and height can be anything, as long as they're equal */
+}
+.table>tbody>tr>td {
+    border-top: 1px dashed #ddd;
+    vertical-align: middle;
 }

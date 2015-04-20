@@ -10,7 +10,7 @@ var actions = require('../actions/actions');
 // Components
 var Spinner = require('../components/spinner');
 var Footer = require('../components/Profile/Footer');
-var FriendsList = require('../components/Friends/FriendsList');
+var FriendRequests = require('../components/Friends/FriendRequests');
 var FriendsTable = require('../components/Friends/FriendsTable');
 
 // Stores
@@ -21,21 +21,23 @@ var Friends = React.createClass({
   
   mixins: [
     require('react-router').Navigation,
-    Reflux.listenTo(friendsStore, 'onLoaded')
+    Reflux.listenTo(friendsStore, 'onChange')
   ],
 
   // When the View loads up, get the data from the Store
   getInitialState: function() {
     return {
       friendsList: friendsStore.getFriendsList(),
+      friendRequests: friendsStore.getFriendRequests(),
       isLoading: true
     };
   },
 
   // When there is a change in the store, the method recieves an updated note list and changes the state. 
-  onChange: function(friends) {
+  onChange: function() {
     this.setState({
-      friendsList: friends // state changes
+      friendRequests: friendsStore.getFriendRequests(), // state changes
+      friendsList: friendsStore.getFriendsList() // state changes
     });
   },
 
@@ -53,10 +55,9 @@ var Friends = React.createClass({
   },
 
   render: function() {
-    console.log('Friends', this.state.friendsList)
     return (
       <div className="content full-width">
-        <h2>Search For Friends</h2>
+        < FriendRequests data= {this.state.friendRequests} />
         < FriendsTable data= {this.state.friendsList} />
         < Footer />
       </div>

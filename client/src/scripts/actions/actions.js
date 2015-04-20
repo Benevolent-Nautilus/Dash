@@ -8,7 +8,9 @@ var actions = Reflux.createActions([
     'updateDashboard',
     'getFriendsList',
     'deleteFriend',
-    'addFriend'
+    'addFriend',
+    'vetRequest',
+
   ]);
 
 
