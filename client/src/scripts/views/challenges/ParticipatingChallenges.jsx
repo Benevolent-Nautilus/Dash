@@ -41,7 +41,7 @@ var involvedChallenges = [
 
 var ParticipatingChallenges = React.createClass({
   getInitialState: function() {
-    return { data: involvedChallenges };
+    return { data: [] };
   }, 
 
   render: function() {

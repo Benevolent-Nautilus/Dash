@@ -15,6 +15,7 @@ var NewChallenges = React.createClass({
   getInitialState: function() {
     return { data: [{}] };
   },
+  
   componentDidMount: function(){
     ChallengeStore.refresh();
   },
