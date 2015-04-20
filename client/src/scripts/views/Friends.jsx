@@ -9,6 +9,7 @@ var actions = require('../actions/actions');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../components/spinner');
+var Header = require('../components/Profile/Header');
 var Footer = require('../components/Profile/Footer');
 var FriendRequests = require('../components/Friends/FriendRequests');
 var FriendsTable = require('../components/Friends/FriendsTable');
@@ -57,6 +58,7 @@ var Friends = React.createClass({
   render: function() {
     return (
       <div className="content full-width">
+        < Header />
         < FriendRequests data= {this.state.friendRequests} />
         < FriendsTable data= {this.state.friendsList} />
         < Footer />
