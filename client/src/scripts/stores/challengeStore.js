@@ -9,6 +9,7 @@ var ChallengeStore = Reflux.createStore({
   init: function(){
     this.fetchChallenges();
   },
+  // load available challenges
   fetchChallenges: function(){
     var context = this;
     $.ajax({
@@ -25,7 +26,7 @@ var ChallengeStore = Reflux.createStore({
          }.bind(this)
      });
   },
-
+  // load currently involved challenges
   loadCurrentChallenges: function(){
     var context = this;
     $.ajax({
@@ -45,19 +46,18 @@ var ChallengeStore = Reflux.createStore({
   refresh: function(){
     this.trigger(_challenges);
   },
-
+  // select new challenge to participate in
   selectChallenge: function(){
     console.log('SELECTED!!!!');
-    // $.ajax({
-    //   type: 'POST',
-    //   url: 
-    //   data: JSON.stringify(message),
-    //   success: function(json){
-    //     console.log('success!!')
-    //   },
-    // });
+    $.ajax({
+      type: 'POST',
+      url: 'api/challenge',
+      success: function(json){
+        console.log('success!!');
+        this.name
+      },
+    });
   },
-
 
   select: function(challenge){
     console.log('selected!!!!');
