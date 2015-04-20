@@ -5,7 +5,7 @@ var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 var ChallengeStat = require('../../components/challenges/ChallengeStat');
-
+var ChallengeStore = require('../../stores/challengeStore');
 
 var ChallengeStats = React.createClass({
   render: function() {

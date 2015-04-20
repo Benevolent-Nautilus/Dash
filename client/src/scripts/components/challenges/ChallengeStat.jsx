@@ -2,6 +2,7 @@
 var Reflux = require('reflux');
 // Router
 var Router = require('react-router');
+var ChallengeStore = require('../../stores/challengeStore')
 
 var ChallengeStat = React.createClass({
   render: function(){
