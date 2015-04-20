@@ -14,6 +14,7 @@ var actions = require('../actions/actions');
 // Components
 var Spinner = require('../components/spinner');
 var Dashboard = require('../components/Profile/Dashboard');
+var Header = require('../components/Profile/Header');
 var Footer = require('../components/Profile/Footer');
 
 var profileStore = require('../stores/profileStore');
@@ -56,6 +57,7 @@ var Profile = React.createClass({
   render: function() {
     return (
       <div className="content full-width">
+       < Header />
        < Dashboard data= {this.state.profileData} />
        < Footer />
       </div>

@@ -10,6 +10,10 @@ body {
     margin: 0px;    
 }
 
+.nav>li { 
+    padding: 0px 0px 0px 20px;
+}
+
 h2 { 
     font-family: "museo-sans", sans-serif, "Helvetica";
     font-size: 32px;
@@ -53,9 +57,19 @@ h4 {
     background-color: #FFF;
 }
 
+
 .navbar-brand img {
-    height: 100%;
+    height: 50px;
     width: auto;
+    float: null;
+
+}
+
+.navbar-brand img {
+    height: 23px;
+    margin-left: 7px;
+    width: auto;
+
 }
 
 .container-fluid {

@@ -32,6 +32,7 @@ var Friends = React.createClass({
     // when the component mounts we start listening to profileStore's 
     // change event.  This is broadcast whenever there is a mutation in the notes lists
     // the following line registers as a listener.
+    console.log('table check:', $(this.getDOMNode()).children().length);
   },
 
   componentWillUnmount: function() {
@@ -45,7 +46,7 @@ var Friends = React.createClass({
         <Table className="table table-hover" id="table" filterable={['Name', 'Device']}>
             {this.props.data.map(function(friend){
               return (
-                  <Tr className="search-tr">
+                  <Tr className="search-tr" >
                       <Td column="">
                         <div className="profile-circle"></div>
                       </Td>
