@@ -21,4 +21,4 @@ var ChallengeStats = React.createClass({
   }
 });
 
-module.exports = ChallengeStats
+module.exports = ChallengeStats;
