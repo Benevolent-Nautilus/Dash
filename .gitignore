@@ -34,7 +34,7 @@ node_modules/
 bower_components/
 
 #config file
-server/config/config.js
+server/config/local.env.js
 
 server/db/local.0
 server/db/local.ns
