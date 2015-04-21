@@ -2,7 +2,6 @@
 var Reflux = require('reflux');
 // Router
 var Router = require('react-router');
-var ChallengeStore = require('../../stores/challengeStore')
 
 var ChallengeStat = React.createClass({
   render: function(){
@@ -13,9 +12,8 @@ var ChallengeStat = React.createClass({
       <div className= "challenge-stat">
         <ul>
           <div> Challenge Name: {props.name} </div>
-          <div> Current Progress: {props.currentSteps} / {props.totalSteps} steps</div>
+          <div> Current Progress: {props.currentSteps} / {props.goal} steps</div>
           <div>
-            <div> Participating Friends: {this.props.data.friends[0].name} | {this.props.data.friends[1].name}</div>
           </div>
         </ul>
       </div>
