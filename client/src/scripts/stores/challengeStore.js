@@ -10,10 +10,10 @@ var ChallengeStore = Reflux.createStore({
   listenables: ChallengeAction,
   init: function(){
     this.fetchChallenges();
+    this.loadCurrentChallenges();
   },
   // load available challenges
   fetchChallenges: function(){
-    var context = this;
     $.ajax({
          url: 'http://demo2404350.mockable.io/dash',
          async: false,
@@ -21,33 +21,38 @@ var ChallengeStore = Reflux.createStore({
          success: function(data) {
           console.log('ajax data', data);
             _challenges = data.data;
-            context.trigger(_challenges);
+            this.trigger(_challenges);
          }.bind(this),
          error: function(xhr, status, err) {
-             console.error(url, status, err.toString());
+             console.error(xhr, status, err.toString());
          }.bind(this)
      });
   },
   // load currently involved challenges
-  // loadCurrentChallenges: function(){
-  //   var context = this;
-  //   $.ajax({
-  //        url: '/api/challenge', //http://demo2404350.mockable.io/dash
-  //        async: false,
-  //        dataType: 'json',
-  //        success: function(data) {
-  //           _joinedChallenge = data.data;
-  //           context.trigger(_joinedChallenge);
-  //        }.bind(this),
-  //        error: function(xhr, status, err) {
-  //            console.error(url, status, err.toString());
-  //        }.bind(this)
-  //    });
-  // },
+  loadCurrentChallenges: function(){
+    var context = this;
+    $.ajax({
+         url: 'http://demo3526673.mockable.io/currentChallenge',
+         async: false,
+         dataType: 'json',
+         success: function(data) {
+            console.log('current challenge', data.data);
+            _joinedChallenge = data.data;
+            context.trigger(_joinedChallenge);
+         }.bind(this),
+         error: function(xhr, status, err) {
+             console.error(xhr, status, err.toString());
+         }.bind(this)
+     });
+  },
 
-  // refresh: function(){
-  //   this.trigger(_challenges);
-  // },
+  refresh: function(){
+    this.trigger(_challenges);
+  },
+
+  getCurrentChallenge: function(){
+    return _joinedChallenge;
+  },
   // // select new challenge to participate in
   // selectChallenge: function(){
   //   console.log('SELECTED!!!!');
