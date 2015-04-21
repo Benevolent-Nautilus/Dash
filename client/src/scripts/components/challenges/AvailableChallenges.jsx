@@ -3,7 +3,7 @@ var Reflux = require('reflux');
 // Router
 var Router = require('react-router');
 var AvailableChallenge = require('./AvailableChallenge');
-var ChallengeStore = require('../../stores/challengeStore')
+var ChallengeStore = require('../../stores/challengeStore');
 
 var AvailableChallenges = React.createClass({
   render: function() {

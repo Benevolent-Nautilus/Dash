@@ -1,3 +1,5 @@
+'use strict';
+
 var Reflux = require('reflux');
 var ChallengeAction = require('../actions/actions');
 
@@ -27,43 +29,47 @@ var ChallengeStore = Reflux.createStore({
      });
   },
   // load currently involved challenges
-  loadCurrentChallenges: function(){
-    var context = this;
-    $.ajax({
-         url: '',
-         async: false,
-         dataType: 'json',
-         success: function(data) {
-            _joinedChallenge = data.data;
-            context.trigger(_joinedChallenge);
-         }.bind(this),
-         error: function(xhr, status, err) {
-             console.error(url, status, err.toString());
-         }.bind(this)
-     });
-  },
+  // loadCurrentChallenges: function(){
+  //   var context = this;
+  //   $.ajax({
+  //        url: '/api/challenge', //http://demo2404350.mockable.io/dash
+  //        async: false,
+  //        dataType: 'json',
+  //        success: function(data) {
+  //           _joinedChallenge = data.data;
+  //           context.trigger(_joinedChallenge);
+  //        }.bind(this),
+  //        error: function(xhr, status, err) {
+  //            console.error(url, status, err.toString());
+  //        }.bind(this)
+  //    });
+  // },
 
-  refresh: function(){
-    this.trigger(_challenges);
-  },
-  // select new challenge to participate in
-  selectChallenge: function(){
-    console.log('SELECTED!!!!');
-    $.ajax({
-      type: 'POST',
-      url: 'api/challenge',
-      success: function(json){
-        console.log('success!!');
-        this.name
-      },
-    });
-  },
+  // refresh: function(){
+  //   this.trigger(_challenges);
+  // },
+  // // select new challenge to participate in
+  // selectChallenge: function(){
+  //   console.log('SELECTED!!!!');
 
-  select: function(challenge){
-    console.log('selected!!!!');
-    _challenges.push(challenge);
+  //   $.ajax({
+  //     type: 'POST',
+  //     url: 'api/challenge/new',
+  //     success: function(data){
+  //       console.log(data)
+  //       this.name = data.name;
+  //       this.goal = data.totalSteps;
+  //       participant.push();
+  //       // console.log('success!!');
+  //     },
+  //   });
+  // },
 
-  }
+  // // select: function(challenge){
+  // //   console.log('selected!!!!');
+  // //   _challenges.push(challenge);
+  // // }
+
 });
 
 module.exports = ChallengeStore;
