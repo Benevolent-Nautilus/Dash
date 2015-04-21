@@ -15,12 +15,6 @@ var Friends = React.createClass({
 
   // When the View loads up, get the data from the Store
   componentDidMount: function() {
-      // store the node on the `this.node` so we can access elsewhere
-      this.node = this.getDOMNode();
-      var dialog = $(this.node).dialog().data('ui-dialog');
-
-      // moved this code so we can call it in other places
-      this.renderDialogContent();
   },
   // When there is a change in the store, the method recieves an updated note list and changes the state. 
   onChange: function(friends) {
@@ -28,11 +22,32 @@ var Friends = React.createClass({
     });
   },
 
+  requestFriendRequest: function(email){
+    // console.log(email);
+    actions.sendFriendRequest(email);
+  },
+
   componentDidMount: function() {
     // when the component mounts we start listening to profileStore's 
     // change event.  This is broadcast whenever there is a mutation in the notes lists
     // the following line registers as a listener.
-    console.log('table check:', $(this.getDOMNode()).children().length);
+    // var $inputField = 
+    var that = this;
+    $(".reactable-filter-input").after("<button class='add-friend btn btn-primary btn-lg outline full-width top-bottom-margin'>Send Friend Request</button>");
+    // console.log('input field', $inputField);
+    var $addFriend = $(".add-friend");
+    $('.reactable-filter-input').keyup(function(){
+      var $rowCount = $('.search-tr').length;
+      if($rowCount === 0){
+        $addFriend.fadeIn(500);
+      } else {
+        $addFriend.fadeOut(500);
+      }
+    });
+    $addFriend.click(function() {
+      var $friendValue = $(".reactable-filter-input").val();
+      that.requestFriendRequest($friendValue);
+    });
   },
 
   componentWillUnmount: function() {

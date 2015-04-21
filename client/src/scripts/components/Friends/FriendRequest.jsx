@@ -1,4 +1,5 @@
 'use strict';
+var $ = jQuery;
 // Router
 var Router = require('react-router');
 // Actions
@@ -7,6 +8,16 @@ var actions = require('../../actions/actions');
 var Friend = React.createClass({
   propTypes: {
     data: React.PropTypes.object
+  },
+
+  componentDidMount: function() {
+      // store the node on the `this.node` so we can access elsewhere
+  },
+
+  componentWillUnmount: function() {
+    // this will remove the listener.
+    // will always stay up-to-date by listening to the Store's change event
+    console.log('unmount', $(this));
   },
 
   render: function() {

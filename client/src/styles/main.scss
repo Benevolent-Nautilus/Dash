@@ -1,5 +1,6 @@
 body {
     background-color: #FCFCFC;
+    font-family: "museo-sans", sans-serif, "Helvetica";
 }
 
 #app {
@@ -29,6 +30,34 @@ h4 {
     padding: 0px;
     letter-spacing: 2px;
     font-weight: 400;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.top-bottom-margin {
+    margin: 5px 0px 0px 0px;
+}
+
+.btn.outline {
+    background: none;
+    padding: 8px 22px;
+}
+
+.btn-primary.outline {
+    border: 2px solid #7d8f97;
+    color: #7d8f97;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #33a6cc;
+    border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
 }
 
 .nav {
@@ -419,6 +448,13 @@ h4 {
     background-position: center;
 }
 
+.dashboard-tab {
+    background-image: url('../images/dashboard-icon.png');
+    background-size: auto 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .challenges-tab {
     background-image: url('../images/challenges.png');
     background-size: auto 40%;
@@ -429,6 +465,13 @@ h4 {
 .settings-tab {
     background-image: url('../images/settings.png');
     background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dashboard-tab:hover {
+    background-image: url('../images/dashboard-icon-hover.png');
+    background-size: auto 30%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -610,11 +653,42 @@ a.list-group-item-success {
     width: 40px;
     height: 40px; 
     margin: 5px 0px 5px 20px;
-    border: 2px dashed #009A8B;
+    border: 2px solid #B3CBC9;
     background-color: transparent;
     /* width and height can be anything, as long as they're equal */
 }
 .table>tbody>tr>td {
     border-top: 1px dashed #ddd;
     vertical-align: middle;
+}
+.add-friend {
+    display: none;
+}
+.challenges {
+    padding-top: 15px;
+}
+.challenges h2 {
+    color: #6fc4bb;
+    margin: 0px;
+    padding: 0px;
+    font-weight: 200;
+}
+.challenges img {
+    width: 230px;
+    height: auto;
+    margin-top: 30px;
+}
+.edged-width {
+    width: 90%
+}
+.challenges-btn {
+    padding: 20px;
+    border: 2px solid #6FC4BB;
+    background-color: transparent;
+}
+.challenges-btn:hover {
+    background-color: #6FC4BB;
+}
+.challenges-btn:hover h2{
+    color: #FFF;
 }

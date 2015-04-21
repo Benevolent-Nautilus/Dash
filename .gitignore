@@ -4,6 +4,7 @@
 .DS_store
 client/.DS_store
 client/src/.DS_store
+client/.sass-cache/
 
 # Logs
 logs

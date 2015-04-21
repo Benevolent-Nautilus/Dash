@@ -12,9 +12,9 @@ var actions = require('../../actions/actions');
 var loginStore = require('../../stores/loginStore');
 // Components
 var Spinner = require('../../components/spinner');
-var Footer = require('../../components/profile/Footer');
-var CurrentChallenges = require('../../components/challenges/CurrentChallenges.jsx');
-var ChooseChallenges = require('../../components/challenges/ChooseChallenges.jsx');
+var Footer = require('../../components/Profile/Footer');
+var Header = require('../../components/Profile/Header');
+var ChallengeButton = require('../../components/Challenges/ChallengeButton');
 /**
 @description This is where users will be able to set up their application.
 Keep an eye out for <Fitbit /> and <Jawbone /> 
@@ -24,21 +24,20 @@ Remember that everything gets refed to the app.jsx file through the module.expor
 @class Setup
 */
 var Challenges = React.createClass({
-  mixins: [],
-
-  getInitialState: function() {
-    return {
-    };
-  },
+  mixins: [
+    require('react-router').Navigation
+  ],
 
   render: function() {
     return (
       <div className="post-info inner full-height">
-        <div className="setup text-center">
-          <h2>Current Challenges</h2>
-          <CurrentChallenges />
-          <h2>Join Challenges</h2>
-          <ChooseChallenges />
+        <Header />
+        <div className="challenges text-center">
+          <span className="setup-steps">Pick Your Battles</span>
+          <h2>Challenges!</h2>
+          <img src="../../../images/current-challenge-monster.png" />
+          <ChallengeButton type="CurrentChallenge" name="Current Challenges" />
+          <ChallengeButton type="JoinChallenges" name="Join Challenges" />
         </div>
         <Footer />
       </div>
