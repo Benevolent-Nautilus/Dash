@@ -14,7 +14,7 @@ var config = {
     requestTokenURL: 'https://api.fitbit.com/oauth/request_token',
     accessTokenURL: 'https://api.fitbit.com/oauth/access_token',
     userAuthorizationURL: 'https://www.fitbit.com/oauth/authorize',
-    consumerKey: process.env.FITBIT_KEY|| localEnv.fitbit.consumerSecret,
+    consumerKey: process.env.FITBIT_KEY|| localEnv.fitbit.consumerKey,
     consumerSecret: process.env.FITBIT_SECRET|| localEnv.fitbit.consumerSecret,
     callbackURL: (process.env.DOMAIN || '') + '/auth/fitbit/callback',
     apiReq: {
