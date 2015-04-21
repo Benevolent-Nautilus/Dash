@@ -31,6 +31,34 @@ h4 {
     font-weight: 400;
 }
 
+.full-width {
+    width: 100%;
+}
+
+.top-bottom-margin {
+    margin: 5px 0px 0px 0px;
+}
+
+.btn.outline {
+    background: none;
+    padding: 8px 22px;
+}
+
+.btn-primary.outline {
+    border: 2px solid #7d8f97;
+    color: #7d8f97;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #33a6cc;
+    border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
 .nav {
     font-family: "museo-sans", sans-serif, "Helvetica";
     color: #6fc4bb;
@@ -419,6 +447,13 @@ h4 {
     background-position: center;
 }
 
+.dashboard-tab {
+    background-image: url('../images/dashboard-icon.png');
+    background-size: auto 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .challenges-tab {
     background-image: url('../images/challenges.png');
     background-size: auto 40%;
@@ -429,6 +464,13 @@ h4 {
 .settings-tab {
     background-image: url('../images/settings.png');
     background-size: auto 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dashboard-tab:hover {
+    background-image: url('../images/dashboard-icon-hover.png');
+    background-size: auto 30%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -617,4 +659,7 @@ a.list-group-item-success {
 .table>tbody>tr>td {
     border-top: 1px dashed #ddd;
     vertical-align: middle;
+}
+.add-friend {
+    display: none;
 }

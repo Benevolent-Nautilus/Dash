@@ -55,6 +55,11 @@ var friendsStore = Reflux.createStore({
     this.trigger(_requests);
   },
 
+  sendFriendRequest: function(email) {
+    console.log(email);
+    
+  },
+
   addFriend: function(friend) {
     _friends.push(friend[0]);
     this.trigger(_friends);

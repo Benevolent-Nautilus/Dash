@@ -1,4 +1,5 @@
 'use strict';
+var $ = jQuery;
 // Router
 var Router = require('react-router');
 // Actions
