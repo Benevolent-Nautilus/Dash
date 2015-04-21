@@ -455,13 +455,19 @@ h4 {
 }
 
 .challenge-stat {
-    background-size: auto 40%;
-    border: 0px;
-    border-radius: 5px;
-    margin: 5px;
+    border: 1px solid;
+    width: 60%;
+    margin: 0px auto;
 }
 
-.search-friends {
+.challenge-stat:hover {
+    border: 2px solid;
+}
+
+.challengeMonster {
+    width: 10%;
+    margin: 30px;
+}.search-friends {
   font-family:  "museo-sans", sans-serif, "Helvetica";
 }
 

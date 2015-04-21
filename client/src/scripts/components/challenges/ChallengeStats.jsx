@@ -4,18 +4,21 @@ var Reflux = require('reflux');
 var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
-
+var ChallengeStat = require('../../components/challenges/ChallengeStat');
+var ChallengeStore = require('../../stores/challengeStore');
 
 var ChallengeStats = React.createClass({
   render: function() {
     return (
       <div>
         <ul>
-          {this.prop.data.map(function(stat){
-            return <li key=(stat.id)> <ChallengeStat data= { stat }>
+          {this.props.data.map(function(stat){
+            return <ul key={stat.uid}> <ChallengeStat data= { stat } /> </ul>
           })}
         </ul>
       </div>
     );
-  };
+  }
 });
+
+module.exports = ChallengeStats;

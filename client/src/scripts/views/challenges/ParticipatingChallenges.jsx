@@ -2,54 +2,28 @@
 var Reflux = require('reflux');
 // Router
 var Router = require('react-router');
+var ChallengeStore = require('../../stores/challengeStore')
 
 // Components
 var Spinner = require('../../components/spinner');
-var ChallengeStats = require('../../components/challenges/ChallengeStat');
+var ChallengeStats = require('../../components/challenges/ChallengeStats');
 var Footer = require('../../components/Profile/Footer');
-
-var involvedChallenges = [
-  {
-    name: 'Everest',
-    totalSteps: 100000,
-    currentSteps: 82009,
-    friends: [
-      {name: 'Dennis',
-       currentSteps: 79004
-      },
-      {name: 'Jason',
-      currentSteps: 85000
-      }
-    ],
-  },
-  {
-    name: "Frodo's Journey to Mount Doom",
-    totalSteps: 17000000,
-    currentStesp: 6282009,
-    friends: [
-      {name: 'Dennis',
-       currentSteps: 5679004
-      },
-      {name: 'Jason',
-      currentSteps: 689902
-      }
-
-    ]
-  }
-]
-
 
 var ParticipatingChallenges = React.createClass({
   getInitialState: function() {
-    return { data: involvedChallenges };
+    return { data: ChallengeStore.getCurrentChallenge() };
   }, 
 
+  componentDidMount: function(){
+    ChallengeStore.refresh();
+  },
+
   render: function() {
-    console.log("Participating Challenges");
     return (
       <div className="text-center">
-      
+        <h2 className="setup">Here Are Your Current Challenges </h2>
         < ChallengeStats data= { this.state.data } />
+        <img className="challengeMonster" src="../../images/challengeMonster.png" />
         < Footer />
         
       </div>
