@@ -13,7 +13,7 @@ var ChallengeStats = React.createClass({
       <div>
         <ul>
           {this.props.data.map(function(stat){
-            return <ul key={stat.id}> <ChallengeStat data= { stat } /> </ul>
+            return <ul key={stat.uid}> <ChallengeStat data= { stat } /> </ul>
           })}
         </ul>
       </div>
