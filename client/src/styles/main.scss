@@ -1,5 +1,6 @@
 body {
     background-color: #FCFCFC;
+    font-family: "museo-sans", sans-serif, "Helvetica";
 }
 
 #app {
@@ -652,7 +653,7 @@ a.list-group-item-success {
     width: 40px;
     height: 40px; 
     margin: 5px 0px 5px 20px;
-    border: 2px dashed #009A8B;
+    border: 2px solid #B3CBC9;
     background-color: transparent;
     /* width and height can be anything, as long as they're equal */
 }
@@ -662,4 +663,32 @@ a.list-group-item-success {
 }
 .add-friend {
     display: none;
+}
+.challenges {
+    padding-top: 15px;
+}
+.challenges h2 {
+    color: #6fc4bb;
+    margin: 0px;
+    padding: 0px;
+    font-weight: 200;
+}
+.challenges img {
+    width: 230px;
+    height: auto;
+    margin-top: 30px;
+}
+.edged-width {
+    width: 90%
+}
+.challenges-btn {
+    padding: 20px;
+    border: 2px solid #6FC4BB;
+    background-color: transparent;
+}
+.challenges-btn:hover {
+    background-color: #6FC4BB;
+}
+.challenges-btn:hover h2{
+    color: #FFF;
 }
