@@ -14,3 +14,4 @@ deploy:
   app: dash-io
   on:
     repo: Benevolent-Nautilus/Benevolent-Nautilus
+  skip_cleanup: true
