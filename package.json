@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./server/app.js",
-    "test": "jest"
+    "test": "gulp serverLint"
   },
   "repository": {
     "type": "git",

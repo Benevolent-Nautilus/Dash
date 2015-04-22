@@ -125,6 +125,31 @@ gulp.task('scripts', function() {
   return rebundle();
 });
 
+//Run Script once
+gulp.task('script', function() {
+  var bundler = browserify({
+    basedir: __dirname,
+    noparse: ['react/addons', 'reflux', 'fastclick', 'react-router'],
+    entries: [path.ENTRY_POINT],
+    transform: [reactify],
+    extensions: ['.jsx'],
+    debug: true,
+    cache: {},
+    packageCache: {},
+    fullPaths: true
+  });
+  var start = Date.now();
+  return bundler.bundle()
+    .on('error', onError)
+    .pipe(source('app.js'))
+    .pipe(prod ? $.streamify($.uglify()) : $.util.noop())
+    .pipe(gulp.dest(path.DIST_SCRIPT))
+    .pipe($.notify(function() {
+      console.log('Bundling Complete - ' + (Date.now() - start) + 'ms');
+    }))
+    .pipe(livereload());
+});
+
 
 // HTML
 gulp.task('html', function() {
@@ -213,9 +238,9 @@ gulp.task('mongoclean', function() {
     'stop-mongo');
 });
 
-// Clean
+// Delete the whole dist folder
 gulp.task('clean', function(cb) {
-  del([path.DIST_CSS, path.DIST_SCRIPT, path.DIST_IMAGE], cb);
+  del([path.DIST_HTML], cb);
 });
 
 //Build local environment for testing/development
@@ -232,7 +257,12 @@ gulp.task('localtest', function(callback) {
 });
 
 // Default task - DEPRECATING
-gulp.task('default', ['clean', 'html', 'styles', 'images', 'scripts']);
+gulp.task('default', function(callback) {
+  runSequence(
+    'clean', 
+    ['html', 'styles', 'images', 'script']
+    );
+});
 
 
 // Watch
@@ -241,5 +271,4 @@ gulp.task('watch', function() {
   gulp.watch(path.SRC_HTML, ['clientLint', 'html']);
   gulp.watch(path.SRC_CSS, ['clientLint', 'styles']);
   gulp.watch(path.SRC_IMAGE, ['clientLint', 'images']);
-  gulp.watch(path.SRC_SCRIPT, ['clientLint', 'scripts']);
 });
