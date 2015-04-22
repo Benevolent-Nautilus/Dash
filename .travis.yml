@@ -3,6 +3,10 @@ node_js:
 - '0.10'
 services:
 - mongodb
+before-install:
+- npm install -g gulp
+script:
+- gulp
 deploy:
   provider: heroku
   api_key:
