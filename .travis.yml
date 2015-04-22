@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - '0.8'
-  - '0.10'
+- '0.10'
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: Q9hfkM4L1Emh84pU5j5hknT1Pm+YYpM8POOinGsgIGLeBs7Vj4dPrjaumf2K4QiwARSLKgWnqpawXpU5NXETghW06DOErGVHdxwKHGhiQTpBdZo+0r44LS6ftquFh88EC2pusqgo4lRkjDxyIsxfzkXS/t+0m5ej0+GeF7d2amQ=
+  app: dash-io
+  on:
+    repo: Benevolent-Nautilus/Benevolent-Nautilus
