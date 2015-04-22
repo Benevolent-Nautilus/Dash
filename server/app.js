@@ -14,7 +14,7 @@ var cookieParser = require('cookie-parser');
 var path = require('path');
 var app = express();
 var bodyParser = require('body-parser');
-var port = 8080;
+var port = process.env.PORT || 8080;
 
 require('./db/db.config');
 
