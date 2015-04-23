@@ -8,8 +8,6 @@
 var Reflux = require('reflux');
 // Actions
 var actions = require('../../actions/actions');
-// Stores
-var loginStore = require('../../stores/loginStore');
 // Components
 var Spinner = require('../../components/spinner');
 var Footer = require('../../components/profile/Footer');
@@ -37,7 +35,7 @@ var Challenges = React.createClass({
           <h2>Challenges!</h2>
           <img src="../../../images/current-challenge-monster.png" />
           <ChallengeButton type="CurrentChallenge" name="Current Challenges" />
-          <ChallengeButton type="JoinChallenges" name="Join Challenges" />
+          <ChallengeButton type="ChooseChallenge" name="Choose Challenges" />
         </div>
         <Footer />
       </div>

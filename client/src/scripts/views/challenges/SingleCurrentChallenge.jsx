@@ -3,7 +3,7 @@ var Reflux = require('reflux');
 // Router
 var Router = require('react-router');
 // Store
-var ChallengesStore=require('../../stores/challengesStore');
+var ChallengesStore = require('../../stores/challengesStore');
 // Components
 var Spinner = require('../../components/spinner');
 var Header = require('../../components/profile/Header');

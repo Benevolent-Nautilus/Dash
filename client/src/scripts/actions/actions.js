@@ -11,7 +11,8 @@ var actions = Reflux.createActions([
     'addFriend',
     'vetRequest',
     'sendFriendRequest',
-    'fetchSingleChallenge'
+    'fetchSingleChallenge',
+    'joinChallenge'
   ]);
 
 

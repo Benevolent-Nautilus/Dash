@@ -41,7 +41,7 @@ var path = {
   DIST_CSS: 'client/dist/styles',
   DIST_SCRIPT: 'client/dist/scripts',
   DIST_HTML: 'client/dist',
-  DIST_IMAGE:'client/dist/images',
+  DIST_IMAGE:'./client/dist/images',
   // back end
   LOCAL_CONFIG: './server/config/local.env'
 };

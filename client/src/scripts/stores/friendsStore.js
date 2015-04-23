@@ -23,7 +23,6 @@ var friendsStore = Reflux.createStore({
      async: false,
      dataType: 'json',
      success: function(data) {
-        console.log(data);
         _friends = data.friends;
         _requests = data.requests;
      }.bind(this),
@@ -57,7 +56,6 @@ var friendsStore = Reflux.createStore({
 
   sendFriendRequest: function(email) {
     console.log(email);
-    
   },
 
   addFriend: function(friend) {

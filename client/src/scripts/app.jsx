@@ -98,7 +98,8 @@ var Challenges = require('./views/challenges/challenges');
 var CurrentChallenge = require('./views/challenges/CurrentChallenges');
 var SingleCurrentChallenge = require('./views/challenges/SingleCurrentChallenge');
 // New Challenges
-var ChooseChallenge = require('./views/challenges/ChooseChallenge');
+var JoinChallenge = require('./views/Challenges/JoinChallenge');
+var InviteFriends = require('./views/Challenges/InviteFriends');
 
 /**
 @description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
@@ -147,7 +148,8 @@ var routes = (
     <Route name="Challenges" path="/challenges" handler={ Challenges } />
     <Route name="CurrentChallenge" path="/current-challenges" handler={ CurrentChallenge } />
     <Route name="SingleCurrentChallenge" path="/current-challenges/:challengeid" handler={ SingleCurrentChallenge } />
-    <Route name="ChooseChallenge" path="/choose-challenges" handler={ ChooseChallenge } />
+    <Route name="JoinChallenge" path="/join-challenges" handler={ JoinChallenge } />
+    <Route name="SelectChallenge" path="/join-challenges/:challengeid" handler={ InviteFriends } />
     <DefaultRoute name="Home" handler={ Login } />
   </Route>
 );
