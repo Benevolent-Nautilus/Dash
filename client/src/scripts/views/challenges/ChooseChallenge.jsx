@@ -6,7 +6,7 @@ var ChallengeStore = require('../../stores/challengeStore')
 
 // Components
 var Spinner = require('../../components/spinner');
-var Footer = require('../../components/Profile/Footer');
+var Footer = require('../../components/profile/Footer');
 var AvailableChallenges = require('../../components/challenges/AvailableChallenges');
 
 var NewChallenges = React.createClass({
