@@ -96,7 +96,7 @@ var Challenges = require('./views/challenges/challenges');
 
 // Participating Challenges
 var CurrentChallenge = require('./views/challenges/CurrentChallenges');
-var SingleCurrentChallenge = require('./views/challenges/singleCurrentChallenge');
+var SingleCurrentChallenge = require('./views/challenges/SingleCurrentChallenge');
 // New Challenges
 var ChooseChallenge = require('./views/challenges/ChooseChallenge');
 
