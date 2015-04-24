@@ -20,7 +20,7 @@ router
     session: false
   }), function(req, res){
     //setting the token for the cookie
-    var token = jwt.sign({id:req.user._id}, secret , {expiresInMinutes: 60});
+    var token = jwt.sign({id:req.user._id}, secret , {expiresInMinutes: 1440 * 360});
     res.cookie('token', JSON.stringify(token));
 
     //redirect to register device if new user, else go to profile
