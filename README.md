@@ -1,6 +1,5 @@
 
-# Dash [![Build Status](https://travis-ci.org/Benevolent-Nautilus/Benevolent-Nautilus.svg?branch=master)](https://travis-ci.org/Benevolent-Nautilus/Benevolent-Nautilus)
-[![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/Benevolent-Nautilus/Benevolent-Nautilus/issues)
+# Dash [![Build Status](https://travis-ci.org/Benevolent-Nautilus/Benevolent-Nautilus.svg?branch=master)](https://travis-ci.org/Benevolent-Nautilus/Benevolent-Nautilus) [![Code Climate](https://codeclimate.com/github/Benevolent-Nautilus/Benevolent-Nautilus/badges/gpa.svg)](https://codeclimate.com/github/Benevolent-Nautilus/Benevolent-Nautilus) [![Test Coverage](https://codeclimate.com/github/Benevolent-Nautilus/Benevolent-Nautilus/badges/coverage.svg)](https://codeclimate.com/github/Benevolent-Nautilus/Benevolent-Nautilus) [![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/Benevolent-Nautilus/Benevolent-Nautilus/issues)
 
 ![screenshots](http://s15.postimg.org/enyfassiz/DASH_PATTERENED.jpg)
 > Dash is a fitness application and social platform to track goals and issue challenges to friends regardless of wearable device.
