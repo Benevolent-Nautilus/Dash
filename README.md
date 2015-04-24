@@ -1,12 +1,13 @@
-# Project Name
+
+# Dash [![Build Status](https://travis-ci.org/Benevolent-Nautilus/Benevolent-Nautilus.svg?branch=master)](https://travis-ci.org/Benevolent-Nautilus/Benevolent-Nautilus)
 
 > Pithy project description
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Derek Van Dyke
+  - __Scrum Master__: Dennis Yang
+  - __Development Team Members__:  Jason Chang, Scott Kao
 
 ## Table of Contents
 
