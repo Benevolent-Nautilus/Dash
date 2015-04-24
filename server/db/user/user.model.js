@@ -10,6 +10,7 @@ var userSchema = new Schema({
     first: {type: String},
     last: {type: String}
   },
+  profileImage: {type: String},
   emailAddress: {type: String, unique: true},
   fitnessDevice: {
     deviceType: {type: String},
@@ -40,7 +41,7 @@ var userSchema = new Schema({
     totalSteps: {type: Number}
   },
   friendRequests:[{
-    id: {type:Schema.Types.ObjectId, ref: 'User'},
+    _id: {type:Schema.Types.ObjectId, ref: 'User'},
     isAccepted: {type: Boolean}
   }],
   friends: [{type: Schema.Types.ObjectId, ref: 'User'}],
