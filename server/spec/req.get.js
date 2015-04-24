@@ -1,6 +1,6 @@
-var express = require('express')
-  , request = require('supertest')
-  , assert = require('assert');
+var express = require('express');
+var request = require('supertest');
+var assert = require('assert');
 
 describe('req', function(){
   describe('.get(field)', function(){
