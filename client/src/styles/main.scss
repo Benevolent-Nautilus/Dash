@@ -692,3 +692,12 @@ a.list-group-item-success {
 .challenges-btn:hover h2{
     color: #FFF;
 }
+
+.transition-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.transition-enter.transition-enter-active {
+  opacity: 1;
+}

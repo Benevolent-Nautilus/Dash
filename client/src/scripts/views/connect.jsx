@@ -16,6 +16,7 @@ var Header = require('../components/Profile/Header');
 var Jawbone = require('../components/Devices/Jawbone');
 var Fitbit = require('../components/Devices/Fitbit');
 var Other = require('../components/Devices/Other');
+
 /**
 @description This is where users will be able to set up their application.
 Keep an eye out for <Fitbit /> and <Jawbone /> 
