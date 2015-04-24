@@ -7,6 +7,9 @@ before-install:
 - npm install -g gulp
 script:
 - gulp
+cache:
+  directories:
+    - node_modules
 deploy:
   provider: heroku
   api_key:
