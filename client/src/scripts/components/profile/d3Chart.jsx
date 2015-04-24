@@ -2,7 +2,7 @@ var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 
-var Radial = require('./Radial');
+var Radial = require('./radial');
 
 D3Chart = {};
 
