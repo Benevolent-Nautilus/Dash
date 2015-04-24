@@ -18,17 +18,17 @@ var userSchema = new Schema({
   },
   oauth: {
     facebook: {
-      id: {type: String, unique: true},
+      id: {type: String, sparse: true},
       token: {type: String},
       tokenSecret: {type: String}
     },
     google: {
-      id: {type: String, unique: true},
+      id: {type: String, sparse: true},
       token: {type: String},
       tokenSecret: {type: String}
     },
     twitter: {
-      id: {type: String, unique: true},
+      id: {type: String, sparse: true},
       token: {type: String},
       tokenSecret: {type: String}
     }
