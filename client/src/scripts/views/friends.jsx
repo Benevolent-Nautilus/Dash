@@ -9,10 +9,10 @@ var actions = require('../actions/actions');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../components/spinner');
-var Header = require('../components/profile/Header');
-var Footer = require('../components/profile/Footer');
-var FriendRequests = require('../components/Friends/FriendRequests');
-var FriendsTable = require('../components/Friends/FriendsTable');
+var Header = require('../components/profile/header');
+var Footer = require('../components/profile/footer');
+var FriendRequests = require('../components/friends/friendRequests');
+var FriendsTable = require('../components/friends/friendsTable');
 
 // Stores
 var friendsStore = require('../stores/friendsStore');

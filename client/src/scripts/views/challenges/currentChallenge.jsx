@@ -6,11 +6,11 @@ var Router = require('react-router');
 var ChallengesStore = require('../../stores/challengesStore');
 // Components
 var Spinner = require('../../components/spinner');
-var Header = require('../../components/Profile/Header');
-var Footer = require('../../components/Profile/Footer');
-var CurrentChallengeHeader = require('../../components/Challenges/CurrentChallengeHeader');
-var Progress = require('../../components/Challenges/CurrentChallengeProgress');
-var ChallengeTable = require('../../components/Challenges/ChallengeTable');
+var Header = require('../../components/profile/header');
+var Footer = require('../../components/profile/footer');
+var CurrentChallengeHeader = require('../../components/challenges/currentChallengeHeader');
+var Progress = require('../../components/challenges/currentChallengeProgress');
+var ChallengeTable = require('../../components/challenges/challengeTable');
 
 
 var SingleCurrentChallenge = React.createClass({

@@ -1,10 +1,10 @@
-
+'use strict';
 // Router
 var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 // Components
-var CurrentChallenge = require('./CurrentChallenge');
+var CurrentChallenge = require('./currentChallenge');
 
 var CurrentChallengesList = React.createClass({
   render: function() {

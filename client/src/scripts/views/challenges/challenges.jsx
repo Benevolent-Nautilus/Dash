@@ -7,9 +7,9 @@ var ChallengesStore = require('../../stores/challengesStore');
 // Components
 var Spinner = require('../../components/spinner');
 
-var CurrentChallengesList = require('../../components/Challenges/CurrentChallengesList');
-var Header = require('../../components/Profile/Header');
-var Footer = require('../../components/Profile/Footer');
+var ChallengesList = require('../../components/challenges/currentChallengesList');
+var Header = require('../../components/profile/header');
+var Footer = require('../../components/profile/footer');
 
 var Challenges = React.createClass({
   getInitialState: function() {
@@ -23,7 +23,7 @@ var Challenges = React.createClass({
           <div className="user-progress">
             <h4 className="title">Your Challenges</h4>
           </div>
-          <CurrentChallengesList data={this.state.data} />
+          <ChallengesList data={this.state.data} />
         < Footer />
       </div>
     );

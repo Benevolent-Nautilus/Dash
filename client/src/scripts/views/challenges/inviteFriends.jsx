@@ -11,10 +11,10 @@ var Router = require('react-router');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../../components/spinner');
-var Header = require('../../components/Profile/Header');
-var Footer = require('../../components/Profile/Footer');
-var FriendRequests = require('../../components/Friends/FriendRequests');
-var InviteFriendsTable = require('../../components/Friends/InviteFriendsTable');
+var Header = require('../../components/profile/header');
+var Footer = require('../../components/profile/footer');
+var FriendRequests = require('../../components/friends/friendRequests');
+var InviteFriendsTable = require('../../components/friends/inviteFriendsTable');
 
 // Stores
 var friendsStore = require('../../stores/friendsStore');

@@ -1,10 +1,8 @@
 'use strict';
-// Router
-var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 // Components
-var TotalSteps = require('./Tracker/TotalSteps');
+var TotalStepsTracker = require('./tracker/totalStepsTracker');
 
 var Tracker = React.createClass({
   propTypes: {
@@ -15,7 +13,7 @@ var Tracker = React.createClass({
     var totalSteps = this.props.totalSteps;
     return (
         <div className="row">
-          <TotalSteps data= { totalSteps } />
+          <TotalStepsTracker data= { totalSteps } />
         </div>
     );
   }

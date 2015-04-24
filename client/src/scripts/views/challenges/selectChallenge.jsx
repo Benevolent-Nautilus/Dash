@@ -7,9 +7,9 @@ var ChallengesStore = require('../../stores/challengesStore')
 
 // Components
 var Spinner = require('../../components/spinner');
-var Header = require('../../components/Profile/Header');
-var Footer = require('../../components/Profile/Footer');
-var ChallengeList = require('../../components/Challenges/ChallengeList');
+var Header = require('../../components/profile/header');
+var Footer = require('../../components/profile/footer');
+var ChallengeList = require('../../components/challenges/challengeList');
 
 var JoinChallenge = React.createClass({
   mixins: [Reflux.connect(ChallengesStore, 'data')],

@@ -89,14 +89,14 @@ var Connect = require('./views/connect');
 var Profile = require('./views/profile');
 
 // Friends
-var Friends = require('./views/Friends');
+var Friends = require('./views/friends');
 
 // Challenges
-var Challenges = require('./views/Challenges/challenges');
-var SingleCurrentChallenge = require('./views/Challenges/SingleCurrentChallenge');
+var Challenges = require('./views/challenges/challenges');
+var CurrentChallenge = require('./views/challenges/currentChallenge');
 // New Challenges
-var JoinChallenge = require('./views/Challenges/JoinChallenge');
-var InviteFriends = require('./views/Challenges/InviteFriends');
+var SelectChallenge = require('./views/challenges/selectChallenge');
+var InviteFriends = require('./views/challenges/inviteFriends');
 
 /**
 @description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
@@ -112,13 +112,7 @@ var Dash = React.createClass({
   },
 
   render: function() {
-    var cx = React.addons.classSet;
-
-    var headerCx = cx({
-      'header': true,
-      'panel-open': this.state.showPanel
-    });
-
+    
     return (
       <div className="wrapper full-height">
         <main id="content" className="full-height inner">
@@ -143,9 +137,9 @@ var routes = (
     <Route name="Dashboard" path="/dashboard" handler={ Profile } />
     <Route name="Friends" path="/friends" handler={ Friends } />
     <Route name="Challenges" path="/challenges" handler={ Challenges } />
-    <Route name="SingleCurrentChallenge" path="/challenges/:challengeid" handler={ SingleCurrentChallenge } />
-    <Route name="JoinChallenge" path="/join-challenges" handler={ JoinChallenge } />
-    <Route name="SelectChallenge" path="/join-challenges/:challengeid" handler={ InviteFriends } />
+    <Route name="CurrentChallenge" path="/challenges/:challengeid" handler={ CurrentChallenge } />
+    <Route name="SelectChallenge" path="/join-challenge" handler={ SelectChallenge } />
+    <Route name="JoinChallenge" path="/join-challenge/:challengeid" handler={ InviteFriends } />
     <DefaultRoute name="Home" handler={ Login } />
   </Route>
 );

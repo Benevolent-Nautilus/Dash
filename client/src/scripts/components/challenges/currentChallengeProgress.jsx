@@ -1,3 +1,4 @@
+'use strict';
 // Reflux
 var Reflux = require('reflux');
 // Router

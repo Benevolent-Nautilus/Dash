@@ -7,9 +7,9 @@ var Router = require('react-router');
 var actions = require('../../actions/actions');
 
 // Components
-var Chart = require('./Chart');
-var Tracker = require('./Tracker');
-var Competitions = require('./Competitions');
+var Chart = require('./chart');
+var Tracker = require('./tracker');
+var Competitions = require('./competitions');
 
 var Dashboard = React.createClass({
 

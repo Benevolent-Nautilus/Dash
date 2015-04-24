@@ -5,7 +5,7 @@ var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 //Components
-var FriendRequest = require('./FriendRequest')
+var FriendRequest = require('./friendRequest')
 
 
 var Competition = React.createClass({
