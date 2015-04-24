@@ -8,13 +8,13 @@ var router = express.Router();
 router
   //facebook auth
   .get('/', passport.authorize('fitbit', {
-    failureRedirect: '/#/register',
+    failureRedirect: '/#/connect',
     session: false
   }))
 
   //callback for api
   .get('/callback', passport.authorize('fitbit', {
-    failureRedirect: '/#/register',
+    failureRedirect: '/#/connect',
     session: false
   }), function(req, res){
     res.redirect('/#/dashboard');
