@@ -23,7 +23,7 @@ Visit our app at : [www.dash.fitness](www.dash.fitness)
 
 ## Requirements
 
-- Node >= 0.10.x
+- Node 0.10.x
 - MongoDB 
 - Gulp
 
