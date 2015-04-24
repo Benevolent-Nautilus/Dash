@@ -7,9 +7,9 @@ var Router = require('react-router');
 var actions = require('../../actions/actions');
 
 // Components
-var Chart = require('./Chart');
-var Tracker = require('./Tracker');
-var Competitions = require('./Competitions');
+var Chart = require('./chart');
+var Tracker = require('./tracker');
+var Challenges = require('./challenges');
 
 var Dashboard = React.createClass({
 
@@ -21,8 +21,10 @@ var Dashboard = React.createClass({
         <Chart name = { this.props.data.name } 
               stepsToday = { this.props.data.stepsToday } 
               dailyGoal = { this.props.data.dailyGoal }/>
-        <Tracker totalSteps = { this.props.data.totalSteps }/>
-        <Competitions competitions= { this.props.data.competitions } />
+        <div className="fixed-tracker-dashboard">
+          <Tracker totalSteps = { this.props.data.totalSteps }/>
+          <Challenges competitions= { this.props.data.competitions } />
+        </div>
       </div>
     );
   }

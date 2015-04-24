@@ -78,7 +78,7 @@ Attached is 'Login', which is located in the /components folder. Login will hold
 Reason for why the files are in the components folder is mainly due to modulator amongst many views. 
 @type {Component}
 */
-var Login = require('./views/Login');
+var Login = require('./views/login');
 /** 
 Attached is 'Setup', which is located in the /views folder. Setup will hold a view for users to have new devices. 
 @type {View}
@@ -89,16 +89,14 @@ var Connect = require('./views/connect');
 var Profile = require('./views/profile');
 
 // Friends
-var Friends = require('./views/Friends');
+var Friends = require('./views/friends');
 
 // Challenges
 var Challenges = require('./views/challenges/challenges');
-
-// Participating Challenges
-var CurrentChallenge = require('./views/challenges/CurrentChallenges');
-var SingleCurrentChallenge = require('./views/challenges/SingleCurrentChallenge');
+var CurrentChallenge = require('./views/challenges/currentChallenge');
 // New Challenges
-var ChooseChallenge = require('./views/challenges/ChooseChallenge');
+var SelectChallenge = require('./views/challenges/selectChallenge');
+var InviteFriends = require('./views/challenges/inviteFriends');
 
 /**
 @description This is the main React Class used to delegate tasks throughout our app.  Everything will come here as the main point of interest. 
@@ -114,13 +112,7 @@ var Dash = React.createClass({
   },
 
   render: function() {
-    var cx = React.addons.classSet;
-
-    var headerCx = cx({
-      'header': true,
-      'panel-open': this.state.showPanel
-    });
-
+    
     return (
       <div className="wrapper full-height">
         <main id="content" className="full-height inner">
@@ -145,9 +137,9 @@ var routes = (
     <Route name="Dashboard" path="/dashboard" handler={ Profile } />
     <Route name="Friends" path="/friends" handler={ Friends } />
     <Route name="Challenges" path="/challenges" handler={ Challenges } />
-    <Route name="CurrentChallenge" path="/current-challenges" handler={ CurrentChallenge } />
-    <Route name="SingleCurrentChallenge" path="/current-challenges/:challengeid" handler={ SingleCurrentChallenge } />
-    <Route name="ChooseChallenge" path="/choose-challenges" handler={ ChooseChallenge } />
+    <Route name="CurrentChallenge" path="/challenges/:challengeid" handler={ CurrentChallenge } />
+    <Route name="SelectChallenge" path="/join-challenge" handler={ SelectChallenge } />
+    <Route name="JoinChallenge" path="/join-challenge/:challengeid" handler={ InviteFriends } />
     <DefaultRoute name="Home" handler={ Login } />
   </Route>
 );

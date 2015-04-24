@@ -1,16 +1,9 @@
 'use strict';
-// Reflux
-var Reflux = require('reflux');
-// Router
-var Router = require('react-router');
-// Actions
-var actions = require('../../actions/actions');
 
 var Footer = React.createClass({
   render: function() {
     return (
         <div className="footer">
-          <div className="container">
             <div className="row">
               <a href="#/dashboard">
                 <div className="col-xs-3 col-sm-3 footer-tab dashboard-tab">
@@ -29,7 +22,6 @@ var Footer = React.createClass({
                 </div>
               </a>
             </div>
-          </div>
         </div>
     );
   }

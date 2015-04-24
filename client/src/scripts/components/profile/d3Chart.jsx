@@ -19,7 +19,7 @@ D3Chart.create = function(el, state) {
         return goal-daily + " STEPS TO GO";
       })
       .onClick(this.refresh)
-      .diameter(350)
+      .diameter(330)
       .value(state.steps_today)
       .maxValue(state.daily_goal)
       .render();

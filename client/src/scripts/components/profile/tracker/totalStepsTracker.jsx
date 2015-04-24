@@ -1,7 +1,5 @@
 'use strict';
 
-// Router
-var Router = require('react-router');
 // Actions
 var actions = require('../../../actions/actions');
 
@@ -9,9 +7,6 @@ var TotalSteps = React.createClass({
   render: function() {
     return ( 
         <div className="tracker">
-          <div className="tracker-header">
-            <h4>Total Steps</h4>
-          </div>
           <div className="tracker-data">
             <h2>{ this.props.data }</h2>
             <span>Total Steps</span>

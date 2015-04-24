@@ -208,7 +208,7 @@ Radial.radialProgress = function (parent) {
     _height=_width;
     _fontSize=_width*.2;
     //controls the thickness of the parameter
-    _arc.outerRadius(_width/2 - 20);
+    _arc.outerRadius(_width/2 - 19);
     _arc.innerRadius(_width/2 * .85);
   }
 

@@ -12,7 +12,7 @@ var actions = require('../actions/actions');
 var loginStore = require('../stores/loginStore');
 // Components
 var Spinner = require('../components/spinner');
-var Header = require('../components/profile/Header');
+var Header = require('../components/profile/header');
 var Jawbone = require('../components/devices/jawbone');
 var Fitbit = require('../components/devices/fitbit');
 var Other = require('../components/devices/other');

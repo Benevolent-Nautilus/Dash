@@ -13,9 +13,9 @@ var actions = require('../actions/actions');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../components/spinner');
-var Dashboard = require('../components/profile/Dashboard');
-var Header = require('../components/profile/Header');
-var Footer = require('../components/profile/Footer');
+var Dashboard = require('../components/profile/dashboard');
+var Header = require('../components/profile/header');
+var Footer = require('../components/profile/footer');
 
 var profileStore = require('../stores/profileStore');
 
@@ -56,11 +56,11 @@ var Profile = React.createClass({
 
   render: function() {
     return (
-      <div className="content full-width">
-       < Header />
-       < Dashboard data= {this.state.profileData} />
-       < Footer />
-      </div>
+        <div className="content full-width">
+         < Header />
+         < Dashboard data= {this.state.profileData} />
+         < Footer />
+        </div>
     );
   }
 });
