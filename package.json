@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./server/app.js",
-    "postinstall":"gulp",
+    "postinstall": "gulp",
     "test": "gulp serverLint"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "mongodb": "^2.0.27",
     "mongoose": "^4.0.1",
     "morgan": "^1.5.2",
+    "newrelic": "^1.18.4",
     "passport": "^0.2.1",
     "passport-facebook": "^2.0.0",
     "passport-oauth": "^1.0.0",
