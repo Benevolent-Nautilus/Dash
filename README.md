@@ -25,7 +25,7 @@
 
 ## Getting Started
 
-![alt tag](https://files.slack.com/files-pri/T035PU4GY-F04H7DHHV/dash-patterened.jpg)
+![alt tag](http://s15.postimg.org/enyfassiz/DASH_PATTERENED.jpg)
 
 ## Requirements
 
