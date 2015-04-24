@@ -56,11 +56,11 @@ var Profile = React.createClass({
 
   render: function() {
     return (
-      <div className="content full-width">
-       < Header />
-       < Dashboard data= {this.state.profileData} />
-       < Footer />
-      </div>
+        <div className="content full-width">
+         < Header />
+         < Dashboard data= {this.state.profileData} />
+         < Footer />
+        </div>
     );
   }
 });

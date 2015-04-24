@@ -12,12 +12,11 @@ var Tracker = React.createClass({
   },
 
   render: function() {
+    var totalSteps = this.props.totalSteps;
     return (
-      <div className="container">
         <div className="row">
-          <TotalSteps data= { this.props.totalSteps } />
+          <TotalSteps data= { totalSteps } />
         </div>
-      </div>
     );
   }
 });

@@ -92,11 +92,8 @@ var Profile = require('./views/profile');
 var Friends = require('./views/Friends');
 
 // Challenges
-var Challenges = require('./views/challenges/challenges');
-
-// Participating Challenges
-var CurrentChallenge = require('./views/challenges/CurrentChallenges');
-var SingleCurrentChallenge = require('./views/challenges/SingleCurrentChallenge');
+var Challenges = require('./views/Challenges/challenges');
+var SingleCurrentChallenge = require('./views/Challenges/SingleCurrentChallenge');
 // New Challenges
 var JoinChallenge = require('./views/Challenges/JoinChallenge');
 var InviteFriends = require('./views/Challenges/InviteFriends');
@@ -146,8 +143,7 @@ var routes = (
     <Route name="Dashboard" path="/dashboard" handler={ Profile } />
     <Route name="Friends" path="/friends" handler={ Friends } />
     <Route name="Challenges" path="/challenges" handler={ Challenges } />
-    <Route name="CurrentChallenge" path="/current-challenges" handler={ CurrentChallenge } />
-    <Route name="SingleCurrentChallenge" path="/current-challenges/:challengeid" handler={ SingleCurrentChallenge } />
+    <Route name="SingleCurrentChallenge" path="/challenges/:challengeid" handler={ SingleCurrentChallenge } />
     <Route name="JoinChallenge" path="/join-challenges" handler={ JoinChallenge } />
     <Route name="SelectChallenge" path="/join-challenges/:challengeid" handler={ InviteFriends } />
     <DefaultRoute name="Home" handler={ Login } />

@@ -15,7 +15,6 @@ var friendsStore = Reflux.createStore({
 
   init: function() {
     this.fetchAllChallenges();
-    this.fetchCurrentChallenges();
   },
 
   fetchAllChallenges: function() {
@@ -47,6 +46,7 @@ var friendsStore = Reflux.createStore({
         console.error(xhr, status, err.toString());
      }.bind(this)
    });
+   return _currentChallenges;
   },
 
   fetchSingleChallenge: function(uid){
@@ -90,19 +90,6 @@ var friendsStore = Reflux.createStore({
       friends: []
     }
   },
-
-  vetRequest: function(uid, status){
-    for(var i=0; i < _requests.length; i++){
-      if(_requests[i].uid === uid){
-        var friend = _requests.splice(i, 1);
-        if(status === true) {
-          this.addFriend(friend);
-        }
-        break;
-      }
-    }
-    this.trigger(_requests);
-  }
 
 });
 

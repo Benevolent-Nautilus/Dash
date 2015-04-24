@@ -5,6 +5,16 @@ body {
 
 #app {
     background-color: #FFF;
+    margin-bottom: 100px;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.table-responsive {
+    margin-bottom: 85px;
 }
 
 .container-fluid>.navbar-header {
@@ -25,16 +35,11 @@ h2 {
 
 h4 { 
     font-family: "museo-sans", sans-serif, "Helvetica";
-    font-size: 16px;
+    font-size: 20px;
     margin: 0px;
     padding: 0px;
     letter-spacing: 2px;
     font-weight: 400;
-}
-
-.row { 
-    margin-left: 0px;
-    margin-right: 0px;
 }
 
 .full-width {
@@ -44,6 +49,11 @@ h4 {
 .top-bottom-margin {
     margin: 5px 0px 0px 0px;
 }
+
+
+
+
+/*  Outlined Button  */
 
 .btn.outline {
     background: none;
@@ -64,6 +74,15 @@ h4 {
     color: #007299;
     box-shadow: none;
 }
+.btn-lg {
+    padding: 8px 16px;
+    font-size: 10px;
+}
+
+
+
+
+/*  Navigation Bar  */
 
 .nav {
     font-family: "museo-sans", sans-serif, "Helvetica";
@@ -91,7 +110,6 @@ h4 {
     background-color: #FFF;
 }
 
-
 .navbar-brand img {
     height: 50px;
     width: auto;
@@ -100,8 +118,7 @@ h4 {
 }
 
 .navbar-brand img {
-    height: 23px;
-    margin-left: 7px;
+    height: 20px;
     width: auto;
 
 }
@@ -284,8 +301,8 @@ h4 {
 }
 
 .radial-svg {
-    width: 315px;
-    margin: 30px auto;
+    width: 300px;
+    margin: 5px auto;
     display: block;
 }
 
@@ -318,29 +335,12 @@ h4 {
 }
 
 .tracker {
-    height: 100px;
-    margin: 3px 20px;
-    padding: 0px;
+    height: 100%;
+    padding: 10px;
+    background-color: #193540;
     text-align: center;
-    border: 2px solid #00bcd4;
     display: block;
     position: relative;
-}
-
-.tracker-header {
-    width: 100%;
-    height: 30px;
-    margin: 0px auto;
-    padding: 0px;
-    text-align: center;
-    background-color: #00bcd4;
-    display: block;
-    position: relative;
-}
-
-.tracker-header h4 {
-    color: #FFF;
-    padding-top: 8px;
 }
 
 .tracker-data {
@@ -353,13 +353,13 @@ h4 {
 }
 
 .tracker-data h2 {
-    color: #659f99;
+    color: #FFF;
     margin-bottom: 0px;
     padding: 0px;
 }
 
 .tracker-data span {
-    color: #a1aeb3;
+    color: #A8BBC4;
     margin: 0px;
     padding:0px;
     font-size: 12px;
@@ -370,11 +370,13 @@ h4 {
 .competition-box {
     height: 75px;
     padding-top: 14px;
+    background-color: #00626f;
 }
 
 .competition-box h4{
-    color: #7d8f97;
+    color: #FFF;
     text-transform: uppercase;
+    font-size: 12px;
 }
 
 .competition-box img{
@@ -385,19 +387,19 @@ h4 {
 
 .competition-score {
     font-family:  "museo-sans", sans-serif, "Helvetica";
-    color: #7d8f97;
+    color: #FFF;
     text-align: right;
     display: block;
 }
 
 .competition-accumulated {
     font-family:  "museo-sans", sans-serif, "Helvetica";
-    color: #7d8f97;
+    color: #FFF;
     font-weight: 800;
 }
 .competition-score {
     font-family:  "museo-sans", sans-serif, "Helvetica";
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .text-right {
@@ -410,10 +412,19 @@ h4 {
 
 .competition-text {
     font-family:  "museo-sans", sans-serif, "Helvetica";
-    color: #7d8f97;
-    font-size: 12px;
+    color: #A8BBC4;
+    font-size: 10px;
+    padding: 5px 0px;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.fixed-tracker-dashboard {
+    position: fixed;
+    left: 0px;
+    bottom: 80px;
+    height: 150px;
+    width: 100%;
 }
 
 .footer {
@@ -551,6 +562,18 @@ ul {
     padding: 0;
 }
 
+.friends-steps {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    font-weight: 800;
+    background-color: #00bcd7;
+    display: block;
+    position: relative;
+}
+
 .friend-request {
     min-width: 300px;
     height: 25px;
@@ -581,7 +604,7 @@ ul {
     border: 0px;
     font-family: "museo-sans", sans-serif, "Helvetica";
     color: #CCC;
-    background-color: #2C4744;
+    background-color: #193540;
 }
 
 a.list-group-item {
@@ -590,11 +613,12 @@ a.list-group-item {
 }
 
 .list-group-item-success {
-    background-color: #009A8B;
+    color: #A8BBC4;
+    background-color: #0096a7;
 }
 
 .list-group-item-success:hover {
-    background-color: #009A8B;
+    background-color: #193540;
 }
 
 .panel {
@@ -611,12 +635,18 @@ a.list-group-item-success {
     font-size: 16px;
 }
 
+a.list-group-item-success:focus, a.list-group-item-success:hover {
+    color: #A8BBC4;
+    background-color: #00626f;
+}
+
 .circle {
     border-radius: 50%;
-    width: 15px;
-    height: 15px; 
-    margin-top: 7px;
+    width: 20px;
+    height: 20px; 
+    margin-top: 6px;
     background-color: #009A8B;
+    border: 2px solid #3d5a56;
     /* width and height can be anything, as long as they're equal */
 }
 
@@ -655,11 +685,10 @@ a.list-group-item-success {
 
 .profile-circle {
     border-radius: 50%;
-    width: 40px;
-    height: 40px; 
-    margin: 5px 0px 5px 20px;
-    border: 2px solid #B3CBC9;
-    background-color: transparent;
+    width: 60px;
+    height: 60px; 
+    margin: 0px;
+    border: 2px solid #9ab2b4;
     /* width and height can be anything, as long as they're equal */
 }
 .table>tbody>tr>td {
@@ -684,15 +713,20 @@ a.list-group-item-success {
     margin-top: 30px;
 }
 .edged-width {
-    width: 90%
+    width: 90%;
+}
+.half-width {
+    width: 50%;
 }
 .challenges-btn {
-    padding: 20px;
-    border: 2px solid #6FC4BB;
+    border: 2px solid #789AA2;
     background-color: transparent;
+    color: #789AA2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 .challenges-btn:hover {
-    background-color: #6FC4BB;
+    background-color: #789AA2;
 }
 .challenges-btn:hover h2{
     color: #FFF;
@@ -705,4 +739,150 @@ a.list-group-item-success {
 
 .transition-enter.transition-enter-active {
   opacity: 1;
+
+/* User Table */
+.user-details {
+    display: block;
+}
+.user-details span{
+    display: block;
+}
+
+.user-details .device{
+    color: #5d817f;
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: strong;
+    text-transform: uppercase;
+}
+
+/* Current Challenge View */
+
+/* Selecting Current Chalenge */
+
+.challenge-header {
+    height: 200px;
+    margin: 0;
+    padding: 2.5em;
+    background-color: #00bcd7;
+    display: block;
+}
+
+.challenge-header .info{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    text-align: center;
+}
+
+.challenge-header h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.challenge-header img{
+    width: 120px;
+    height: auto;
+    margin: 10px;
+}
+.challenge-header span{
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: block;
+}
+
+.user-progress {
+    height: 100%;
+    padding: 10px;
+    background-color: #193540;
+    text-align: right;
+    display: block;
+    position: relative;
+}
+
+.user-progress h4 {
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+}
+
+.user-progress .title {
+    color: #00bcd7;
+    text-transform: uppercase;
+}
+
+.user-steps {
+    color: #FFF;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.challenge-box {
+    height: 75px;
+    padding-top: 14px;
+}
+
+.challenge-box h4{
+    color: #00626F;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.challenge-box .competition-accumulated {
+  font-family: "museo-sans", sans-serif, "Helvetica";
+  color: #00626F;
+  font-weight: 800;
+}
+
+.challenge-box .competition-score {
+  color: #00626F;
+  text-align: right;
+}
+
+.challenge-box .competition-total{
+    color: #789AA2;
+    text-align: right;
+}
+
+.challenge-box img{
+    height: 20px;
+    margin: 3px auto;
+    width: auto;
+}
+
+ul.current-challenges li{
+    padding: 20px;
+    border-bottom: 1px dashed #ddd;
+}​
+
+ul.current-challenges li:last-child {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}​
+
+/* Leaderboard  */
+.leader-board-photo {
+    width: 100%;
+    display: block;
+}
+
+.leader-board-photo .position {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px; 
+    left: 55px;
+    background-color: #00bed3;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+    position: absolute;
+}
+
+.leader-board-photo .position span{
+    font-size: 12px;
+    color: #FFF;
+>>>>>>> Finished Redesign
 }

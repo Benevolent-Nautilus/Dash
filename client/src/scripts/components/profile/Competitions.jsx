@@ -12,12 +12,11 @@ var Competition = React.createClass({
   },
 
   render: function() {
+    var firstCompetition = this.props.competitions[0];
     return (
-        <div className="container">
           <div className="row">
-            <LatestCompetition data= { (this.props.competitions[0]) ? this.props.competitions[0] : 'Add Competition' } />
+            <LatestCompetition data= { (firstCompetition) ? firstCompetition : 'Add Competition' } />
           </div>
-        </div>
     );
   }
 });

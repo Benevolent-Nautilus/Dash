@@ -58,16 +58,30 @@ var Friends = React.createClass({
   render: function() {
     return (
       <div className="table-responsive search-friends table-hover" >
-        <Table className="table table-hover" id="table" filterable={['Name', 'Device']}>
-            {this.props.data.map(function(friend){
+        <Table className="table table-hover" id="table" filterable={ ['Name'] }>
+            { this.props.data.map(function(friend){
+              var profileImage = { 
+                        "background": 'url(' + friend.img + ')',
+                        "backgroundSize": "100%"
+                      };
+              var userSteps = (
+                          <span>
+                            { friend.steps }
+                          </span>
+                      );
               return (
                   <Tr className="search-tr" >
                       <Td column="">
-                        <div className="profile-circle"></div>
+                        <div className="profile-circle" style={ profileImage }>
+                        </div>
                       </Td>
-                      <Td column="Name" data={friend.name}>
+                      <Td column="Name">
+                        { friend.name }
                       </Td>
-                      <Td column="Device" data={friend.device}>
+                      <Td column="Steps">
+                        <span className="friends-steps">
+                          { friend.steps }
+                        </span>
                       </Td>
                   </Tr>
               )

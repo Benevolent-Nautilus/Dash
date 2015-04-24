@@ -56,10 +56,14 @@ var Friends = React.createClass({
   },
 
   render: function() {
+    var friendRequestsBar;
+    if (this.state.friendRequests.length > 0) {
+      friendRequestsBar = < FriendRequests data= {this.state.friendRequests} />;
+    }
     return (
       <div className="content full-width">
         < Header />
-        < FriendRequests data= {this.state.friendRequests} />
+        { friendRequestsBar }
         < FriendsTable data= {this.state.friendsList} />
         < Footer />
       </div>
