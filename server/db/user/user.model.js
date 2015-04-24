@@ -40,7 +40,7 @@ var userSchema = new Schema({
     totalSteps: {type: Number}
   },
   friendRequests:[{
-    id: {type:Schema.Types.ObjectId, ref: 'User'},
+    _id: {type:Schema.Types.ObjectId, ref: 'User'},
     isAccepted: {type: Boolean}
   }],
   friends: [{type: Schema.Types.ObjectId, ref: 'User'}],

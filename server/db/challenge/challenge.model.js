@@ -9,7 +9,7 @@ var challengeSchema = new Schema({
   name: {type: String},
   goal: {type: Number},
   participants: [{
-    userId : {type: Schema.Types.ObjectId, ref: 'User'},
+    _id : {type: Schema.Types.ObjectId, ref: 'User'},
     startSteps: {type: Number},
     endSteps: {type: Number}
   }],
