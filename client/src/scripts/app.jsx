@@ -71,7 +71,7 @@ Components are the backbone of React, every view should be devided into multiple
 Attached is 'Home', which is located in the /views folder.  Home has the main landing view. 
 @type {View}
 */
-var Home = require('./views/Home');
+var Home = require('./views/home');
 /** 
 Components are the backbone of React, every view should be devided into multiple bits.  
 Attached is 'Login', which is located in the /components folder. Login will hold the necessary information for users to Login. 
@@ -83,20 +83,20 @@ var Login = require('./views/Login');
 Attached is 'Setup', which is located in the /views folder. Setup will hold a view for users to have new devices. 
 @type {View}
 */
-var Connect = require('./views/Connect');
+var Connect = require('./views/connect');
 
 // Profile
-var Profile = require('./views/Profile');
+var Profile = require('./views/profile');
 
 // Friends
 var Friends = require('./views/Friends');
 
 // Challenges
-var Challenges = require('./views/challenges/Challenges');
+var Challenges = require('./views/challenges/challenges');
 
 // Participating Challenges
 var CurrentChallenge = require('./views/Challenges/CurrentChallenges');
-var SingleCurrentChallenge = require('./views/Challenges/SingleCurrentChallenge');
+var SingleCurrentChallenge = require('./views/Challenges/singleCurrentChallenge');
 // New Challenges
 var ChooseChallenge = require('./views/Challenges/ChooseChallenge');
 
