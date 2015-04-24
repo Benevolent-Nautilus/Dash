@@ -6,6 +6,7 @@
 <p>Open up a port to listen for requests</p>
 
 */
+require('newrelic');
 var express = require('express');
 var session = require('express-session');
 var morgan = require('morgan');
