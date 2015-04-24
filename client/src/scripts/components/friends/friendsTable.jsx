@@ -1,4 +1,3 @@
-'use strict';
 var $ = jQuery;
 var Reflux = require('reflux');
 var actions = require('../../actions/actions');

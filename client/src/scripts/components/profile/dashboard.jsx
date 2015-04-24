@@ -9,7 +9,7 @@ var actions = require('../../actions/actions');
 // Components
 var Chart = require('./chart');
 var Tracker = require('./tracker');
-var Competitions = require('./competitions');
+var Challenges = require('./challenges');
 
 var Dashboard = React.createClass({
 
@@ -23,7 +23,7 @@ var Dashboard = React.createClass({
               dailyGoal = { this.props.data.dailyGoal }/>
         <div className="fixed-tracker-dashboard">
           <Tracker totalSteps = { this.props.data.totalSteps }/>
-          <Competitions competitions= { this.props.data.competitions } />
+          <Challenges competitions= { this.props.data.competitions } />
         </div>
       </div>
     );
