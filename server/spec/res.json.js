@@ -1,6 +1,6 @@
-var express = require('express')
-  , request = require('supertest')
-  , assert = require('assert');
+var express = require('express');
+var request = require('supertest');
+var assert = require('assert');
 
 describe('res', function(){
   describe('.json(object)', function(){
@@ -106,9 +106,7 @@ describe('res', function(){
         var app = express();
 
         app.set('json replacer', function(key, val){
-          return '_' == key[0]
-            ? undefined
-            : val;
+          return '_' === key[0] ? undefined : val;
         });
 
         app.use(function(req, res){
