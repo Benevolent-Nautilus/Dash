@@ -1,7 +1,11 @@
 
 # Dash [![Build Status](https://travis-ci.org/Benevolent-Nautilus/Benevolent-Nautilus.svg?branch=master)](https://travis-ci.org/Benevolent-Nautilus/Benevolent-Nautilus)
 
-> Pithy project description
+> Dash is a fitness application and social platform to track goals and issue challenges to friends regardless of wearable device.
+
+> Visit our app at : www.dash.fitness
+
+![alt tag](http://i.giphy.com/IThjAlJnD9WNO.gif)
 
 ## Team
 
