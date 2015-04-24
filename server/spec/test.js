@@ -4,8 +4,8 @@ var request = require('supertest');
 var expect = require('expect');
 var should = require('should');
 var mongoose = require('mongoose');
-var User = require('../server/db/user/user.model')
-var app = require('./app');
+var User = require('../../server/db/user/user.model')
+var app = require('../../server/app');
 
 describe('GET requests', function(){
   it('to \'/\' sends you to the homepage', function(done) {
