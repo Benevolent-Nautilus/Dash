@@ -7,7 +7,7 @@ var ChallengeStore = require('../../stores/challengeStore')
 // Components
 var Spinner = require('../../components/spinner');
 var ChallengeStats = require('../../components/challenges/ChallengeStats');
-var Footer = require('../../components/Profile/Footer');
+var Footer = require('../../components/profile/Footer');
 
 var ParticipatingChallenges = React.createClass({
   getInitialState: function() {

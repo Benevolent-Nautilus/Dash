@@ -12,8 +12,8 @@ var actions = require('../actions/actions');
 var loginStore = require('../stores/loginStore');
 
 // Components
-var Banner = require('../components/Frontpage/Banner');
-var Info = require('../components/Frontpage/Info');
+var Banner = require('../components/frontpage/Banner');
+var Info = require('../components/frontpage/Info');
 var Spinner = require('../components/spinner');
 /**
 @description This is the Home class.  The Routes will basically load this as a view once the user goes to anywhere on the site with the path '/'. 

@@ -9,8 +9,8 @@ var actions = require('../actions/actions');
 // var userStore = require('../stores/userStore');
 // Components
 var Spinner = require('../components/spinner');
-var Header = require('../components/Profile/Header');
-var Footer = require('../components/Profile/Footer');
+var Header = require('../components/profile/Header');
+var Footer = require('../components/profile/Footer');
 var FriendRequests = require('../components/Friends/FriendRequests');
 var FriendsTable = require('../components/Friends/FriendsTable');
 

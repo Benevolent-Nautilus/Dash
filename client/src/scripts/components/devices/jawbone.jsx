@@ -10,6 +10,7 @@ var Router = require('react-router');
 var actions = require('../../actions/actions');
 // Components
 var Spinner = require('../spinner');
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 /**
 @description Class Dedicated to Jawbones API requests while rendering a button.

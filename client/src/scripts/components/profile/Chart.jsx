@@ -7,7 +7,7 @@ var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 
-var D3Chart = require('./D3Chart');
+var D3Chart = require('./d3Chart');
 
 var Chart = React.createClass({
   propTypes: {
