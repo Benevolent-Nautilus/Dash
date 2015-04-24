@@ -24,6 +24,7 @@ var facebookAuth = {
                 first:profile.name.givenName,
                 last: profile.name.familyName
               },
+              profileImage: 'http://graph.facebook.com/' + profile.id + '/picture?type=large',
               emailAddress: profile.emails[0].value,
               username: profile.username,
               oauth:{

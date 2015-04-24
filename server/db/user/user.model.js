@@ -10,6 +10,7 @@ var userSchema = new Schema({
     first: {type: String},
     last: {type: String}
   },
+  profileImage: {type: String},
   emailAddress: {type: String, unique: true},
   fitnessDevice: {
     deviceType: {type: String},
