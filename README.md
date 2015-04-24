@@ -15,7 +15,7 @@
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+1. [Getting Started](#getting-started)
 1. [Requirements](#requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
@@ -23,9 +23,9 @@
 1. [Team](#team)
 1. [Contributing](#contributing)
 
-## Usage
+## Getting Started
 
-> Some usage instructions
+![alt tag](https://files.slack.com/files-pri/T035PU4GY-F04H7DHHV/dash-patterened.jpg)
 
 ## Requirements
 
