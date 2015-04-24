@@ -78,7 +78,7 @@ Attached is 'Login', which is located in the /components folder. Login will hold
 Reason for why the files are in the components folder is mainly due to modulator amongst many views. 
 @type {Component}
 */
-var Login = require('./views/Login');
+var Login = require('./views/login');
 /** 
 Attached is 'Setup', which is located in the /views folder. Setup will hold a view for users to have new devices. 
 @type {View}
