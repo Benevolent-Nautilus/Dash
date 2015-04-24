@@ -14,7 +14,7 @@ var loginStore = require('../../stores/loginStore');
 var Spinner = require('../../components/spinner');
 var Footer = require('../../components/Profile/Footer');
 var Header = require('../../components/Profile/Header');
-var ChallengeButton = require('../../components/Challenges/ChallengeButton');
+var ChallengeButton = require('../../components/challenges/ChallengeButton');
 /**
 @description This is where users will be able to set up their application.
 Keep an eye out for <Fitbit /> and <Jawbone /> 

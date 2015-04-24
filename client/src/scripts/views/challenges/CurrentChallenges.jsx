@@ -6,7 +6,7 @@ var Router = require('react-router');
 var ChallengesStore=require('../../stores/challengesStore');
 // Components
 var Spinner = require('../../components/spinner');
-var CurrentChallengesList = require('../../components/Challenges/CurrentChallengesList');
+var CurrentChallengesList = require('../../components/challenges/CurrentChallengesList');
 var Header = require('../../components/Profile/Header');
 var Footer = require('../../components/Profile/Footer');
 
