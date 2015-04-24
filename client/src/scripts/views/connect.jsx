@@ -12,10 +12,10 @@ var actions = require('../actions/actions');
 var loginStore = require('../stores/loginStore');
 // Components
 var Spinner = require('../components/spinner');
-var Header = require('../components/Profile/Header');
-var Jawbone = require('../components/Devices/jawbone');
-var Fitbit = require('../components/Devices/fitbit');
-var Other = require('../components/Devices/other');
+var Header = require('../components/profile/Header');
+var Jawbone = require('../components/devices/jawbone');
+var Fitbit = require('../components/devices/fitbit');
+var Other = require('../components/devices/other');
 
 /**
 @description This is where users will be able to set up their application.
