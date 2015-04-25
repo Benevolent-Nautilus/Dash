@@ -266,7 +266,10 @@ gulp.task('localtest', function(callback) {
 gulp.task('default', function(callback) {
   runSequence(
     'clean', 
-    ['html', 'styles', 'images', 'script']
+    ['serverLint'],
+    ['html', 'styles', 'images', 'scripts'],
+    'clientLint',
+    'test'
     );
 });
 
