@@ -4,13 +4,12 @@
 @author Jason Chang, Scott Kao, Derek Van Dyk, Dennis Yang
 */
 'use strict';
+var $ = jQuery;
 // Reflux
 var Reflux = require('reflux');
 // Actions
 var actions = require('../actions/actions');
 // Stores
-var loginStore = require('../stores/loginStore');
-
 // Components
 var Spinner = require('../components/spinner');
 /**
@@ -29,9 +28,22 @@ var Home = React.createClass({
     return {};
   },
 
+  componentDidMount: function() {
+    var width = $( window ).width();
+    var height = $( window ).height();
+    $('#iphone-container').html('<object data="/#/login" />');
+    $('.full-page').css({'width': width +'px', 'height': height +'px' });
+  },
+
   render: function() {
     return (
-      <div class="full-width">
+      <div className="full-page">
+        <div className="full-width">
+          <div id="iphone">
+            <div id="iphone-container">
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
