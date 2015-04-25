@@ -6,7 +6,7 @@ var Radial = require('./radial');
 
 D3Chart = {};
 
-D3Chart.create = function(el, state) {
+D3Chart.create = function(el, state, width) {
   // Checks to see how far user is from daily goal.
   var goal = state.daily_goal;
   var daily = state.steps_today;
@@ -19,7 +19,7 @@ D3Chart.create = function(el, state) {
         return goal-daily + " STEPS TO GO";
       })
       .onClick(this.refresh)
-      .diameter(330)
+      .diameter(width - 20)
       .value(state.steps_today)
       .maxValue(state.daily_goal)
       .render();

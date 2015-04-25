@@ -144,7 +144,14 @@ h4 {
 }
 
 .navbar-collapse { 
-    background-color: #e5fbf9;
+    background-color: #00bcd7;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 10px;    
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -324,7 +331,7 @@ h4 {
 
 .radial-svg {
     width: 300px;
-    margin: 5px auto;
+    margin: 0 auto;
     display: block;
 }
 
@@ -930,6 +937,7 @@ ul.current-challenges li:last-child {
     width: 20px;
     height: 20px; 
     left: 55px;
+    top: 10px;
     background-color: #00bed3;
     vertical-align: middle;
     text-align: center;
