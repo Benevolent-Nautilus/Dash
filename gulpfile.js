@@ -24,6 +24,7 @@ var runSequence = require('run-sequence');
 var exec = require('child_process').exec;
 var mongobackup = require('mongobackup');
 var livereload = require('gulp-livereload');
+var mocha = require('gulp-mocha');
 
 //Remove
 var sass = require('gulp-sass');
@@ -188,6 +189,11 @@ gulp.task('serverLint', function() {
   .pipe(jshint.reporter('jshint-stylish'))
   .pipe(jshint.reporter('fail'));
 });
+
+gulp.task('test', function() {
+  return gulp.src('./server/spec/*.js')
+  .pipe(mocha({reporter: 'nyan'}))
+})
 
 
 //Create webserver

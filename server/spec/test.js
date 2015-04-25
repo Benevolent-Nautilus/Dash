@@ -20,7 +20,7 @@ describe('GET requests', function(){
       }
     });
   }); 
-  it('to other directories redirect you to the homepage', function(){
+  it('to other directories redirect you to the homepage', function(done){
     request(app)
     .get('/somethingElse')
     .expect(302)
