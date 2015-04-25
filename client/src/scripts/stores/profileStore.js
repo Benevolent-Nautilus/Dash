@@ -3,6 +3,7 @@
 var Reflux = require('reflux');
 var actions = require('../actions/actions');
 
+
 // Private variable to hold dashboard data
 var _userInfo = {};
 
