@@ -12,28 +12,7 @@ var controller = require('./controller');
 
 router
   .get('/', controller.getUserProfile)
-  .get('/friends', function(req, res, next){
-    var decode = jwt.verify(JSON.parse(req.cookies.token), config.secrets.session);
-    User.findOne({
-      '_id': decode.id
-    },
-    function(err, user){
-      var friends = {
-        friends: user.friends
-      }
-      res.send(friends);
-    });
-  })
-  .post('/addfriend', function(req, res, next){
-    var decode = jwt.verify(JSON.parse(req.cookies.token), config.secrets.session);
-    User.findOne({
-      'emailAddress': req.body.email
-    },
-    function(err, user){
-      user.friendRequests.push(user);
-      user.save();
-    });
-    res.send(201, 'Friend request sent');
-  })
+  .get('/friends', controller.getFriendProfile)
+  .post('/addfriend', controller.postAddFriend)
 
 module.exports = router;
