@@ -15,8 +15,13 @@ var Chart = React.createClass({
   },
   // Create
   componentDidMount: function() {
+    var width = $( window ).width();
     var el = this.getDOMNode();
-    D3Chart.create(el, this.getChartState());
+    D3Chart.create(el, this.getChartState(), width);
+    $('.radial-svg').css({ 'width' : (width * .87) + 'px', 
+                           'height' : (width * 1.13) + 'px',
+                           'margin-top': (width * 0.08) + 'px',
+                         });
   },
   // Update (Figure out what to do with this later)
   // componentDidUpdate: function() {
