@@ -192,8 +192,8 @@ gulp.task('serverLint', function() {
 
 gulp.task('test', function() {
   return gulp.src('./server/spec/*.js')
-  .pipe(mocha({reporter: 'nyan'}))
-})
+  .pipe(mocha());
+});
 
 
 //Create webserver
@@ -265,10 +265,9 @@ gulp.task('localtest', function(callback) {
 // Default task - DEPRECATING
 gulp.task('default', function(callback) {
   runSequence(
-    'clean', 
-    ['serverLint'],
+    'clean',
     ['html', 'styles', 'images', 'scripts'],
-    'clientLint',
+    ['serverLint','clientLint'],
     'test'
     );
 });
