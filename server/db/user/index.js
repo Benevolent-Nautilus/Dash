@@ -14,5 +14,6 @@ router
   .get('/', controller.getUserProfile)
   .get('/friends', controller.getFriendProfile)
   .post('/addfriend', controller.postAddFriend)
+  .post('/acceptfriend', controller.postAcceptFriend)
 
 module.exports = router;
