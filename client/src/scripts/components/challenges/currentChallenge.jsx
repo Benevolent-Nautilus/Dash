@@ -4,6 +4,8 @@ var Router = require('react-router');
 // Actions
 var actions = require('../../actions/actions');
 
+var ReactTransitionGroup = React.addons.CSSTransitionGroup;
+
 var CurrentChallenge = React.createClass({
 
   mixins: [
@@ -13,7 +15,7 @@ var CurrentChallenge = React.createClass({
   render: function(){
     var url = "#/challenges/" + this.props.uid;
     return (
-        <li key={this.props.uid}>
+        <li key={this.props.uid} className="fadeInUp animated">
           <a href={ url }>
             <div className="challenge-box">
               <div className="col-xs-4 col-md-4 line-right">

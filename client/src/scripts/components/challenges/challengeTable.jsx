@@ -19,7 +19,7 @@ var InviteFriends = React.createClass({
     var rowCount = 1;
     return (
       <div className="table-responsive search-friends table-hover" >
-        <Table className="table table-hover" id="table">
+        <Table className="table table-hover fadeInUp animated" id="table">
             {this.props.friends.map(function(friend){
               var profileImage = { 
                         "background": 'url(' + friend.img + ')',
@@ -46,7 +46,7 @@ var InviteFriends = React.createClass({
                       );
               rowCount++;
               return (
-                <Tr className="search-tr" key={friend.uid}>
+                <Tr className="search-tr fadeInDown animated" key={friend.uid}>
                   <Td column="">
                     { leaderBoardPhoto }
                   </Td>

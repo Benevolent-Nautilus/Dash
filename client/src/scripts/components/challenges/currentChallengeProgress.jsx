@@ -15,11 +15,11 @@ var ProgressBar = React.createClass({
     };
     return (
           <div className="user-progress">
-            <div className="profile-circle" style={ profileImg }>
+            <div className="profile-circle bounceIn animated" style={ profileImg }>
             </div>
-            <h4 className="title">You</h4>
+            <h4 className="title fadeIn animated">You</h4>
             <h4>{ this.props.currentSteps } / { this.props.goal }</h4>
-            <span className="user-steps">Total Steps</span>
+            <span className="user-steps fadeIn animated">Total Steps</span>
           </div>
     ) 
   }

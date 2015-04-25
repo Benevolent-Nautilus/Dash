@@ -14,14 +14,12 @@ var Friends = React.createClass({
   ],
 
   // When the View loads up, get the data from the Store
+  getInitialState: function() {
+    return { mounted: false };
+  },
   componentDidMount: function() {
+    this.setState({ mounted: true });
   },
-  // When there is a change in the store, the method recieves an updated note list and changes the state. 
-  onChange: function(friends) {
-    this.setState({
-    });
-  },
-
   requestFriendRequest: function(email){
     // console.log(email);
     actions.sendFriendRequest(email);
@@ -58,7 +56,7 @@ var Friends = React.createClass({
   render: function() {
     return (
       <div className="table-responsive search-friends table-hover" >
-        <Table className="table table-hover" id="table" filterable={ ['Name'] }>
+        <Table className="table table-hover fadeInDown animated" id="table" filterable={ ['Name'] }>
             { this.props.data.map(function(friend){
               var profileImage = { 
                         "background": 'url(' + friend.img + ')',
@@ -70,7 +68,7 @@ var Friends = React.createClass({
                           </span>
                       );
               return (
-                  <Tr className="search-tr" >
+                  <Tr className="search-tr fadeInUp animated" >
                       <Td column="">
                         <div className="profile-circle" style={ profileImage }>
                         </div>
