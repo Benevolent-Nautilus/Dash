@@ -10,24 +10,31 @@ var actions = require('../../actions/actions');
 var Chart = require('./chart');
 var Tracker = require('./tracker');
 var Challenges = require('./challenges');
+var CurrentChallenge = require('../challenges/currentChallenge');
 
 var Dashboard = React.createClass({
 
   mixins: [],
 
   render: function() {
+    console.log('competitions', this.props.data.competitions);
     return (
       <div className="Application">
-        <Chart name = { this.props.data.name } 
+        <div className="fixed-tracker-dashboard">
+          <Chart name = { this.props.data.name } 
               stepsToday = { this.props.data.stepsToday } 
               dailyGoal = { this.props.data.dailyGoal }/>
-        <div className="fixed-tracker-dashboard">
           <Tracker totalSteps = { this.props.data.totalSteps }/>
-          <Challenges competitions= { this.props.data.competitions } />
+          <ul className="current-challenges challenges-box-dash">
+            <CurrentChallenge key="12348" uid="12348" name="Everest" currentSteps="384729" goal="100000" amountOfFriends="5" />
+          </ul>
         </div>
       </div>
     );
   }
 });
 
+            // <CurrentChallenge key={stat.uid} uid={stat.uid} name={stat.name} currentSteps={stat.currentSteps} goal={stat.goal} amountOfFriends={stat.amountOfFriends} />
+
+// <Challenges competitions= { this.props.data.competitions } />
 module.exports = Dashboard;

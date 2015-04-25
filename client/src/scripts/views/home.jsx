@@ -38,7 +38,7 @@ var Home = React.createClass({
   render: function() {
     return (
       <div className="full-page">
-        <div className="full-width">
+        <div className="full-width fadeInUp animated">
           <div id="iphone">
             <div id="iphone-container">
             </div>
