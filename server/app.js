@@ -30,12 +30,6 @@ app.use(morgan('dev'));
 //set setting for oauth
 app.use(session({
   secret: config.secrets.session,
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    secure: false,
-    maxAge: new Date(Date.now() + 3600000),
-  }
 }));
 
 //cookie parser
