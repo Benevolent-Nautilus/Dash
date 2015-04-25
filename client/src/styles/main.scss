@@ -419,7 +419,7 @@ h4 {
 
 .tracker {
     height: 100%;
-    padding: 10px;
+    padding: 20px;
     background-color: #193540;
     text-align: center;
     display: block;
@@ -453,6 +453,23 @@ h4 {
 
 /* Dashboard - Competition Box - Updating Bootstrap Display Definition
    ========================================================================== */
+
+.challenges-box-dash {
+    background-color: #00626F;
+}
+
+.challenges-box-dash ul.current-challenges li{
+    border-bottom: null;
+}
+
+
+.challenges-box-dash .challenge-box  .competition-accumulated {
+    color: #FFF;
+}
+
+.challenges-box-dash .challenge-box h4 {
+    color: #FFF;
+}
 
 .competition-box {
     height: 75px;
