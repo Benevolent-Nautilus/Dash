@@ -15,12 +15,12 @@ var Chart = React.createClass({
   },
   // Create
   componentDidMount: function() {
-    var width = $( window ).width();
+    var width = 380;
     var el = this.getDOMNode();
-    D3Chart.create(el, this.getChartState(), width);
-    $('.radial-svg').css({ 'width' : (width * .87) + 'px', 
-                           'height' : (width * 1.13) + 'px',
-                           'margin-top': (width * 0.03) + 'px',
+    D3Chart.create(el, this.getChartState(), width - 20);
+    $('.radial-svg').css({ 'width' : (width - 74) + 'px', 
+                           'height' : (width * .96) + 'px',
+                           'margin-top': (width * 0.06) + 'px',
                          });
   },
   // Update (Figure out what to do with this later)
@@ -44,7 +44,7 @@ var Chart = React.createClass({
 
   render: function() {
     return (
-      <div className="chart-center fadeInUp animated">
+      <div className="chart-center bounceIn animated">
         <div className="Chart"></div>
       </div>
     );

@@ -18,10 +18,10 @@ var Dashboard = React.createClass({
   render: function() {
     return (
       <div className="Application">
-        <Chart name = { this.props.data.name } 
+        <div className="fixed-tracker-dashboard">
+          <Chart name = { this.props.data.name } 
               stepsToday = { this.props.data.stepsToday } 
               dailyGoal = { this.props.data.dailyGoal }/>
-        <div className="fixed-tracker-dashboard">
           <Tracker totalSteps = { this.props.data.totalSteps }/>
           <Challenges competitions= { this.props.data.competitions } />
         </div>

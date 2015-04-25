@@ -142,7 +142,7 @@ var routes = (
     <Route name="CurrentChallenge" path="/challenges/:challengeid" handler={ CurrentChallenge } />
     <Route name="SelectChallenge" path="/join-challenge" handler={ SelectChallenge } />
     <Route name="JoinChallenge" path="/join-challenge/:challengeid" handler={ InviteFriends } />
-    <DefaultRoute name="Home" handler={ Home } />
+    <DefaultRoute name="Home" handler={ Login } />
   </Route>
 );
 

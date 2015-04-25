@@ -1,3 +1,5 @@
+/* Body
+   ========================================================================== */
 body {
     background-color: #FCFCFC;
     font-family: "museo-sans", sans-serif, "Helvetica";
@@ -9,7 +11,8 @@ ul {
     padding: 0;
 }
 
-/*  Header Parameters */
+/* Header Display Definitions
+   ========================================================================== */
 h2 { 
     font-size: 32px;
     margin: 5px;
@@ -41,7 +44,8 @@ h4 {
     margin: 5px 0px 0px 0px;
 }
 
-/* Front Page iPhone Parameters */
+/* Front Page iPhone Home Display Definitions
+   ========================================================================== */
 #iphone {
     width: 430px;
     height: 868px;
@@ -63,7 +67,8 @@ h4 {
     display:
 }
 
-/*  Adjusted Bootsrap Parameters Parameters */
+/* Adjusted Bootstrap Display Definitions
+   ========================================================================== */
 #app {
     background-color: #FFF;
 }
@@ -79,6 +84,11 @@ h4 {
 
 .container-fluid>.navbar-header {
     margin: 0px;    
+    height: 40px;
+}
+
+.navbar { 
+    height: 40px;
 }
 
 .nav>li { 
@@ -86,7 +96,8 @@ h4 {
 }
 
 
-/*  Outlined Button  */
+/* Button Outline Display Definitions
+   ========================================================================== */
 
 .btn.outline {
     background: none;
@@ -116,19 +127,26 @@ h4 {
 
 
 
-/*  Navigation Bar  */
+/* Navigation Bar - Updating Bootstrap Display Definition
+   ========================================================================== */
 
 .nav {
     color: #6fc4bb;
-    height: 50px;
+    height: 40px;
 }
 .navbar {
     border: 0px;
     margin-bottom: 0px;
+    min-height: 40px;
 }
 
 .navbar-header {
+    width: 100%;
+    height: 40px;
+    top: 0;
     background-color: #00bcd4;
+    position: fixed;
+    z-index: 100;
 }
 
 .navbar-toggle {
@@ -146,13 +164,15 @@ h4 {
 
 .navbar-brand { 
     float: inherit;
+    margin: 0px;
+    padding: 0px;
 }
 
 .navbar-brand img {
     height: 50px;
     width: auto;
     float: null;
-    margin: 0px auto;
+    margin: 10px auto 0px;
 
 }
 
@@ -191,7 +211,8 @@ h4 {
 }
 
 
-/*  Login Page  */
+/* Login Page Display Definition
+   ========================================================================== */
 
 .login-page {
     height: 279px;
@@ -200,11 +221,12 @@ h4 {
     left: 50%;
     margin-top: -139px;
     margin-left: -194px;
+    padding: 40px;
     position: absolute;
 }
 
 .login-page img{
-    width: 80%;
+    width: 70%;
     height: auto;
     margin: 0px auto;
     display: block;
@@ -314,12 +336,13 @@ h4 {
 
 .fill { 
     min-height: 100%;
-    height: 670px;
+    height: 725px;
     background-color: #00bcd4;
 }
 
 
-/* DASHBOARD */
+/* Dashboard - Updating Bootstrap Display Definition
+   ========================================================================== */
 
 /* D3 Chart Styling */
 
@@ -391,7 +414,8 @@ h4 {
 }
 
 
-/* Dashboard Tracker */
+/* Dashboard Tracker Display Definition
+   ========================================================================== */
 
 .tracker {
     height: 100%;
@@ -427,7 +451,8 @@ h4 {
 }
 
 
-/* Competition Tracker Dashboard */
+/* Dashboard - Competition Box - Updating Bootstrap Display Definition
+   ========================================================================== */
 
 .competition-box {
     height: 75px;
@@ -482,23 +507,25 @@ h4 {
 }
 
 
-/* Dashboard Bottom Fixed Stats  */
+/* Dashboard - Enclosing Bottom Part Display Definition
+   ========================================================================== */
 
 .fixed-tracker-dashboard {
-    position: fixed;
-    left: 0px;
-    bottom: 80px;
-    height: 150px;
+    position: absolute;
+    background-color: #FFF;
+    padding-bottom: 55px;
+    top: 35px;
     width: 100%;
 }
 
-/* Footer  */
+/* Footer Display Definition
+   ========================================================================== */
 
 .footer {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    height: 80px;
+    height: 60px;
     width: 100%;
     border-top: 1px solid #f0f0f0;
     background: #FFF;
@@ -506,7 +533,7 @@ h4 {
 
 .footer-tab {
     border-left: 1px solid #f0f0f0;
-    height: 80px;
+    height: 60px;
     text-align: center;
     vertical-align: middle;
     position: relative;
@@ -514,7 +541,7 @@ h4 {
 }
 .footer-tab:first-child {
     border-left: transparent;
-    height: 80px;
+    height: 60px;
     display: table-cell;
 }
 .footer-tab:hover {
@@ -581,7 +608,8 @@ h4 {
 }
 
 
-/* Challenges Page STyling */
+/* Challenge Page Display Definition
+   ========================================================================== */
 
 .challenge-stat {
     border: 1px solid;
@@ -598,12 +626,13 @@ h4 {
     margin: 30px;
 }
 
-/* Default Reactable Mod Stylings */
+/* Customized Reactable Display Definition
+   ========================================================================== */
 
 .reactable-filter-input {
   display: block;
   width: 100%;
-  height: 34px;
+  height: 28px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -627,8 +656,8 @@ h4 {
 }
 
 
-
-/* Friends Table Added Styling */
+/* Friends Steps Display Definition
+   ========================================================================== */
 
 .friends-steps {
     width: 100%;
@@ -649,7 +678,8 @@ h4 {
 }
 
 
-/* Friend Request Drop Down + Modified Styling */
+/* Friend Request Drop Down + Modified Styling Definition
+   ========================================================================== */
 
 .friend-request {
     min-width: 300px;
@@ -676,7 +706,6 @@ h4 {
 
 .list-group-item {
     border: 0px;
-    font-family: "museo-sans", sans-serif, "Helvetica";
     color: #CCC;
     background-color: #193540;
 }
@@ -688,6 +717,7 @@ a.list-group-item {
 
 .list-group-item-success {
     color: #A8BBC4;
+    font-size: 14px;
     background-color: #0096a7;
 }
 
@@ -706,7 +736,7 @@ a.list-group-item-success {
     font-family: "museo-sans", sans-serif, "Helvetica";
     text-align: center;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 a.list-group-item-success:focus, a.list-group-item-success:hover {
@@ -766,17 +796,20 @@ a.list-group-item-success:focus, a.list-group-item-success:hover {
     padding-top: 15px;
 }
 
-/* Profile Circle  */
+
+/* Profile-Circle Drop Down + Modified Styling Definition
+   ========================================================================== */
 .profile-circle {
     border-radius: 50%;
-    width: 60px;
-    height: 60px; 
+    width: 55px;
+    height: 55px; 
     margin: 0px;
     border: 2px solid #9ab2b4;
 }
 
 
-/* Current Challenge View  */
+/* Current Challenge View Styling Definition
+   ========================================================================== */
 
 .challenges h2 {
     color: #6fc4bb;
@@ -964,13 +997,13 @@ ul.current-challenges li:last-child {
     border-radius: 50%;
     width: 20px;
     height: 20px; 
-    left: 55px;
-    top: 10px;
+    left: 40px;
+    top: 15px;
     background-color: #00bed3;
     vertical-align: middle;
     text-align: center;
     display: table-cell;
-    position: absolute;
+    position: relative;
 }
 
 .leader-board-photo .position span {
