@@ -1,5 +1,6 @@
 'use strict';
 
+// Required components
 var $ = jQuery;
 var Reflux = require('reflux');
 var actions = require('../actions/actions');
@@ -9,14 +10,17 @@ var _allChallenges = [];
 var _currentChallenges = [];
 var _singleChallenge = [];
 
+// Create friend store in Reflux
 var friendsStore = Reflux.createStore({
 
   listenables: actions,
 
+// Initialize
   init: function() {
     this.fetchAllChallenges();
   },
 
+// API call to fetch all available challenges for user to participate
   fetchAllChallenges: function() {
      $.ajax({
        // url: '/api/user/friends',
@@ -33,6 +37,7 @@ var friendsStore = Reflux.createStore({
      });
   },
 
+// API call to fetch challenges users are participating in
   fetchCurrentChallenges: function(){
    $.ajax({
      // url: '/api/user/friends',
@@ -49,6 +54,7 @@ var friendsStore = Reflux.createStore({
    return _currentChallenges;
   },
 
+// API call to fetch single challenge  
   fetchSingleChallenge: function(uid){
    $.ajax({
      // url: '/api/user/friends',
