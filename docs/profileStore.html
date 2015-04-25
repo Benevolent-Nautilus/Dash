@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>Require components</title>
+  <title>profileStore.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -12,6 +12,12 @@
     <div id="background"></div>
     
     <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>profileStore.js</h1>
+              </div>
+          </li>
         
         
         
@@ -35,7 +41,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <h1 id="require-components">Require components</h1>
+              <p>Require components</p>
 
             </div>
             
@@ -55,9 +61,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> _userInfo = {};
-
-<span class="hljs-keyword">var</span> profileStore = Reflux.createStore({</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> _userInfo = {};</pre></div></div>
             
         </li>
         
@@ -68,11 +72,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>Lstens to the actions stores as a whole.</p>
+              <p>Create store in Reflux</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  listenables: actions,</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> profileStore = Reflux.createStore({</pre></div></div>
             
         </li>
         
@@ -82,6 +86,21 @@
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Lstens to the actions stores as a whole.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  listenables: actions,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>Initialize user data</p>
 
@@ -98,11 +117,11 @@
         </li>
         
         
-        <li id="section-6">
+        <li id="section-7">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>Listen to actions and register callbacks
 this.listenTo(actions.loadDashboard, this.getDefaultData);
@@ -115,11 +134,11 @@ this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
         </li>
         
         
-        <li id="section-7">
+        <li id="section-8">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
+                <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <p>API call to fetch user data for profile </p>
 
@@ -137,11 +156,11 @@ this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
         </li>
         
         
-        <li id="section-8">
+        <li id="section-9">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-8">&#182;</a>
+                <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
               <p>Divide up data into new initialized object</p>
 
@@ -163,11 +182,11 @@ this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
         </li>
         
         
-        <li id="section-9">
+        <li id="section-10">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-9">&#182;</a>
+                <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
               <p>Create and render dashboard data by calling fetchUserData</p>
 
@@ -188,11 +207,11 @@ this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
         </li>
         
         
-        <li id="section-10">
+        <li id="section-11">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-10">&#182;</a>
+                <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
               <p>Function to update user dashboard</p>
 
@@ -206,11 +225,11 @@ this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
         </li>
         
         
-        <li id="section-11">
+        <li id="section-12">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-11">&#182;</a>
+                <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
               
             </div>

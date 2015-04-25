@@ -1,16 +1,19 @@
 'use strict';
-
+// Required components
 var Reflux = require('reflux');
 var actions = require('../actions/actions');
 
+// Create login store in Reflux
 var loginStore = Reflux.createStore({
 
     listenables: actions,
 
+// Initialize
     init: function() {
         this.message = '';
     },
-
+// Set up for user authentication
+// (currently not being called-- using Facebook authentication through Passport)
     loginError: function(errorCode) {
         var message;
         switch (errorCode) {
