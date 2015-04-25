@@ -9,7 +9,7 @@ script:
 - gulp
 cache:
   directories:
-    - node_modules
+  - node_modules
 deploy:
   provider: heroku
   api_key:
@@ -18,3 +18,13 @@ deploy:
   on:
     repo: Benevolent-Nautilus/Benevolent-Nautilus
   skip_cleanup: true
+env:
+  global:
+  - secure: Hmxbv6SNcbiyKN60Mt/u6AejnPmZCdh4c0irN6Qf1bYBCbUrGFN0aQdFfOPUpJfs/bGxlSfvlWuo7l0hiZ+9AHJewUnTBBlZ1Dh1jciVMM+IksSar0Nmohzye/176aojoe4CwUWmuGF10aFYhIhMjI4z55S0gNvV54xmEXqjKuE=
+  - secure: EWxMf0ySxxIy4nBhlXMqHOFYJMGJKhAh8VZMR5JgojwnacFQEudbyqN+9lPw4fUJ2+W7ORRFyh4dTIfIyjvKFWHDrGe8mFmu5tOxdQdu2QgF5PrOY35uQJ16va0jc/KCgcP+3bBJISNLnpVb8XkihQBYgtrYX0zL5zA8opMZPhg=
+  - secure: CTvPx3v8mS3H2LO9CSGXuka499ln8d4cM2LyoiCKZwUuOmqEzmWo0CylSGvC5Fvn+tiRTjfSO5XE5LAqi64G4MCpsnm9Q5638s0peZeeRMmls9by89C4gJwhC51pg52q6IqG3OnS0RVcqhekt7tYQGwlLS34bDP2nNh6Hkz2xGU=
+  - secure: cI8M2oyYBa94Ln7KIIPPM1GzIw/CsuzennosLchQXxKyB9Tof4fjW7bg6OmRztKNRNU56KJ83YJKn0ykmQQmkt1fAUFZY2iFHqfq7WR9d+2AiRbZYz9Csn0U8Sawc8iFk9R3QYWQWo/x7S5kpY2BOZP2wjTvvwKVmtUEsyE7HhM=
+  - secure: TMaIGMqyM/MKgTkBA6Hq5r6AO4N8f61Ht4AudSgS7mOqDOMWGf9g5YboOWSJl2hq2wIUN9RntndEvEhvm30s9/AxCeqGBkC+E/yenumrQKUsLN49cVG5R3P+2gSOwmH1XUdyR3V1zzMbRDVirpr8ePCezqjf2VKofEbLOlIMQfc=
+  - secure: fJEFKamdNo6/4xcAWL7YOU2ajkeFH52iooWEziV3nZZB/09WSmXI9diantXb/iT9VFcKOeO9eXFEff7GPDrstMgiE+aLIAM4r5Z5NyXCkesBt9W4xsSbeUdNgxv8lyVsUluyJ6OkWA554TgoPgXlXUnjcHEfIzu2rQDsH41/vKg=
+  - secure: FvaFovTco0HTe9+yuW+Dqdhvp9IHcwuUQT3ETJoWupVDcMHN4my2eSwAfQWR38oCTSsuSwV+yAZWHJCSMh6nCi6TjPZgHmYWHEnZqoW81kVDieE/A01s55MbPZ1IGk32LZOgtn8qaE/BzTmJfZxv/eEknK5joXM/4rZ9A2bwDw4=
+  - secure: YDjUCPfUzlMLVqzJjQQD6cMvKie8TPqDQgia+ZTUzzQ4W+SFJixk+PDD2TXxtcCU0esaCOhisF4kJ5EF4FM9XGljcQksyRK+OFJoJdE37dPQWJHJkfVZ5cPKNfr91EIQgoCiLK/FvVxuqpqYmc+sdRfnu84yYrGuQHDPODvCgTM=
