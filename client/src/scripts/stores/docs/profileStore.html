@@ -68,19 +68,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>listens to the actions stores as a whole.</p>
+              <p>Lstens to the actions stores as a whole.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  listenables: actions,
-
-  init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">this</span>.userId = <span class="hljs-string">''</span>;
-    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">''</span>;
-    <span class="hljs-keyword">this</span>.stepsToday = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">this</span>.dailyGoal = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">this</span>.totalSteps = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">this</span>.competitions = [];</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  listenables: actions,</pre></div></div>
             
         </li>
         
@@ -91,15 +83,49 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
+              <p>Initialize user data</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.userId = <span class="hljs-string">''</span>;
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">''</span>;
+    <span class="hljs-keyword">this</span>.stepsToday = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">this</span>.dailyGoal = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">this</span>.totalSteps = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">this</span>.competitions = [];</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
               <p>Listen to actions and register callbacks
 this.listenTo(actions.loadDashboard, this.getDefaultData);
 this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  },
+            <div class="content"><div class='highlight'><pre>  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Fetch user data for profile</p>
 
-  fetchUserData: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  fetchUserData: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'AJAX button pressed'</span>);
      $.ajax({
          url: <span class="hljs-string">'/api/user'</span>,
@@ -111,11 +137,11 @@ this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
         </li>
         
         
-        <li id="section-6">
+        <li id="section-8">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <p>Divide up data into new initialized object</p>
 
@@ -132,9 +158,22 @@ this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
              <span class="hljs-built_in">console</span>.error(xhr, status, err.toString());
          }.bind(<span class="hljs-keyword">this</span>)
      });
-  },
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Calls fetchUserData to render onto user dashboard</p>
 
-  createDashboard: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  createDashboard: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">this</span>.fetchUserData();
     <span class="hljs-keyword">return</span> {
               userId: <span class="hljs-keyword">this</span>.userId,
@@ -144,14 +183,39 @@ this.listenTo(actions.updateDashboard, this.updateDashboard);</p>
               totalSteps: <span class="hljs-keyword">this</span>.totalSteps,
               competitions: <span class="hljs-keyword">this</span>.competitions
             };
-  },
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Function to update user dashboard</p>
 
-  updateDashboard: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  updateDashboard: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Update Dashboard Commenced in Store'</span>);
      <span class="hljs-keyword">this</span>.fetchUserData();
-  },
-
-  triggerAll: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  triggerAll: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
       <span class="hljs-keyword">this</span>.trigger({
           userId: <span class="hljs-keyword">this</span>.userId,
           name: <span class="hljs-keyword">this</span>.name,
