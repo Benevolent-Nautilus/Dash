@@ -21,7 +21,7 @@ var Challenges = React.createClass({
       <div className="text-center">
         <Header />
           <div className="user-progress">
-            <h4 className="title">Your Challenges</h4>
+            <h4 className="title bounceIn animated">Your Challenges</h4>
           </div>
           <ChallengesList data={this.state.data} />
         < Footer />

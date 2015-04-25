@@ -59,6 +59,8 @@ A <Link> renders an <a> tag that links to a route in the application. If you cha
 More info here: https://github.com/rackt/react-router/blob/master/docs/api/components/Link.md
 @type {method}
 */
+
+// Transition
 var Link = Router.Link;
 /** 
 Part of the reflux architecture, will send out emit triggers that will be heard throughout the app to update. 
@@ -104,7 +106,7 @@ var InviteFriends = require('./views/challenges/inviteFriends');
 */
 var Dash = React.createClass({
   mixins: [
-      require('react-router').Navigation
+      require('react-router').Navigation,
     ],
 
   getInitialState: function() {

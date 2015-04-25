@@ -26,8 +26,8 @@ var Friend = React.createClass({
               "backgroundSize": "100%"
             };
     return (
-        <a href="javascript:;"  className="list-group-item">
-          <div className="row">
+        <a href="javascript:;"  className="list-group-item" key={this.props.key}>
+          <div className="row fadeInDown animated" key={this.props.uid}>
             <div className="col-xs-1 col-sm-1">
               <div className="circle" style={profileImage}>
               </div>

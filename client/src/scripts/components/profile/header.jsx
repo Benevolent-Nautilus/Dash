@@ -13,21 +13,9 @@ var Footer = React.createClass({
           <div className="container-fluid">
             <div className="navbar-header">
               <div className="row">
-                <div className="col-xs-4 col-sm-4">
-                  <button type="button" className="navbar-toggle collapsed visible-md-block hidden-md " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span className="sr-only">Toggle navigation</span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                  </button>
-                </div>
-                <div className="col-xs-4 col-sm-4">
-                  <a className="navbar-brand" href="#">
-                    <img src="../images/logo.png" />
-                  </a>
-                </div>
-                <div className="col-xs-4 col-sm-4">
-                </div>
+                <a className="navbar-brand" href="#">
+                  <img src="../images/logo.png" />
+                </a>
               </div>
             </div>
 

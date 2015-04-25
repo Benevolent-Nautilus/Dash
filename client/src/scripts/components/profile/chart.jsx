@@ -39,7 +39,7 @@ var Chart = React.createClass({
 
   render: function() {
     return (
-      <div className="chart-center">
+      <div className="chart-center fadeInUp animated">
         <div className="Chart"></div>
       </div>
     );
