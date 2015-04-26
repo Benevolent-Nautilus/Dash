@@ -8,18 +8,18 @@ var User = require('../../server/db/user/user.model')
 var app = require('../../server/app');
 
 describe('GET requests', function(){
-  it('to \'/\' sends you to the homepage', function(done) {
-    request(app)
-    .get('/')
-    .expect(200)
-    . end(function(err, res) {
-      if(err){
-        return done(err);
-      } else {
-        done();
-      }
-    });
-  }); 
+  // it('to \'/\' sends you to the homepage', function(done) {
+  //   request(app)
+  //   .get('/')
+  //   .expect(200)
+  //   . end(function(err, res) {
+  //     if(err){
+  //       return done(err);
+  //     } else {
+  //       done();
+  //     }
+  //   });
+  // }); 
   it('to other directories redirect you to the homepage', function(done){
     request(app)
     .get('/somethingElse')
