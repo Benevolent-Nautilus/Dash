@@ -42,15 +42,43 @@ var challengeRequest = {
 
   postNewChallenge: function(req, res, next){
     var decode = decodeFunc(req.cookies.token);
-    var challengeData = req.body;
-    challengeData.participants.push(decode.id);
+    var participants = req.body.participants;
+    //add current user to the participants list
+    participants.push(decode.id); 
+    
+    //construct a new challenge
     var challenge = new Challenge({
-      name: challengeData.name,
-      goal: challengeData.goal,
+      name: req.body.name,
+      goal: req.body.goal, 
+      winner: null
     });
-    challengeData.participants.forEach(function(element){
-      challenge.participants.push(element);
-    });
+
+    //Assign all the participants to the challenge
+    participants.forEach(function(participant){
+      User
+      .findOne({'_id': participant})
+      .exec(function(err, user){
+        challenge.participants.push({
+          _id: user._id,
+          startSteps: user.activity.totalSteps,
+          currentSteps: user.activity.totalSteps - this.startSteps 
+        });
+      });
+    })
+
+    //save the challenge and save it to each user
+    challenge.save(function(err){
+      if(err) return console.log(err);
+      participants.forEach(function(participant){
+        User
+        .findOne({'_id': participant})
+        .exec(function(err, user){
+          user.challenges.push(challenge._id);
+          user.save();
+        });
+      });
+    })
+
   }
 }; 
 
