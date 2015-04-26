@@ -8,19 +8,19 @@
 // type: Dependency
 var $ = jQuery;
 
-// window.React will load addons.js from the React folder in nodes_modules. <br />
+// window.React will load addons.js from the React folder in nodes modules. <br />
 // type: Dependency
 
 window.React = require('react/addons');
  
-// Reflux is a simple library fro undirectional dataflow architectured, inspired for React. <br />
+// Use Reflux  for unidirectional data flow architecture for React. <br />
 // More info here: https://github.com/spoike/refluxjs <br />
 // type: Dependency
 
 var Reflux = require('reflux');
 
  
-// FastClick is a simple library for eliminating the 300ms delay between physical tap and the firing of a click event on a mobile browser. <br />
+// FastClick is a library for eliminating 300ms delay between physical tap and the firing of a click event on a mobile browser. <br />
 // More info here: https://github.com/ftlabs/fastclick <br />
 // type: Library
 
@@ -32,7 +32,7 @@ var attachFastClick = require('fastclick');
 
 var Router = require('react-router');
 
-// A <RouteHandler> renders the handler of the route at the level of the route hierarchy in which it is used. <br />
+// A RouteHandler renders the handler of the route at the level of the route hierarchy in which it is used. <br />
 // More info here: https://github.com/rackt/react-router <br />
 // type: Method
 
@@ -44,13 +44,13 @@ var RouteHandler = Router.RouteHandler;
 
 var Route = Router.Route;
 
-// A <DefaultRoute> is active when the parent route's path matches exactly. <br />
+// A DefaultRoute is active when the parent route's path matches exactly. <br />
 // More info here: https://github.com/rackt/react-router/blob/master/docs/api/components/DefaultRoute.md <br />
 // type: Method
 
 var DefaultRoute = Router.DefaultRoute;
 
-// A <Link> renders an <a> tag that links to a route in the application. If you change the path of your route, you don't also have to change your links. <br />
+// A Link renders an <a> tag that links to a route in the application. If you change the path of your route, you don't also have to change your links. <br />
 // More info here: https://github.com/rackt/react-router/blob/master/docs/api/components/Link.md <br />
 // type: Method
 
@@ -58,7 +58,7 @@ var DefaultRoute = Router.DefaultRoute;
 // Transition
 var Link = Router.Link;
  
-// Part of the reflux architecture, will send out triggers that will be heard throughout the app to update. <br />
+// Part of the reflux architecture, will send out triggers that will be heard throughout the app for update. <br />
 // Documentation on Actions: https://facebook.github.io/flux/docs/overview.html  <br />
 // type: Actions
 
@@ -95,7 +95,7 @@ var SelectChallenge = require('./views/challenges/selectChallenge');
 var InviteFriends = require('./views/challenges/inviteFriends');
 
 
-// Description: This is the main React Class used to delegate tasks throughout our app.  <br />
+// This is the main React Class used to delegate tasks throughout the application.  <br />
 // Everything will come here as the main point of interest. <br />
 // class React
 
@@ -122,7 +122,7 @@ var Dash = React.createClass({
 
 // Router: This dictates the route and links with the above Router. <br />
 // This is the main mutator in rendering Components to the View. <br />
-// Remember that everything in between hander={' '} is a component to load. <br />
+// Note: everything in between hander={' '} is a component to load. <br />
 
 // type: DOM Node
 var routes = (
