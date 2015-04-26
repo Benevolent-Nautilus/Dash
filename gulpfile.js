@@ -190,7 +190,7 @@ gulp.task('serverLint', function() {
   .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('test', function() {
+gulp.task('mochaTest', function() {
   return gulp.src('./server/spec/*.js')
   .pipe(mocha())
   .once('end', function () {
@@ -269,9 +269,15 @@ gulp.task('localtest', function(callback) {
 gulp.task('default', function(callback) {
   runSequence(
     'clean',
-    ['html', 'styles', 'images', 'scripts'],
-    ['serverLint','clientLint'],
-    'test'
+    ['html', 'styles', 'images', 'script']
+    );
+});
+
+gulp.task('test', function(callback){
+  runSequence(
+    'serverLint',
+    'clientLint',
+    'mochaTest'
     );
 });
 
