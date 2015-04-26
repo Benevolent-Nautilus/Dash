@@ -20,7 +20,7 @@ window.React = require('react/addons');
 var Reflux = require('reflux');
 
  
-// FastClick is a simple, easy-to-use library for eliminating the 300ms delay between physical tap and the firing of a click event on a mobile browser. <br />
+// FastClick is a simple library for eliminating the 300ms delay between physical tap and the firing of a click event on a mobile browser. <br />
 // More info here: https://github.com/ftlabs/fastclick <br />
 // type: Library
 
@@ -58,7 +58,7 @@ var DefaultRoute = Router.DefaultRoute;
 // Transition
 var Link = Router.Link;
  
-// Part of the reflux architecture, will send out emit triggers that will be heard throughout the app to update. <br />
+// Part of the reflux architecture, will send out triggers that will be heard throughout the app to update. <br />
 // Documentation on Actions: https://facebook.github.io/flux/docs/overview.html  <br />
 // type: Actions
 
@@ -70,9 +70,8 @@ var actions = require('./actions/actions');
 
 var Home = require('./views/home');
 
-// Components are the backbone of React, every view should be devided into multiple bits.  <br />
-// Attached is 'Login', which is located in the /components folder. Login will hold the necessary information for users to Login. <br />
-// Reason for why the files are in the components folder is mainly due to modulator amongst many views. <br />
+// Attached is 'Login';located in the /components folder. Login will hold the necessary information for users to Login. <br />
+// Files are in the components folder mainly due to modulator amongst many views. <br />
 // type: Component
 
 var Login = require('./views/login');
