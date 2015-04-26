@@ -28,10 +28,14 @@ var challengeRequest = {
 
   getSingleChallenge: function(req, res, next){
     var id = req.params.id;
-    Challenge.findOne({
-      '_id' : id
-    },
-    function(err, challenges){
+    Challenge
+    .findOne({'_id' : id})
+    .select('name goal participants.currentSteps winner')
+    .populate({
+      path: 'participants',
+      select: ('name profileImage emailAddress fitnessDevice.deviceType')
+    })
+    .exec(function(err, challenges){
       res.send(challenges);
     });
   },
