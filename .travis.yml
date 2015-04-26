@@ -7,7 +7,6 @@ before-install:
 - npm install -g gulp
 script:
 - gulp
-- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && bundle exec rake tests:integration || false'
 cache:
   directories:
   - node_modules
