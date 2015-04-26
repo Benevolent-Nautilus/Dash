@@ -5,7 +5,6 @@ var Router = require('react-router');
 var actions = require('../../actions/actions');
 // Components
 var Spinner = require('../spinner');
-var React = require('react/addons');
 
 var $ = jQuery;
 /**
