@@ -11,7 +11,7 @@ var challengeSchema = new Schema({
   participants: [{
     _id : {type: Schema.Types.ObjectId, ref: 'User'},
     startSteps: {type: Number},
-    endSteps: {type: Number}
+    currentSteps: {type: Number}
   }],
   winner: {type: Schema.Types.ObjectId, ref: 'User'}
 });

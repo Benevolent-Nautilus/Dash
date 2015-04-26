@@ -18,7 +18,8 @@ var userRequest = {
     .select('name profileImage fitnessDevice.deviceType activity challenges')
     .populate({
       path: 'challenges',
-      select: 'name goal participants'
+      match: {'challenges.participants._id': decode.id},
+      select: 'name goal participants.currentSteps'
     })
     .exec(function(err, user){
       res.send(user);
