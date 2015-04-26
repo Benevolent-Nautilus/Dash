@@ -13,15 +13,16 @@ var decodeFunc = function(rawToken){
 
 var challengeRequest = {
   getChallenges: function(req, res, next){
-    var decode = jwt.verify(JSON.parse(req.cookies.token), config.secrets.session);
-    User.findOne({
-      '_id': decode.id
-    },
-    function(err, user){
-      var challenges = {
-        challenges: user.challenges
-      }
-      res.send(challenges);
+    var decode = decodeFunc(req.cookies.token);
+    User
+    .findOne({'_id': decode.id})
+    .select('name profileImage emailAddress fitnessDevice.deviceType challenges')
+    .populate({
+      path: 'challenges',
+      select: 'name goal participants.currentSteps winner'
+    })
+    .exec(function(err, user){
+      res.send(user);
     });
   },
 
