@@ -40,7 +40,6 @@ var friendsStore = Reflux.createStore({
     return _friends;
   },
 
-f
   getFriendRequests: function(){
     return _requests;
   },
