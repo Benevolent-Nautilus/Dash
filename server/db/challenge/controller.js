@@ -2,7 +2,7 @@
 
 'use strict';
 
-var User = require('./user.model');
+var User = require('../user/user.model');
 var Challenge = require('./challenge.model');
 var jwt = require('jsonwebtoken');
 var config = require('../../config/config');
@@ -41,7 +41,7 @@ var challengeRequest = {
   },
 
   postNewChallenge: function(req, res, next){
-    var decode = jwt.verify(JSON.parse(req.cookies.token), config.secrets.session);
+    var decode = decodeFunc(req.cookies.token);
     var challengeData = req.body;
     challengeData.participants.push(decode.id);
     var challenge = new Challenge({
