@@ -87,7 +87,9 @@ var Profile = require('./views/profile');
 // Require Friends View
 var Friends = require('./views/friends');
 
-// Require Challenges View
+// Settings
+var Settings = require('./views/settings');
+
 var Challenges = require('./views/challenges/challenges');
 var CurrentChallenge = require('./views/challenges/currentChallenge');
 // Require New Challenges View
@@ -135,6 +137,7 @@ var routes = (
     <Route name="CurrentChallenge" path="/challenges/:challengeid" handler={ CurrentChallenge } />
     <Route name="SelectChallenge" path="/join-challenge" handler={ SelectChallenge } />
     <Route name="JoinChallenge" path="/join-challenge/:challengeid" handler={ InviteFriends } />
+    <Route name="Settings" path="/settings" handler={ Settings } />
     <DefaultRoute name="Home" handler={ Login } />
   </Route>
 );

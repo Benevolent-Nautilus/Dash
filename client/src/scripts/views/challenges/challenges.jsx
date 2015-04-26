@@ -24,6 +24,12 @@ var Challenges = React.createClass({
             <h4 className="title bounceIn animated">Your Challenges</h4>
           </div>
           <ChallengesList data={this.state.data} />
+            <a href="#/join-challenge">
+              <div className = "join-challenge fadeInUp animated">
+                <span className="add-icon">+</span>
+                <span className="text">Join More Challenges</span>
+              </div>
+            </a>
         < Footer />
       </div>
     );
