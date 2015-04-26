@@ -192,7 +192,10 @@ gulp.task('serverLint', function() {
 
 gulp.task('test', function() {
   return gulp.src('./server/spec/*.js')
-  .pipe(mocha());
+  .pipe(mocha())
+  .once('end', function () {
+    process.exit();
+  });
 });
 
 

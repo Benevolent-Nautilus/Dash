@@ -108,10 +108,11 @@ describe('User', function() {
   });
 
   after(function(done) {
-    mongoose.connection.db.dropCollection('users', function(err, result) {
+    mongoose.connection.db.dropDatabase(function(err, result) {
       if(err){
         // console.log(err);
       }
+      mongoose.connection.close();
       done();
     })
   });
