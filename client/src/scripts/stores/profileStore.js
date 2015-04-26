@@ -1,16 +1,19 @@
 'use strict';
-
+//Require components
 var Reflux = require('reflux');
 var actions = require('../actions/actions');
+
 
 // Private variable to hold dashboard data
 var _userInfo = {};
 
+// Create store in Reflux
 var profileStore = Reflux.createStore({
 
-  // listens to the actions stores as a whole.
+  // Lstens to the actions stores as a whole.
   listenables: actions,
 
+  // Initialize user data
   init: function() {
     this.userId = '';
     this.name = '';
@@ -23,6 +26,7 @@ var profileStore = Reflux.createStore({
     // this.listenTo(actions.updateDashboard, this.updateDashboard);
   },
 
+  // API call to fetch user data for profile 
   fetchUserData: function(){
      console.log('AJAX button pressed');
      $.ajax({
@@ -45,6 +49,7 @@ var profileStore = Reflux.createStore({
      });
   },
 
+  // Create and render dashboard data by calling fetchUserData
   createDashboard: function() {
     this.fetchUserData();
     return {
@@ -57,11 +62,13 @@ var profileStore = Reflux.createStore({
             };
   },
 
+  // Function to update user dashboard
   updateDashboard: function() {
      console.log('Update Dashboard Commenced in Store');
      this.fetchUserData();
   },
 
+  // 
   triggerAll: function () {
       this.trigger({
           userId: this.userId,

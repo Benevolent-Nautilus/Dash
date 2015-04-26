@@ -1,5 +1,6 @@
 'use strict';
 
+// Required components
 var $ = jQuery;
 var Reflux = require('reflux');
 var actions = require('../actions/actions');
@@ -8,6 +9,7 @@ var actions = require('../actions/actions');
 var _friends = [],
     _requests = [];
 
+// Create friend store in Reflux
 var friendsStore = Reflux.createStore({
 
   listenables: actions,
@@ -16,6 +18,7 @@ var friendsStore = Reflux.createStore({
     this.fetch();
   },
 
+// API call to request user's current friend list
   fetch: function(){
    $.ajax({
      // url: '/api/user/friends',
@@ -37,6 +40,7 @@ var friendsStore = Reflux.createStore({
     return _friends;
   },
 
+f
   getFriendRequests: function(){
     return _requests;
   },
@@ -54,17 +58,19 @@ var friendsStore = Reflux.createStore({
     this.trigger(_requests);
   },
 
+// Function call to send request to friend.  Takes user's email as argument
   sendFriendRequest: function(email) {
     console.log(email);
   },
 
+// Add new friend into user's friend list 
   addFriend: function(friend) {
     _friends.push(friend[0]);
     this.trigger(_friends);
   },
 
+// Remove friend from friend list
   deleteFriend: function() {
-    // add this later
   }
 });
 

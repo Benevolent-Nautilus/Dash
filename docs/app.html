@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>app.jsx</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>app.jsx</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>app.js - Main page—Dependencies and Routes Injected Here <br />
+author: Jason Chang, Scott Kao, Derek Van Dyke, and Dennis Yang</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p><br /></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-pi">'use strict'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>$ will be used to reference jQuery throughout the React Application <br />
+type: Dependency</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> $ = jQuery;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>window.React will load addons.js from the React folder in nodes modules. <br />
+type: Dependency</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-built_in">window</span>.React = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react/addons'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Use Reflux  for unidirectional data flow architecture for React. <br />
+More info here: <a href="https://github.com/spoike/refluxjs">https://github.com/spoike/refluxjs</a> <br />
+type: Dependency</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> Reflux = <span class="hljs-built_in">require</span>(<span class="hljs-string">'reflux'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>FastClick is a library for eliminating 300ms delay between physical tap and the firing of a click event on a mobile browser. <br />
+More info here: <a href="https://github.com/ftlabs/fastclick">https://github.com/ftlabs/fastclick</a> <br />
+type: Library</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> attachFastClick = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fastclick'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>React Router is a complete routing library for React. <br />
+More info here: <a href="https://github.com/rackt/react-router">https://github.com/rackt/react-router</a> <br />
+type: Library</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> Router = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-router'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>A RouteHandler renders the handler of the route at the level of the route hierarchy in which it is used. <br />
+More info here: <a href="https://github.com/rackt/react-router">https://github.com/rackt/react-router</a> <br />
+type: Method</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> RouteHandler = Router.RouteHandler;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>A Route renders the route at the level of the handler in which it is used. <br />
+More info here: <a href="https://github.com/rackt/react-router">https://github.com/rackt/react-router</a> <br />
+type: Method</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> Route = Router.Route;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>A DefaultRoute is active when the parent route’s path matches exactly. <br />
+More info here: <a href="https://github.com/rackt/react-router/blob/master/docs/api/components/DefaultRoute.md">https://github.com/rackt/react-router/blob/master/docs/api/components/DefaultRoute.md</a> <br />
+type: Method</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> DefaultRoute = Router.DefaultRoute;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>A Link renders an <a> tag that links to a route in the application. If you change the path of your route, you don’t also have to change your links. <br />
+More info here: <a href="https://github.com/rackt/react-router/blob/master/docs/api/components/Link.md">https://github.com/rackt/react-router/blob/master/docs/api/components/Link.md</a> <br />
+type: Method</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Transition</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Link = Router.Link;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Part of the reflux architecture, will send out triggers that will be heard throughout the app for update. <br />
+Documentation on Actions: <a href="https://facebook.github.io/flux/docs/overview.html">https://facebook.github.io/flux/docs/overview.html</a>  <br />
+type: Actions</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> actions = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./actions/actions'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Components are the backbone of React, every view should be devided into multiple bits.  <br />
+Attached is ‘Home’, which is located in the /views folder.  Home has the main landing view. <br />
+type: View</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> Home = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/home'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>Attached is ‘Login’;located in the /components folder. Login will hold the necessary information for users to Login. <br />
+Files are in the components folder mainly due to modulator amongst many views. <br />
+type: Component</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> Login = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/login'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>Attached is ‘Setup’, which is located in the /views folder. Setup will hold a view for users to have new devices. <br />
+type: View</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> Connect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/connect'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>Require Profile View</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Profile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/profile'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <p>Require Friends View</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Friends = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/friends'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <p>Require Challenges View</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Challenges = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/challenges/challenges'</span>);
+<span class="hljs-keyword">var</span> CurrentChallenge = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/challenges/currentChallenge'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <p>Require New Challenges View</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> SelectChallenge = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/challenges/selectChallenge'</span>);
+<span class="hljs-keyword">var</span> InviteFriends = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/challenges/inviteFriends'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>This is the main React Class used to delegate tasks throughout the application.  <br />
+Everything will come here as the main point of interest. <br />
+class React</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> Dash = React.createClass({
+  mixins: [
+      <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-router'</span>).Navigation,
+    ],
+
+  getInitialState: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> {};
+  },
+
+  render: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"wrapper full-height"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">main</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"content"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"full-height inner"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">RouteHandler</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">main</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>Router: This dictates the route and links with the above Router. <br />
+This is the main mutator in rendering Components to the View. <br />
+Note: everything in between hander={‘ ‘} is a component to load. <br /></p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p>type: DOM Node</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> routes = (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">Dash</span> }&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Login"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/login"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">Login</span> } /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Connect"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/connect"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">Connect</span> } /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Dashboard"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/dashboard"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">Profile</span> } /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Friends"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/friends"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">Friends</span> } /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Challenges"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/challenges"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">Challenges</span> } /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"CurrentChallenge"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/challenges/:challengeid"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">CurrentChallenge</span> } /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"SelectChallenge"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/join-challenge"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">SelectChallenge</span> } /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"JoinChallenge"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/join-challenge/:challengeid"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">InviteFriends</span> } /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">DefaultRoute</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Home"</span> <span class="hljs-attribute">handler</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">Login</span> } /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Route</span>&gt;</span>
+)</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p>param {variables}  routes, func(Handler, state) <br />
+returns {object} a Handler/state from the above routes. <br /> </p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+Router.run(routes, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Handler, state)</span> </span>{
+  React.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Handler</span> <span class="hljs-attribute">params</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">state.params</span> } /&gt;</span>, document.getElementById('app'));
+});
+
+</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>fastclick eliminates 300ms click delay on mobile</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>attachFastClick(<span class="hljs-built_in">document</span>.body);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
