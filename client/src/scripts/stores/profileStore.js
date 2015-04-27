@@ -31,6 +31,7 @@ var profileStore = Reflux.createStore({
          dataType: 'json',
          success: function(data) {
           //Divide up data into new initialized object
+            console.log(data);
             this.userId = data.msg;
             this.name = data.name.first + ' ' + data.name.last;
             this.stepsToday = data.activity.dailySteps;

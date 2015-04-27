@@ -27,9 +27,7 @@ var CurrentChallengesList = React.createClass({
     return (
       <div>
         <ul className="current-challenges">
-          <ReactTransitionGroup transitionName="fade">
             {Challenge}  
-          </ReactTransitionGroup>
         </ul>
       </div>
     )

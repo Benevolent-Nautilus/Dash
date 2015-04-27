@@ -77,7 +77,7 @@ var InviteFriends = React.createClass({
                       };
               var userSteps = that.formatNumber(friend.activity.dailySteps);
               return (
-                  <Tr className="search-tr fadeInUp animated" id= { friend._id } key= { friend._id } >
+                  <Tr className="search-tr fadeInUp animated" id= { friend._id } key= { friend._id }  >
                       <Td column="">
                         <div className="profile-circle" style={ profileImage }>
                         </div>

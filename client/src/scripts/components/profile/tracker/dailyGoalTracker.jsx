@@ -10,13 +10,13 @@ var TotalSteps = React.createClass({
   ],
 
   render: function() {
-    var totalSteps = this.props.totalSteps;
-    console.log('totalSteps', totalSteps);
+    var dailyGoal = this.props.dailyGoal;
+    console.log('dailygoal', dailyGoal);
     return ( 
-        <div className="tracker">
+        <div className="tracker dailygoal">
           <div className="tracker-data fadeInUp animated">
-            <h2>{ this.formatNumber(totalSteps) }</h2>
-            <span>Total Steps</span>
+            <h2>{ this.formatNumber(dailyGoal) }</h2>
+            <span>Daily Goal</span>
           </div>
         </div>
     );

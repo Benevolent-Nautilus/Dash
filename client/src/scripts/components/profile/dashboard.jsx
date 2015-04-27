@@ -21,15 +21,18 @@ var Dashboard = React.createClass({
     var LatestChallenge = <CurrentChallenge key="12348" uid="12348" name="Everest" currentSteps="384729" goal="100000" amountOfFriends="5" />;
     var UserActivity = (this.props.competitions === undefined) ? null : LatestChallenge;
     // console.log(this.props.competitions);
+
+    var totalSteps = (this.props.data.totalSteps === undefined) ? 0 : this.props.data.totalSteps;
     return (
       <div className="Application">
         <div className="fixed-tracker-dashboard">
           <Chart name = { this.props.data.name } 
               stepsToday = { this.props.data.stepsToday } 
               dailyGoal = { this.props.data.dailyGoal }/>
-          <Tracker totalSteps = { this.props.data.totalSteps } dailyGoal = { goal }/>
+          <Tracker totalSteps = { totalSteps } dailyGoal = { goal }/>
+          { UserActivity }
           <ul className="current-challenges challenges-box-dash">
-            { UserActivity }
+            <CurrentChallenge key="12348" uid="12348" name="Everest" currentSteps="384729" goal="100000" amountOfFriends="5" />
           </ul>
         </div>
       </div>

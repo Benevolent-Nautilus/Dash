@@ -7,7 +7,6 @@ var actions = require('../../actions/actions');
 //Components
 var FriendRequest = require('./friendRequest')
 
-var ReactTransitionGroup = React.addons.CSSTransitionGroup;
 
 var Competition = React.createClass({
   propTypes: {
