@@ -32,7 +32,7 @@ var Dashboard = React.createClass({
           <Tracker totalSteps = { totalSteps } dailyGoal = { goal }/>
           { UserActivity }
           <ul className="current-challenges challenges-box-dash">
-            <CurrentChallenge key="12348" uid="12348" name="Everest" currentSteps="384729" goal="100000" amountOfFriends="5" />
+            <CurrentChallenge key="12348" uid="12348" name="Everest" currentSteps="384729" goal="100000" amountOfFriends="5" img="http://www.dash.fitness/images/challenge.png" />
           </ul>
         </div>
       </div>
