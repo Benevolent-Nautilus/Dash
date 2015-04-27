@@ -21,13 +21,14 @@ var friendsStore = Reflux.createStore({
 // API call to request user's current friend list
   fetch: function(){
    $.ajax({
-     // url: '/api/user/friends',
-     url: 'http://demo7018697.mockable.io/api/friends',
+     url: '/api/user/friends',
+     // url: 'http://demo7018697.mockable.io/api/friends',
      async: false,
      dataType: 'json',
      success: function(data) {
-        _friends = data.friends;
-        _requests = data.requests;
+        console.log('friends data:', data);
+        // _friends = data.friends;
+        // _requests = data.requests;
      }.bind(this),
      error: function(xhr, status, err) {
         console.error(xhr, status, err.toString());
@@ -74,18 +75,3 @@ var friendsStore = Reflux.createStore({
 });
 
 module.exports = friendsStore;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

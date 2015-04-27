@@ -21,9 +21,6 @@ var profileStore = Reflux.createStore({
     this.dailyGoal = 0;
     this.totalSteps = 0;
     this.competitions = [];
-    // Listen to actions and register callbacks
-    // this.listenTo(actions.loadDashboard, this.getDefaultData);
-    // this.listenTo(actions.updateDashboard, this.updateDashboard);
   },
 
   // API call to fetch user data for profile 
