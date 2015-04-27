@@ -36,7 +36,7 @@ var userRequest = {
       select: 'name profileImage emailAddress fitnessDevice.deviceType activity'
     })
     .populate({
-      path: 'friendRequests._id',
+      path: 'friendRequests',
       select: 'name profileImage'
     })
     .exec(function(err, user){
