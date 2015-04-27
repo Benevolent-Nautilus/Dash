@@ -8,6 +8,7 @@ var router = express.Router();
 router
   //facebook auth
   .get('/', passport.authorize('jawbone', {
+    scope: ['move_read', 'extended_read'],
     failureRedirect: '/#/connect',
     session: false
   }))
