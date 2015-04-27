@@ -13,6 +13,7 @@ var controller = require('./controller');
 router
   .get('/', controller.getUserProfile)
   .get('/friends', controller.getFriendProfile)
+  .get('/:id', controller.getSingleFriendProfile)
   .post('/addfriend', controller.postAddFriend)
   .post('/acceptfriend', controller.postAcceptFriend)
 

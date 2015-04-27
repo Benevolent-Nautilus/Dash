@@ -45,6 +45,25 @@ var userRequest = {
     });
   },
 
+  getSingleFriendProfile: function(req, res, next){
+    var id = req.params.id;
+    console.log('hi');
+    User
+    .findOne({'_id': id})
+    .select('name profileImage fitnessDevice.deviceType activity friends')
+    .exec(function(err, user){
+      var obj = {
+        _id: user._id,
+        profileImage: user.profileImage,
+        activity: user.activity,
+        fitnessDevice: user.fitnessDevice,
+        name: user.name,
+        friendsLength: user.friends.length
+      }
+      res.send(200, obj);
+    })
+  },
+
   postAddFriend: function(req, res, next){
     var decode = decodeFunc(req.cookies.token);
     User.findOne({
