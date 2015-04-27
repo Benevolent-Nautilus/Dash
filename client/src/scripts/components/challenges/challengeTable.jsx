@@ -12,11 +12,13 @@ var InviteFriends = React.createClass({
   
   mixins: [
     require('react-router').Navigation,
+    require('../../mixins/formatNumber')
   ],
   // When there is a change in the store, the method recieves an updated note list and changes the state. 
 
   render: function() {
     var rowCount = 1;
+    var that = this;
     return (
       <div className="table-responsive search-friends table-hover" >
         <Table className="table table-hover fadeInUp animated" id="table">
@@ -44,6 +46,7 @@ var InviteFriends = React.createClass({
                         </span>
                       </div>
                       );
+              var userSteps = that.formatNumber(friend.steps);
               rowCount++;
               return (
                 <Tr className="search-tr fadeInDown animated" key={friend.uid}>
@@ -55,7 +58,7 @@ var InviteFriends = React.createClass({
                   </Td>
                   <Td column="Steps">
                     <span className="friends-steps">
-                      { friend.steps }
+                      { userSteps }
                     </span>
                   </Td>
                 </Tr>

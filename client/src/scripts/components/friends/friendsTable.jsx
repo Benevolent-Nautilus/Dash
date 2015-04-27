@@ -11,6 +11,7 @@ var Friends = React.createClass({
   
   mixins: [
     require('react-router').Navigation,
+    require('../../mixins/formatNumber')
   ],
 
   // When the View loads up, get the data from the Store
@@ -54,6 +55,7 @@ var Friends = React.createClass({
   },
 
   render: function() {
+    var that = this;
     return (
       <div className="table-responsive search-friends table-hover" >
         <Table className="table table-hover fadeInDown animated" id="table" filterable={ ['Name'] }>
@@ -62,11 +64,7 @@ var Friends = React.createClass({
                         "background": 'url(' + friend.img + ')',
                         "backgroundSize": "100%"
                       };
-              var userSteps = (
-                          <span>
-                            { friend.steps }
-                          </span>
-                      );
+              var userSteps = that.formatNumber(friend.steps);
               return (
                   <Tr className="search-tr fadeInUp animated" >
                       <Td column="">
@@ -78,7 +76,7 @@ var Friends = React.createClass({
                       </Td>
                       <Td column="Steps">
                         <span className="friends-steps">
-                          { friend.steps }
+                          { userSteps }
                         </span>
                       </Td>
                   </Tr>
