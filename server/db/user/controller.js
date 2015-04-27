@@ -41,6 +41,7 @@ var userRequest = {
     })
     .exec(function(err, user){
       console.log(user);
+      res.send(user);
     });
   },
 
@@ -77,6 +78,7 @@ var userRequest = {
         });
       }
     });
+    res.send(201, 'Friend accepted');
   },
 
 }; 
