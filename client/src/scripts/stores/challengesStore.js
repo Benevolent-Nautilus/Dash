@@ -23,7 +23,6 @@ var friendsStore = Reflux.createStore({
 // API call to fetch all available challenges for user to participate
   fetchAllChallenges: function() {
      $.ajax({
-       // url: '/api/user/friends',
        url: 'http://demo7018697.mockable.io/api/allchallenges',
        async: false,
        dataType: 'json',
@@ -35,16 +34,18 @@ var friendsStore = Reflux.createStore({
           console.error(xhr, status, err.toString());
        }.bind(this)
      });
+     return _allChallenges;
   },
 
 // API call to fetch challenges users are participating in
   fetchCurrentChallenges: function(){
    $.ajax({
-     // url: '/api/user/friends',
-     url: 'http://demo7018697.mockable.io/api/challenges',
+     url: '/api/challenge',
+     // url: 'http://demo7018697.mockable.io/api/challenges',
      async: false,
      dataType: 'json',
      success: function(data) {
+        console.log('current challenges', data);
         _currentChallenges = data.data;
      }.bind(this),
      error: function(xhr, status, err) {

@@ -13,7 +13,7 @@ var Footer = require('../../components/profile/footer');
 
 var SelectChallenge = React.createClass({
   getInitialState: function() {
-    return { data: ChallengesStore.fetchCurrentChallenges() };
+    return { data: ChallengesStore.getAllChallenges() };
   }, 
 
   render: function() {

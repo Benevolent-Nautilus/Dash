@@ -21,7 +21,8 @@ var CurrentChallengesList = React.createClass({
     var Challenge = 
                     (this.state.mounted) ? 
                       this.props.data.map(function(stat){
-                        return <CurrentChallenge key={stat.uid} uid={stat.uid} name={stat.name} currentSteps={stat.currentSteps} goal={stat.goal} amountOfFriends={stat.amountOfFriends} />
+                        return <CurrentChallenge key={stat.id} uid={stat.id} name={stat.name} currentSteps={stat.currentSteps} 
+                                  goal={stat.goal} amountOfFriends={stat.amountOfFriends} img="../../../images/challenge.png" />
                       }) :null;
     return (
       <div>
