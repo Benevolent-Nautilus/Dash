@@ -4,6 +4,7 @@
 @author Jason Chang, Scott Kao, Derek Van Dyk, Dennis Yang
 */
 'use strict';
+var $ = jQuery;
 // Reflux
 var Reflux = require('reflux');
 // Router
@@ -27,9 +28,17 @@ var Login = React.createClass({
     };
   },
 
+  componentDidMount: function() {
+    // when the component mounts we start listening to profileStore's 
+    // change event.  This is broadcast whenever there is a mutation in the notes lists
+    // the following line registers as a listener.
+    $('body').css('background-color', '#00bcd4');
+  },
+
+
   render: function() {
     return (
-      <div className="post-info inner full-height fill">
+      <div className="post-info inner full-height">
         <div className="login-page">
           <img src="../images/splash-login.png" />
               <Facebook />

@@ -22,9 +22,10 @@ var InviteFriends = React.createClass({
     return (
       <div className="table-responsive search-friends table-hover" >
         <Table className="table table-hover fadeInUp animated" id="table">
-            {this.props.friends.map(function(friend){
+            {this.props.participants.map(function(friend){
+              var name = friend._id.name.first + " " + friend._id.name.last;
               var profileImage = { 
-                        "background": 'url(' + friend.img + ')',
+                        "background": 'url(' + friend._id.profileImage + ')',
                         "backgroundSize": "100%"
                       };
               var leaderBoardPhoto = (
@@ -39,17 +40,17 @@ var InviteFriends = React.createClass({
               var userDetails = (
                       <div className="user-details">
                         <span>
-                          { friend.name }
+                          { name }
                         </span>
                         <span className="device">
-                          { friend.device }
+                          { friend._id.fitnessDevice.deviceType }
                         </span>
                       </div>
                       );
-              var userSteps = that.formatNumber(friend.steps);
+              var userSteps = that.formatNumber(friend.currentSteps);
               rowCount++;
               return (
-                <Tr className="search-tr fadeInDown animated" key={friend.uid}>
+                <Tr className="search-tr fadeInDown animated" key={friend._id._id}>
                   <Td column="">
                     { leaderBoardPhoto }
                   </Td>

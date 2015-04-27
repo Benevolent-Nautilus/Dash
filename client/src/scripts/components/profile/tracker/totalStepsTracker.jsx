@@ -10,7 +10,7 @@ var TotalSteps = React.createClass({
   ],
 
   render: function() {
-    var totalSteps = this.props.data;
+    var totalSteps = this.props.totalSteps;
     return ( 
         <div className="tracker">
           <div className="tracker-data fadeInUp animated">

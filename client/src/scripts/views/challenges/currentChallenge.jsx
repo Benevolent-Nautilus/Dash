@@ -27,11 +27,11 @@ var SingleCurrentChallenge = React.createClass({
   render: function() {
     console.log(this.state.data);
     return (
-      <div>
+      <div className="page-extend">
         <Header />
             < CurrentChallengeHeader name={ this.state.data.name } img="http://localhost:8080/images/challenge.png" />
-            < Progress currentSteps={ this.state.data.currentSteps } goal={ this.state.data.goal } profileImg={ this.state.data.profileImg } />
-            < ChallengeTable friends={ this.state.data.friends } />
+            < Progress goal={ this.state.data.goal } />
+            < ChallengeTable participants={ this.state.data.participants } />
         < Footer />
       </div>
     );

@@ -18,7 +18,7 @@ var Challenges = React.createClass({
 
   render: function() {
     return (
-      <div className="text-center">
+      <div className="text-center page-extend">
         <Header />
           <div className="user-progress">
             <h4 className="title bounceIn animated">Your Challenges</h4>

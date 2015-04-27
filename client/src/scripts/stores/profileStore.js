@@ -25,13 +25,11 @@ var profileStore = Reflux.createStore({
 
   // API call to fetch user data for profile 
   fetchUserData: function(){
-     console.log('AJAX button pressed');
      $.ajax({
          url: '/api/user',
          async: false,
          dataType: 'json',
          success: function(data) {
-          console.log('user data', data);
           //Divide up data into new initialized object
             this.userId = data.msg;
             this.name = data.name.first + ' ' + data.name.last;
@@ -47,24 +45,36 @@ var profileStore = Reflux.createStore({
   },
 
   fetchFriendsData: function(uid){
-     console.log('AJAX button pressed', uid);
      $.ajax({
          url: '/api/user/' + uid,
          async: false,
          dataType: 'json',
          success: function(data) {
-          console.log('user data', data);
             this.userId = data.msg;
             this.name = data.name.first + ' ' + data.name.last;
             this.stepsToday = data.activity.dailySteps;
             this.dailyGoal = data.activity.dailyGoal;
             this.totalSteps = data.activity.totalSteps;
-            this.competitions = data.challenges;
+            this.profileImg = data.profileImage;
+            this.device = data.deviceType;
+            this.friendsCount = data.friendsLength;
+            this.competitions = undefined;
          }.bind(this),
          error: function(xhr, status, err) {
              console.error(xhr, status, err.toString());
          }.bind(this)
      });
+     return {
+               userId : this.userId,
+               name : this.name,
+               stepsToday : this.stepsToday,
+               dailyGoal : this.dailyGoal,
+               totalSteps : this.totalSteps,
+               device : this.device,
+               profileImg : this.profileImg,
+               friendsCount : this.friendsCount,
+               competitions: this.competitions
+             }; 
   },
 
   // Create and render dashboard data by calling fetchUserData
@@ -82,7 +92,6 @@ var profileStore = Reflux.createStore({
 
   // Function to update user dashboard
   updateDashboard: function() {
-     console.log('Update Dashboard Commenced in Store');
      this.fetchUserData();
   },
 
