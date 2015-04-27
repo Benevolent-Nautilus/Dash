@@ -61,11 +61,9 @@ var friendsStore = Reflux.createStore({
   fetchSingleChallenge: function(uid){
    $.ajax({
      // url: '/api/user/friends',
-     type: 'POST',
      url: '/api/challenge/' + uid,
      async: false,
-     data: JSON.stringify(uid),
-     contentType: 'application/json',
+     dataType: 'json',
      success: function(data) {
         _singleChallenge = data;
      }.bind(this),

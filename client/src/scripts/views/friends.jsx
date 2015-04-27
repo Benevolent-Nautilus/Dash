@@ -1,4 +1,3 @@
-
 'use strict';
 // Reflux
 var Reflux = require('reflux');
@@ -63,7 +62,7 @@ var Friends = React.createClass({
       friendRequestsBar = < FriendRequests data= {this.state.friendRequests} />;
     }
     return (
-      <div className="content full-width">
+      <div className="content full-width page-extend">
         < Header />
         { friendRequestsBar }
         < FriendsTable data= {this.state.friendsList} requestText = {this.state.requestText} />

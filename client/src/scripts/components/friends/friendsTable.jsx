@@ -73,7 +73,7 @@ var Friends = React.createClass({
               var userSteps = that.formatNumber(friend.activity.dailySteps);
               var url = "#/friends/" + friend._id;
               return (
-                  <Tr className="search-tr fadeInUp animated" key= { friend._id } onClick={ that.loadFriend.bind(this, friend._id)} >
+                  <Tr className="search-tr fadeInUp animated" key= { friend._id } onClick={ that.loadFriend.bind(that, friend._id)} >
                       <Td column="">
                         <div className="profile-circle" style={ profileImage }>
                         </div>

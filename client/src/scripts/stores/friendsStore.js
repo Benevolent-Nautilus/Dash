@@ -68,16 +68,6 @@ var friendsStore = Reflux.createStore({
     });
     this.trigger(_friends);
     this.trigger(_requests);
-    // for(var i=0; i < _requests.length; i++){
-    //   if(_requests[i].uid === uid){
-    //     var friend = _requests.splice(i, 1);
-    //     if(status === true) {
-    //       this.addFriend(friend);
-    //     }
-    //     break;
-    //   }
-    // }
-    // this.trigger(_requests);
   },
 
   // Function call to send request to friend.  Takes user's email as argument

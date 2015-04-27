@@ -18,10 +18,10 @@ var SelectChallenge = React.createClass({
 
   render: function() {
     return (
-      <div className="text-center">
+      <div className="text-center page-extend">
         <Header />
           <div className="user-progress">
-            <h4 className="title bounceIn animated">Your Challenges</h4>
+            <h4 className="title bounceIn animated">Select Challenges</h4>
           </div>
           <ChallengesList data={this.state.data} />
         < Footer />

@@ -11,9 +11,12 @@ var Tracker = React.createClass({
 
   render: function() {
     var totalSteps = this.props.totalSteps;
+    var dailyGoal = this.props.dailyGoal;
+    var dailyGoalBox = (dailyGoal !== null) ? <TotalStepsTracker totalSteps= { dailyGoal } /> : null;
     return (
         <div className="row">
-          <TotalStepsTracker data= { totalSteps } />
+          <TotalStepsTracker totalSteps= { totalSteps } />
+          { dailyGoalBox }
         </div>
     );
   }
