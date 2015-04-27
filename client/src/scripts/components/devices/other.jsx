@@ -33,7 +33,7 @@ var Other = React.createClass({
     e.preventDefault();
     var self = this;
     console.log('setup Jawbone');
-    self.transitionTo('profile');
+    self.transitionTo('connect');
   },
 
   // Function is built for error messages.  

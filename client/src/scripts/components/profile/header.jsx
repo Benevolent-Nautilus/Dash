@@ -13,7 +13,7 @@ var Footer = React.createClass({
           <div className="container-fluid">
             <div className="navbar-header">
               <div className="row">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand" href="#/dashboard">
                   <img src="../images/logo.png" />
                 </a>
               </div>

@@ -16,6 +16,11 @@ var InviteFriends = React.createClass({
   ],
   // When there is a change in the store, the method recieves an updated note list and changes the state. 
 
+  loadFriend: function(uid) {
+    console.log(uid);
+    window.location.href = "#/friend/" + uid;
+  },
+
   render: function() {
     var rowCount = 1;
     var that = this;
@@ -50,7 +55,7 @@ var InviteFriends = React.createClass({
               var userSteps = that.formatNumber(friend.currentSteps);
               rowCount++;
               return (
-                <Tr className="search-tr fadeInDown animated" key={friend._id._id}>
+                <Tr className="search-tr fadeInDown animated" key={friend._id._id} onClick={ that.loadFriend.bind(that, friend._id._id) }>
                   <Td column="">
                     { leaderBoardPhoto }
                   </Td>

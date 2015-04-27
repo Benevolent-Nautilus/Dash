@@ -262,9 +262,9 @@ a:hover {
 }
 
 .setup img {
-    width: 160px;
+    width: 140px;
     height: auto;
-    margin: 30px;
+    margin: 20px;
 }
 
 .setup-steps {
@@ -277,30 +277,35 @@ a:hover {
 .fitbit-button {
     background-color: #1bd4b8;
     border: 0px;
-    border-radius: 5px;
-    margin: 5px;
+    border-radius: 0px;
+    margin: 0px;
+    width: 100%;
 }
 
 .fitbit-logo {
-    width: 325px;
-    height: 45px;
+    width: 180px;
+    height: 70px;
+    margin: 0px auto;
     background: url("../../images/fitbit-logo.png");
-    background-size: auto 80%;
+    background-size: 80% auto;
     background-position: center;
     background-repeat: no-repeat;
     display: block;
 }
 
 .jawbone-button {
+    width: 100%;
+    height: 80px;
     background-color: #e94343;
     border: 0px;
-    border-radius: 5px;
-    margin: 5px;
+    border-radius: 0px;
+    margin: 0px;
 }
 
 .jawbone-logo {
     width: 325px;
     height: 45px;
+    margin: 0px auto;
     background: url("../../images/jawbone-logo.png");
     background-size: auto 80%;
     background-position: center;
@@ -458,6 +463,9 @@ a:hover {
     letter-spacing: 2px;
 }
 
+.dailygoal {
+    background-color: #284957;
+}
 
 /* Dashboard - Competition Box - Updating Bootstrap Display Definition
    ========================================================================== */

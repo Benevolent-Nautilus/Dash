@@ -36,14 +36,17 @@ var Setup = React.createClass({
   render: function() {
     return (
       <div className="post-info inner full-height">
-        <div className="setup text-center">
-          <span className="setup-steps">Step 1 of 2</span>
-          <h2>Choose your device!</h2>
-          <img src="../../images/setup-monster.png" />
-            <Fitbit />
-            <Jawbone />
-            <Other />
+        < Header />
+        <div className="user-progress">
+          <h4 className="title fadeIn animated">CONNECT</h4>
+          <h4>YOUR FRIENDS</h4>
+          <span className="user-steps fadeIn animated">Step 2 of 2</span>
         </div>
+        <div className="setup text-center">
+          <img src="../../images/setup-monster.png" />
+        </div>
+        <Fitbit />
+        <Jawbone />
       </div>
     );
   }
