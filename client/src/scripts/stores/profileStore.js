@@ -54,13 +54,12 @@ var profileStore = Reflux.createStore({
          dataType: 'json',
          success: function(data) {
           console.log('user data', data);
-          //Divide up data into new initialized object
-            // this.userId = data.msg;
-            // this.name = data.name.first + ' ' + data.name.last;
-            // this.stepsToday = data.activity.dailySteps;
-            // this.dailyGoal = data.activity.dailyGoal;
-            // this.totalSteps = data.activity.totalSteps;
-            // this.competitions = data.challenges;
+            this.userId = data.msg;
+            this.name = data.name.first + ' ' + data.name.last;
+            this.stepsToday = data.activity.dailySteps;
+            this.dailyGoal = data.activity.dailyGoal;
+            this.totalSteps = data.activity.totalSteps;
+            this.competitions = data.challenges;
          }.bind(this),
          error: function(xhr, status, err) {
              console.error(xhr, status, err.toString());
