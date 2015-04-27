@@ -10,20 +10,29 @@ var CurrentChallenge = React.createClass({
 
   mixins: [
     require('react-router').Navigation,
-    require('../../mixins/formatNumber')
+    require('../../mixins/formatNumber'),
+    require('../../mixins/removeSpaces'),
   ],
+
+  joinChallenge: function(uid, name, goal) {
+    actions.setChallengeDetails(uid, name, goal);
+    window.location.href = "#/join-challenge/" + this.removeSpaces(name);
+  },
+
+  challengeDetails: function(uid) {
+    window.location.href = "#/challenges/" + uid;
+  },
 
   render: function(){
     var currentSteps = (this.props.currentSteps === undefined) ? null : this.formatNumber(this.props.currentSteps) + ' /' ;
-    var amountOfFriends = (this.props.amountOfFriends === undefined) ? null : " |  " + this.props.amountOfFriends + " Players" ;
+    var amountOfFriends = (this.props.amountOfFriends === undefined) ? null : " |  " + this.props.amountOfFriends.length + " Players" ;
     var goal = this.formatNumber(this.props.goal);
 
     var details = (currentSteps === null) ? "Join Challenge" : "Details";
-    var url = (currentSteps === null) ? "#/join-challenges/" + this.props.uid : "#/challenges/" + this.props.uid;
-
+    var url = (currentSteps === null) ? this.joinChallenge : this.challengeDetails;
     return (
         <li key={this.props.uid} className="fadeInUp animated">
-          <a href={ url }>
+          <a onClick={ url.bind(this, this.props.uid, this.props.name, this.props.goal) }>
             <div className="challenge-box">
               <div className="col-xs-4 col-md-4 line-right">
                 <img src={ this.props.img } />

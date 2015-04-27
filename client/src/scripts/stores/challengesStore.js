@@ -9,6 +9,11 @@ var actions = require('../actions/actions');
 var _allChallenges = [];
 var _currentChallenges = [];
 var _singleChallenge = [];
+var _inviteList = {};
+var _ChallengeDetails = {
+                        name: null,
+                        goal: null
+                      };
 
 // Create friend store in Reflux
 var friendsStore = Reflux.createStore({
@@ -34,7 +39,6 @@ var friendsStore = Reflux.createStore({
           console.error(xhr, status, err.toString());
        }.bind(this)
      });
-     return _allChallenges;
   },
 
 // API call to fetch challenges users are participating in
@@ -46,7 +50,7 @@ var friendsStore = Reflux.createStore({
      dataType: 'json',
      success: function(data) {
         console.log('current challenges', data);
-        _currentChallenges = data.data;
+        _currentChallenges = data.challenges;
      }.bind(this),
      error: function(xhr, status, err) {
         console.error(xhr, status, err.toString());
@@ -73,29 +77,58 @@ var friendsStore = Reflux.createStore({
    });
   },
 
+  setChallengeDetails: function(uid, name, goal) {
+    _ChallengeDetails.name = name;
+    _ChallengeDetails.goal = goal;
+  },
+
+  inviteFriends: function(uid) {
+    if(_inviteList[uid] === undefined){
+      _inviteList[uid] = uid;
+    } else { 
+      console.log('Friend is already on list');
+    }
+  },
+
+  unInviteFriends: function(uid) {
+    delete _inviteList[uid];
+  },
+
+  joinChallenge: function(name){
+    var participants = Object.keys(_inviteList);
+    var configure = {
+                    name: _ChallengeDetails.name,
+                    goal: _ChallengeDetails.goal,
+                    participants: participants
+                  };  
+    $.ajax({
+     type: 'POST',
+     url: '/api/challenge/new',
+     async: false,
+     data: JSON.stringify(configure),
+     contentType: 'application/json',
+     success: function(data) {
+        //clear the configure for future use
+        configure = {
+                      name: null,
+                      goal: null,
+                      participants: null
+                    };  
+        // redirect client
+        window.location.href = "#/challenges"
+     }.bind(this),
+     error: function(xhr, status, err) {
+        console.error(xhr, status, err.toString());
+     }.bind(this)
+    });
+  },
+
   getSingleChallenge: function(){
     return _singleChallenge;
   },
 
   getAllChallenges: function(){
     return _allChallenges;
-  },
-
-  configureChallenge: function() {
-    return {
-      uid: '',
-      friends: []
-    };
-  },
-
-  joinChallenge: function(){
-    challengeId = function() {
-      console.log('function invoked');
-    };
-    return {
-      challengeId: challengeId,
-      friends: []
-    }
   },
 
 });

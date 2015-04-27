@@ -1,4 +1,4 @@
-'use strict';
+'use-strict';
 var $ = jQuery;
 var Reflux = require('reflux');
 var actions = require('../../actions/actions');
@@ -12,20 +12,16 @@ var InviteFriends = React.createClass({
   
   mixins: [
     require('react-router').Navigation,
+    require('../../mixins/formatNumber')
   ],
-  getInitialState: function() {
-    this.friends = [];
-    return {
-      id: this.props.id,
-      friends: []
-    };
-  },
-  // When there is a change in the store, the method recieves an updated note list and changes the state. 
-  onChange: function(friends) {
-    this.setState({
-    });
-  },
 
+  // When the View loads up, get the data from the Store
+  getInitialState: function() {
+    return { mounted: false };
+  },
+  componentDidMount: function() {
+    this.setState({ mounted: true });
+  },
   requestFriendRequest: function(email){
     // console.log(email);
     actions.sendFriendRequest(email);
@@ -53,35 +49,54 @@ var InviteFriends = React.createClass({
     });
     $row.click(function() {
       var uid = $(this).attr('id');
-      $(this).css('background-color', '#C0C0C0');
-      this.friends.push(uid);
+      $(this).css('background-color', '#D2ECF2');
+      actions.inviteFriends(uid);
+      $('.invite-friend').fadeIn()
     });
   },
 
-  consoleButton: function() {
-    console.log(this.state);
+  componentWillUnmount: function() {
+    // this will remove the listener.
+    // will always stay up-to-date by listening to the Store's change event
+  },
+
+  joinChallenge: function() {
+    actions.joinChallenge();
   },
 
   render: function() {
+    var that = this;
     return (
       <div className="table-responsive search-friends table-hover" >
-        <Table className="table table-hover" id="table" filterable={['Name', 'Device']}>
-            {this.props.data.map(function(friend){
+        <Table className="table table-hover fadeInDown animated" id="table" filterable={ ['Name'] }>
+            { this.props.data.map(function(friend){
+              var friendName = friend.name.first + ' ' + friend.name.last;
+              var profileImage = { 
+                        "background": 'url(' + friend.profileImage + ')',
+                        "backgroundSize": "100%"
+                      };
+              var userSteps = that.formatNumber(friend.activity.dailySteps);
               return (
-                <Tr className="search-tr" id={friend.uid}>
-                  <Td column="">
-                    <div className="profile-circle">
-                    </div>
-                  </Td>
-                  <Td column="Name" data={friend.name}>
-                  </Td>
-                  <Td column="Device" data={friend.device}>
-                  </Td>
-                </Tr>
-              )
+                  <Tr className="search-tr fadeInUp animated" id= { friend._id } key= { friend._id } >
+                      <Td column="">
+                        <div className="profile-circle" style={ profileImage }>
+                        </div>
+                      </Td>
+                      <Td column="Name">
+                        { friendName }
+                      </Td>
+                      <Td column="Steps">
+                        <span className="friends-steps">
+                          { userSteps }
+                        </span>
+                      </Td>
+                  </Tr>
+                )
             })}
         </Table>
-        <button onClick = {this.consoleButton} > Next </button>
+        <div className="user-progress fadeInUp animated invite-friend">
+          <h4 className="title bounceIn animated" onClick = {this.joinChallenge} >Next</h4>
+        </div>
       </div>
     );
   }
