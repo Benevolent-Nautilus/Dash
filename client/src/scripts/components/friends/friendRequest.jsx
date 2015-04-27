@@ -35,7 +35,7 @@ var Friend = React.createClass({
             <div className="col-xs-4 col-sm-4">
               <span className="approval-text">{this.props.name}</span>
             </div>
-            <div className="col-xs-7 col-sm-7">
+            <div className="col-xs-12 col-sm-7">
               <span className="approval-container" onClick= { actions.vetRequest.bind(this, this.props.uid, true) }>
                 <div className="approve-button" >
                 </div>

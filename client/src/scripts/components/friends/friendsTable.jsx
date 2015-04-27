@@ -32,7 +32,7 @@ var Friends = React.createClass({
     // the following line registers as a listener.
     // var $inputField = 
     var that = this;
-    $(".reactable-filter-input").after("<button class='add-friend btn btn-primary btn-lg outline full-width top-bottom-margin'>Send Friend Request</button>");
+    $(".reactable-filter-input").after("<button class='add-friend btn btn-primary btn-lg outline full-width top-bottom-margin'>"+ this.props.requestText +"</button>");
     // console.log('input field', $inputField);
     var $addFriend = $(".add-friend");
     $('.reactable-filter-input').keyup(function(){
@@ -52,6 +52,7 @@ var Friends = React.createClass({
   componentWillUnmount: function() {
     // this will remove the listener.
     // will always stay up-to-date by listening to the Store's change event
+
   },
 
   render: function() {

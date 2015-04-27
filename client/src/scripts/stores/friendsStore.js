@@ -7,7 +7,8 @@ var actions = require('../actions/actions');
 
 // Create a private friends object to populate
 var _friends = [],
-    _requests = [];
+    _requests = [], 
+    _requestText = 'Send Friend Request';
 
 // Create friend store in Reflux
 var friendsStore = Reflux.createStore({
@@ -45,22 +46,59 @@ var friendsStore = Reflux.createStore({
     return _requests;
   },
 
+  updateSendRequest: function(){
+    return _requestText;
+  },
+
   vetRequest: function(uid, status){
-    for(var i=0; i < _requests.length; i++){
-      if(_requests[i].uid === uid){
-        var friend = _requests.splice(i, 1);
-        if(status === true) {
-          this.addFriend(friend);
-        }
-        break;
-      }
-    }
-    this.trigger(_requests);
+    var acceptFriend = { uid: uid, 
+                         status: status
+                       };
+    $.ajax({
+      type: 'POST',
+      url: '/api/user/acceptfriend',
+      async: false,
+      data: JSON.stringify(acceptFriend),
+      contentType: 'application/json',
+      success: function(data) {
+        console.log('success friendstore', data);
+        // this.fetch();
+      }.bind(this),
+      error: function(xhr, status, err) {
+         console.error(xhr, status, err.toString());
+      }.bind(this)
+    });
+    this.trigger(_friends);
+    // for(var i=0; i < _requests.length; i++){
+    //   if(_requests[i].uid === uid){
+    //     var friend = _requests.splice(i, 1);
+    //     if(status === true) {
+    //       this.addFriend(friend);
+    //     }
+    //     break;
+    //   }
+    // }
+    // this.trigger(_requests);
   },
 
   // Function call to send request to friend.  Takes user's email as argument
   sendFriendRequest: function(email) {
-    console.log(email);
+    var addFriend = {email: email};
+    $.ajax({
+     type: 'POST',
+     url: '/api/user/addfriend',
+     async: false,
+     data: JSON.stringify(addFriend),
+     contentType: 'application/json',
+     success: function(data) {
+      console.log('request has been sent');
+       _requestText = 'Request has been sent!';
+       this.trigger(_requestText);
+     }.bind(this),
+     error: function(xhr, status, err) {
+        console.error(xhr, status, err.toString());
+     }.bind(this)
+    });
   },
 
   // Add new friend into user's friend list 

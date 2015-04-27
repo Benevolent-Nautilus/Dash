@@ -22,16 +22,16 @@ var Competition = React.createClass({
   },
 
   render: function() {
-    console.log('friend requests:', this.props.data);
     var amountOfChallenges = this.props.data.length;
     var Requests = (this.state.mounted) ? 
                       this.props.data.map(function(request) {
-                        return <FriendRequest key={request.name} name={request.name} uid={request.uid} img={request.img} />
+                        return <FriendRequest key={request._id} name={request.name} uid={request._id} img={request.profileImage} />
                       }) :null;
     return (
         <div className="row">
           <div className="list-group panel">
-            <a href="#demo3" className="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"> <span className=" bounceIn animated">{ amountOfChallenges } New Friend Requests!</span></a>
+            <a href="#demo3" className="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">
+            <span className=" bounceIn animated">{ amountOfChallenges } New Friend Requests!</span></a>
             <div className="collapse" id="demo3">
                 { Requests }
             </div>
