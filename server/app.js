@@ -15,6 +15,8 @@ var cookieParser = require('cookie-parser');
 var path = require('path');
 var app = express();
 var bodyParser = require('body-parser');
+var mongoStore = require('connect-mongo')(session);
+var mongoose = require('mongoose');
 var port = process.env.PORT || 8080;
 
 require('./db/db.config');
@@ -30,6 +32,9 @@ app.use(morgan('dev'));
 //set setting for oauth
 app.use(session({
   secret: config.secrets.session,
+  resave: true,
+  saveUninitialized: true,
+  store: new mongoStore({ mongoose_connection: mongoose.connection })
 }));
 
 //cookie parser
