@@ -32,7 +32,6 @@ var friendsStore = Reflux.createStore({
        async: false,
        dataType: 'json',
        success: function(data) {
-          console.log('all challenges', data);
           _allChallenges = data.data;
        }.bind(this),
        error: function(xhr, status, err) {
@@ -49,7 +48,6 @@ var friendsStore = Reflux.createStore({
      async: false,
      dataType: 'json',
      success: function(data) {
-        console.log('current challenges', data);
         _currentChallenges = data.challenges;
      }.bind(this),
      error: function(xhr, status, err) {
@@ -64,7 +62,7 @@ var friendsStore = Reflux.createStore({
    $.ajax({
      // url: '/api/user/friends',
      type: 'POST',
-     url: 'http://demo7018697.mockable.io/api/challenges/' + uid,
+     url: '/api/challenge/' + uid,
      async: false,
      data: JSON.stringify(uid),
      contentType: 'application/json',

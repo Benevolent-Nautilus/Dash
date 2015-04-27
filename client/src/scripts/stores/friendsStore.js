@@ -27,7 +27,6 @@ var friendsStore = Reflux.createStore({
      async: false,
      dataType: 'json',
      success: function(data) {
-        console.log('friends data:', data);
         _friends = data.friends;
         _requests = data.friendRequests;
      }.bind(this),
@@ -61,14 +60,14 @@ var friendsStore = Reflux.createStore({
       data: JSON.stringify(acceptFriend),
       contentType: 'application/json',
       success: function(data) {
-        console.log('success friendstore', data);
-        // this.fetch();
+        this.fetch();
       }.bind(this),
       error: function(xhr, status, err) {
          console.error(xhr, status, err.toString());
       }.bind(this)
     });
     this.trigger(_friends);
+    this.trigger(_requests);
     // for(var i=0; i < _requests.length; i++){
     //   if(_requests[i].uid === uid){
     //     var friend = _requests.splice(i, 1);

@@ -20,6 +20,7 @@ var CurrentChallenge = React.createClass({
   },
 
   challengeDetails: function(uid) {
+    console.log(uid);
     window.location.href = "#/challenges/" + uid;
   },
 
@@ -28,8 +29,8 @@ var CurrentChallenge = React.createClass({
     var amountOfFriends = (this.props.amountOfFriends === undefined) ? null : " |  " + this.props.amountOfFriends.length + " Players" ;
     var goal = this.formatNumber(this.props.goal);
 
-    var details = (currentSteps === null) ? "Join Challenge" : "Details";
-    var url = (currentSteps === null) ? this.joinChallenge : this.challengeDetails;
+    var details = (amountOfFriends === null) ? "Join Challenge" : "Details";
+    var url = (amountOfFriends === null) ? this.joinChallenge : this.challengeDetails;
     return (
         <li key={this.props.uid} className="fadeInUp animated">
           <a onClick={ url.bind(this, this.props.uid, this.props.name, this.props.goal) }>
