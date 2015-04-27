@@ -22,6 +22,7 @@ var Competition = React.createClass({
   },
 
   render: function() {
+    console.log('friend requests:', this.props.data);
     var amountOfChallenges = this.props.data.length;
     var Requests = (this.state.mounted) ? 
                       this.props.data.map(function(request) {

@@ -60,19 +60,20 @@ var Friends = React.createClass({
       <div className="table-responsive search-friends table-hover" >
         <Table className="table table-hover fadeInDown animated" id="table" filterable={ ['Name'] }>
             { this.props.data.map(function(friend){
+              var friendName = friend.name.first + ' ' + friend.name.last;
               var profileImage = { 
-                        "background": 'url(' + friend.img + ')',
+                        "background": 'url(' + friend.profileImage + ')',
                         "backgroundSize": "100%"
                       };
-              var userSteps = that.formatNumber(friend.steps);
+              var userSteps = that.formatNumber(friend.activity.dailySteps);
               return (
-                  <Tr className="search-tr fadeInUp animated" >
+                  <Tr className="search-tr fadeInUp animated" key= { friend._id } >
                       <Td column="">
                         <div className="profile-circle" style={ profileImage }>
                         </div>
                       </Td>
                       <Td column="Name">
-                        { friend.name }
+                        { friendName }
                       </Td>
                       <Td column="Steps">
                         <span className="friends-steps">
@@ -80,12 +81,11 @@ var Friends = React.createClass({
                         </span>
                       </Td>
                   </Tr>
-              )
+                )
             })}
         </Table>
       </div>
     );
   }
 });
-
 module.exports = Friends;

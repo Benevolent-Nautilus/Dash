@@ -27,8 +27,8 @@ var friendsStore = Reflux.createStore({
      dataType: 'json',
      success: function(data) {
         console.log('friends data:', data);
-        // _friends = data.friends;
-        // _requests = data.requests;
+        _friends = data.friends;
+        _requests = data.friendRequests;
      }.bind(this),
      error: function(xhr, status, err) {
         console.error(xhr, status, err.toString());
@@ -58,20 +58,17 @@ var friendsStore = Reflux.createStore({
     this.trigger(_requests);
   },
 
-// Function call to send request to friend.  Takes user's email as argument
+  // Function call to send request to friend.  Takes user's email as argument
   sendFriendRequest: function(email) {
     console.log(email);
   },
 
-// Add new friend into user's friend list 
+  // Add new friend into user's friend list 
   addFriend: function(friend) {
     _friends.push(friend[0]);
     this.trigger(_friends);
   },
 
-// Remove friend from friend list
-  deleteFriend: function() {
-  }
 });
 
 module.exports = friendsStore;
