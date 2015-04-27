@@ -9,11 +9,14 @@ var ReactTransitionGroup = React.addons.CSSTransitionGroup;
 var CurrentChallenge = React.createClass({
 
   mixins: [
-    require('react-router').Navigation
+    require('react-router').Navigation,
+    require('../../mixins/formatNumber')
   ],
 
   render: function(){
     var url = "#/challenges/" + this.props.uid;
+    var currentSteps = this.props.currentSteps;
+    var goal = this.props.goal;
     return (
         <li key={this.props.uid} className="fadeInUp animated">
           <a href={ url }>
@@ -24,7 +27,8 @@ var CurrentChallenge = React.createClass({
               </div>
               <div className="col-xs-8 col-md-8 competition-text text-right">
                 <span className="competition-score">
-                  <span className="competition-accumulated">{this.props.currentSteps}</span> / <span className="competition-total">{this.props.goal}</span>
+                  <span className="competition-accumulated">{ this.formatNumber(currentSteps) }</span> / 
+                  <span className="competition-total">{ this.formatNumber(goal) }</span>
                 </span>
                 <span>Total Steps  |  {this.props.amountOfFriends} Players</span>
               </div>

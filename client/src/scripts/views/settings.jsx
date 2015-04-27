@@ -30,7 +30,6 @@ var Friends = React.createClass({
     return {
       friendsList: friendsStore.getFriendsList(),
       friendRequests: friendsStore.getFriendRequests(),
-      requestText: friendsStore.updateSendRequest(),
       isLoading: true
     };
   },
@@ -39,8 +38,7 @@ var Friends = React.createClass({
   onChange: function() {
     this.setState({
       friendRequests: friendsStore.getFriendRequests(), // state changes
-      friendsList: friendsStore.getFriendsList(), // state changes
-      requestText: friendsStore.updateSendRequest() // state changes
+      friendsList: friendsStore.getFriendsList() // state changes
     });
   },
 
@@ -65,8 +63,6 @@ var Friends = React.createClass({
     return (
       <div className="content full-width">
         < Header />
-        { friendRequestsBar }
-        < FriendsTable data= {this.state.friendsList} requestText = {this.state.requestText} />
         < Footer />
       </div>
     );

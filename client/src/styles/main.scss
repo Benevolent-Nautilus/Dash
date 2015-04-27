@@ -73,6 +73,10 @@ h4 {
     background-color: #FFF;
 }
 
+a:hover {
+    text-decorations: none;
+}
+
 .row {
   margin-right: 0;
   margin-left: 0;
@@ -1049,7 +1053,41 @@ ul.current-challenges li:last-child {
   opacity: 0.01;
 }
 
-@charset "UTF-8";
+.join-challenge { 
+    width: 100%;
+    color: #FCFCFC;
+    background-color: #55B4CB;
+    padding: 20px 0px 30px 0px;
+    display: block;
+}
+
+.join-challenge .add-icon { 
+    width: 100%;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 50px;
+    position: relative;
+    display: block;   
+}
+
+.join-challenge .text{ 
+    width: 100%;
+    position: relative; 
+    display: block;
+}
+
+.join-challenge:hover { 
+    color: #00bcd4;
+    background-color: #193540;
+}
+
+.join-challenge .text a:hover { 
+    text-decoration: none;
+}
+
+.join-challenge .add-icon a:hover { 
+    text-decoration: none;
+}
 
 /*!
 Animate.css - http://daneden.me/animate

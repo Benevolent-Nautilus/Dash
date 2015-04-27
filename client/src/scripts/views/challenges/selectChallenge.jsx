@@ -2,37 +2,31 @@
 var Reflux = require('reflux');
 // Router
 var Router = require('react-router');
-// Stores
-var ChallengesStore = require('../../stores/challengesStore')
-
+// Store
+var ChallengesStore = require('../../stores/challengesStore');
 // Components
 var Spinner = require('../../components/spinner');
+
+var ChallengesList = require('../../components/challenges/currentChallengesList');
 var Header = require('../../components/profile/header');
 var Footer = require('../../components/profile/footer');
-var ChallengeList = require('../../components/challenges/challengeList');
 
-var JoinChallenge = React.createClass({
-  mixins: [Reflux.connect(ChallengesStore, 'data')],
-
+var SelectChallenge = React.createClass({
   getInitialState: function() {
-    return { 
-      data: ChallengesStore.getAllChallenges()
-    };
-  },
-  
-  componentDidMount: function(){
-  },
+    return { data: ChallengesStore.fetchCurrentChallenges() };
+  }, 
 
   render: function() {
     return (
-      <div className="post-info inner full-height">
+      <div className="text-center">
         <Header />
-          < ChallengeList data= { this.state.data } /> 
+          <div className="user-progress">
+            <h4 className="title bounceIn animated">Your Challenges</h4>
+          </div>
+          <ChallengesList data={this.state.data} />
         < Footer />
       </div>
     );
   }
 });
-
-module.exports = JoinChallenge;
-
+module.exports = SelectChallenge;

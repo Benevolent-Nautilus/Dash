@@ -11,6 +11,7 @@ var Friends = React.createClass({
   
   mixins: [
     require('react-router').Navigation,
+    require('../../mixins/formatNumber')
   ],
 
   // When the View loads up, get the data from the Store
@@ -31,7 +32,7 @@ var Friends = React.createClass({
     // the following line registers as a listener.
     // var $inputField = 
     var that = this;
-    $(".reactable-filter-input").after("<button class='add-friend btn btn-primary btn-lg outline full-width top-bottom-margin'>Send Friend Request</button>");
+    $(".reactable-filter-input").after("<button class='add-friend btn btn-primary btn-lg outline full-width top-bottom-margin'>"+ this.props.requestText +"</button>");
     // console.log('input field', $inputField);
     var $addFriend = $(".add-friend");
     $('.reactable-filter-input').keyup(function(){
@@ -51,43 +52,41 @@ var Friends = React.createClass({
   componentWillUnmount: function() {
     // this will remove the listener.
     // will always stay up-to-date by listening to the Store's change event
+
   },
 
   render: function() {
+    var that = this;
     return (
       <div className="table-responsive search-friends table-hover" >
         <Table className="table table-hover fadeInDown animated" id="table" filterable={ ['Name'] }>
             { this.props.data.map(function(friend){
+              var friendName = friend.name.first + ' ' + friend.name.last;
               var profileImage = { 
-                        "background": 'url(' + friend.img + ')',
+                        "background": 'url(' + friend.profileImage + ')',
                         "backgroundSize": "100%"
                       };
-              var userSteps = (
-                          <span>
-                            { friend.steps }
-                          </span>
-                      );
+              var userSteps = that.formatNumber(friend.activity.dailySteps);
               return (
-                  <Tr className="search-tr fadeInUp animated" >
+                  <Tr className="search-tr fadeInUp animated" key= { friend._id } >
                       <Td column="">
                         <div className="profile-circle" style={ profileImage }>
                         </div>
                       </Td>
                       <Td column="Name">
-                        { friend.name }
+                        { friendName }
                       </Td>
                       <Td column="Steps">
                         <span className="friends-steps">
-                          { friend.steps }
+                          { userSteps }
                         </span>
                       </Td>
                   </Tr>
-              )
+                )
             })}
         </Table>
       </div>
     );
   }
 });
-
 module.exports = Friends;
