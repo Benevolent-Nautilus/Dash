@@ -67,7 +67,7 @@ var userRequest = {
       //only add friend to friends list of the user if the status is true
       if(req.body.status){
         user.friends.push(req.body.uid);
-        user.friendRequest.pull(req.body.uid);
+        user.friendRequests.pull(req.body.uid);
         user.save();
         //add user to friend's friends list
         User.findOne({
