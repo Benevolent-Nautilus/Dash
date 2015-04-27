@@ -34,7 +34,6 @@ var Friends = React.createClass({
     this.id= this.getParams().challengeid;
     return {
       friendsList: friendsStore.getFriendsList(),
-      friendRequests: friendsStore.getFriendRequests(),
       isLoading: true
     };
   },
@@ -42,7 +41,6 @@ var Friends = React.createClass({
   // When there is a change in the store, the method recieves an updated note list and changes the state. 
   onChange: function() {
     this.setState({
-      friendRequests: friendsStore.getFriendRequests(), // state changes
       friendsList: friendsStore.getFriendsList() // state changes
     });
   },
@@ -65,7 +63,9 @@ var Friends = React.createClass({
     return (
       <div className="content full-width">
         < Header />
-        < FriendRequests data= {this.state.friendRequests} />
+        <div className="user-progress">
+          <h4 className="title bounceIn animated">Invite Your Friends</h4>
+        </div>
         < InviteFriendsTable id={this.id} data= {this.state.friendsList} />
         < Footer />
       </div>

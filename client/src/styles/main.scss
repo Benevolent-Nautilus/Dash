@@ -956,6 +956,7 @@ a.list-group-item-success:focus, a.list-group-item-success:hover {
 .user-progress .title {
     color: #00bcd7;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .user-steps {
@@ -1007,6 +1008,16 @@ ul.current-challenges li:last-child {
     padding: 20px;
     border-bottom: 1px solid #ddd;
 }​
+
+.invite-friend {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background-color: #193540;
+    bottom: 45px;
+    position: absolute;
+    display: none;
+}
 
 /* Leaderboard  */
 .leader-board-photo {

@@ -83,6 +83,7 @@ var Connect = require('./views/connect');
 
 // Require Profile View
 var Profile = require('./views/profile');
+var FriendsDashboard = require('./views/friendsDashboard');
 
 // Require Friends View
 var Friends = require('./views/friends');
@@ -133,6 +134,7 @@ var routes = (
     <Route name="Connect" path="/connect" handler={ Connect } />
     <Route name="Dashboard" path="/dashboard" handler={ Profile } />
     <Route name="Friends" path="/friends" handler={ Friends } />
+    <Route name="Friends-Dashboard" path="/friend/:uid" handler={ FriendsDashboard } />
     <Route name="Challenges" path="/challenges" handler={ Challenges } />
     <Route name="CurrentChallenge" path="/challenges/:challengeid" handler={ CurrentChallenge } />
     <Route name="SelectChallenge" path="/join-challenge" handler={ SelectChallenge } />
