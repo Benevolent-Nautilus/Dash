@@ -25,24 +25,43 @@ var Home = React.createClass({
   mixins: [],
 
   getInitialState: function() {
+    var width = $(window).width();
+    if(width < 1024) { 
+      window.location.href="#/login";
+    }
+    $('#app').css('background-color', '#78c9fd');
     return {};
   },
 
   componentDidMount: function() {
-    var width = $( window ).width();
-    var height = $( window ).height();
     $('#iphone-container').html('<object data="/#/login" />');
-    $('.full-page').css({'width': width +'px', 'height': height +'px' });
   },
 
   render: function() {
     return (
-      <div className="full-page">
-        <div className="full-width fadeInUp animated">
-          <div id="iphone">
-            <div id="iphone-container">
-            </div>
-          </div>
+      <div className="text-center">
+        <div className="fadeInUp animated text-center">
+          <img src="../../images/dash-splash.png" width="1200px" height="737px" className="splash-image" />
+        </div>
+        <div className="row tech-stack-row">
+          <span className="tech-stack">
+            <h4>Dash.io is built using state-of-the-art technologies such as:</h4>
+          </span>
+          <span className="tech-stack">
+            <img src="../../images/tech-table_01.png" width="319" height="81" alt="" />
+            <img src="../../images/tech-table_02.png" width="89" height="81" alt="" />
+            <img src="../../images/tech-table_03.png" width="207" height="81" alt="" />
+            <img src="../../images/tech-table_04.png" width="173" height="81" alt="" />
+            <img src="../../images/tech-table_05.png" width="224" height="81" alt="" />
+          </span>
+          <span className="tech-stack">
+            <img src="../../images/tech-table_06.png" width="223" height="87" alt="" />
+            <img src="../../images/tech-table_07.png" width="96" height="87" alt="" />
+            <img src="../../images/tech-table_08.png" width="89" height="87" alt="" />
+            <img src="../../images/tech-table_09.png" width="195" height="87" alt="" />
+            <img src="../../images/tech-table_10.png" width="199" height="87" alt="" />
+            <img src="../../images/tech-table_11.png" width="198" height="87" alt="" />
+          </span>
         </div>
       </div>
     );

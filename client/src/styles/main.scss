@@ -51,24 +51,49 @@ h4 {
 /* Front Page iPhone Home Display Definitions
    ========================================================================== */
 #iphone {
-    width: 430px;
-    height: 868px;
+    width: 300px;
+    height: 607px;
     background: url('../images/iphone-template.png');
     background-size: 100%;
+    background-repeat: no-repeat;
     margin: 50px auto;
 }
 
 #iphone-container {
-    width: 378px;
-    height: 670px;
-    padding: 98px 26px;
+    width: 265px;
+    height: 469px;
+    padding: 68px 18px;
     display: block;
 }
 
 #iphone-container object {
-    width: 378px;
-    height: 670px;
-    display:
+    width: 264px;
+    height: 467px;
+}
+
+.splash-image {
+    margin: 0px auto;
+}
+
+.tech-stack-row {
+    background-color: #FFF;
+    padding: 20px; 
+}
+
+.tech-stack {
+    width: 1050px;
+    margin: 20px auto;
+    display: block;
+}
+
+.tech-stack h4{
+    text-transform: uppercase;
+}
+
+.tech-stack img{
+    float: left;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* Adjusted Bootstrap Display Definitions

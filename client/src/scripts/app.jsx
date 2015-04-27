@@ -68,7 +68,7 @@ var actions = require('./actions/actions');
 // Attached is 'Home', which is located in the /views folder.  Home has the main landing view. <br />
 // type: View
 
-var Home = require('./views/home');
+var Presentation = require('./views/home');
 
 // Attached is 'Login';located in the /components folder. Login will hold the necessary information for users to Login. <br />
 // Files are in the components folder mainly due to modulator amongst many views. <br />
@@ -140,6 +140,7 @@ var routes = (
     <Route name="SelectChallenge" path="/join-challenge" handler={ SelectChallenge } />
     <Route name="JoinChallenge" path="/join-challenge/:challengeid" handler={ InviteFriends } />
     <Route name="Settings" path="/settings" handler={ Settings } />
+    <Route name="Presentation" path="/presentation" handler={ Presentation } />
     <DefaultRoute name="Home" handler={ Login } />
   </Route>
 );

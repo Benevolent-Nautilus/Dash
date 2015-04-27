@@ -24,6 +24,10 @@ var Login = React.createClass({
   mixins: [],
 
   getInitialState: function() {
+    var width = $(window).width();
+    if(width > 1024) { 
+      window.location.href="#/presentation";
+    }
     return {
     };
   },
