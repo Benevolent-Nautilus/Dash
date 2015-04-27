@@ -51,11 +51,15 @@ var userRequest = {
       'emailAddress': req.body.email
     },
     function(err, user){
-      user.friendRequests.push(decode.id);
-      console.log(user);
-      user.save();
+      if(user){
+        user.friendRequests.push(decode.id);
+        console.log(user);
+        user.save();
+        res.send(201, 'Friend request sent');
+      } else {
+        res.send(404, 'User not in our app');
+      }
     });
-    res.send(201, 'Friend request sent');
   },
 
   postAcceptFriend: function(req, res, next){
