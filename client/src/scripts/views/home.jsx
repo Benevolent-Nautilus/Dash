@@ -34,18 +34,53 @@ var Home = React.createClass({
   },
 
   componentDidMount: function() {
-    $('#iphone-container').html('<object data="/#/login" />');
   },
 
   render: function() {
+    var team = [
+            { 
+              id: "001",
+              name: "Dennis Yang",
+              img: "../../images/dennis-yang.jpg",
+              linkedin: "https://www.linkedin.com/in/yangdennis",
+              github: "https://github.com/Sunyang730",
+            },
+            { 
+              id: "002",
+              name: "Derek van Dyke",
+              img: "../../images/derek-van-dyk.jpg",
+              linkedin: "https://www.linkedin.com/in/ddvandyke",
+              github: "https://github.com/dvandyke",
+            },
+            { 
+              id: "003",
+              name: "Jason Chang",
+              img: "../../images/jason-chang.jpg",
+              linkedin: "https://www.linkedin.com/in/jasonjchang",
+              github: "https://github.com/jasonjchang",
+            },
+            { 
+              id: "004",
+              name: "Scott Kao",
+              img: "../../images/scott-kao.jpg",
+              linkedin: "https://www.linkedin.com/in/scottkao85",
+              github: "https://github.com/scottkao85",
+            }
+            ];
     return (
       <div className="text-center">
+        <br/><br/>
         <div className="fadeInUp animated text-center">
-          <img src="../../images/dash-splash.png" width="1200px" height="737px" className="splash-image" />
+          <img src="../../images/dash-splash.png" width="1030px" height="540px" className="splash-image" />
+        </div>
+        <div className="fadeInUp animated text-center">
+          <a href="https://github.com/Benevolent-Nautilus/Benevolent-Nautilus" target="_blank">
+            <button className="github-btn"><i className="fa fa-github-square"></i> Contribute On Github</button>
+          </a>
         </div>
         <div className="row tech-stack-row">
           <span className="tech-stack">
-            <h4>Dash.io is built using state-of-the-art technologies such as:</h4>
+            <h4>Dash.io is built using state-of-the-art technologies such as</h4>
           </span>
           <span className="tech-stack">
             <img src="../../images/tech-table_01.png" width="319" height="81" alt="" />
@@ -62,6 +97,51 @@ var Home = React.createClass({
             <img src="../../images/tech-table_10.png" width="199" height="87" alt="" />
             <img src="../../images/tech-table_11.png" width="198" height="87" alt="" />
           </span>
+          <span className="tech-stack">
+            <img src="../../images/tech-table_12.png" width="223" height="64" alt="" />
+            <img src="../../images/tech-table_13.png" width="81" height="64" alt="" />
+            <img src="../../images/tech-table_14.png" width="139" height="64" alt="" />
+            <img src="../../images/tech-table_15.png" width="128" height="64" alt="" />
+            <img src="../../images/tech-table_16.png" width="205" height="64" alt="" />
+            <img src="../../images/tech-table_17.png" width="227" height="64" alt="" />
+          </span>
+        </div>
+        <div className="row team">
+          <div className="container">
+            { team.map(function(member){
+              var profileImage = { 
+                        "background": 'url(' + member.img + ')',
+                        "backgroundSize": "auto 100%",
+                        "backgroundPosition" : "center",
+                        "width" : "150px",
+                        "height" : "150px",
+                        "margin" : "20px auto"
+                      };
+              return (
+                      <div key={member.id} className="col-xs-3 col-sm-3 text-center">
+                        <div>
+                          <div className="profile-circle" style={ profileImage }></div>
+                          <div className="user-details">
+                            <span>
+                              { member.name }
+                            </span>
+                            <span className="device">
+                              Software Engineer
+                            </span>
+                            <div className="row text-center portfolio">
+                              <a href={member.github} target="_blank">
+                                <i className="fa fa-github-square"></i>
+                              </a>
+                              <a href={member.linkedin} target="_blank">
+                                <i className="fa fa-linkedin-square"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      )
+            }) }
+          </div>
         </div>
       </div>
     );

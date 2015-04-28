@@ -48,7 +48,7 @@ h4 {
     margin: 5px 0px 0px 0px;
 }
 
-/* Front Page iPhone Home Display Definitions
+/* Front Page Display Definitions
    ========================================================================== */
 #iphone {
     width: 300px;
@@ -94,6 +94,38 @@ h4 {
     float: left;
     margin: 0px;
     padding: 0px;
+}
+
+.team {
+    padding: 40px;
+    background-color: #EFF3F4;
+}
+
+.team .container {
+    padding: 10px;
+    width: 1000px;
+}
+
+.portfolio i {
+    margin: 10px 5px;
+}
+
+.github-btn {
+  border: 2px solid #FFFFFF;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 15px;
+  margin: 40px;
+  font-size: 14px;
+}
+
+.github-btn:hover {
+  border: 2px solid #FFFFFF;
+  background-color: #FFF;
+  color: #78c9fd;
 }
 
 /* Adjusted Bootstrap Display Definitions
